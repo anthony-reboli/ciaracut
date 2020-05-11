@@ -25,7 +25,7 @@ ob_start();
 <body id="body-reserv">
 <header id="header-reserv">
       <?php
-      include('bar-nav.php');
+     // include('bar-nav.php');
 
       ?>
 </header>
@@ -68,7 +68,7 @@ ob_start();
   else {
     echo "vous n'avez pas de reservations a votre nom";
   } 
-  include("footer.php");
+ // include("footer.php");
 ?>
 </body>
 </html>
