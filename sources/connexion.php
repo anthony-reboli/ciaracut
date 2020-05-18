@@ -22,8 +22,8 @@
    	        $login = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['login']));
             $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
 
-            if($login !== "" && $password !== "")
-            {
+             if($login !== "" && $password !== "")
+             {
                 $requete = "SELECT count(*) FROM utilisateurs where
                 login = '".$login."' ";
                 $exec_requete = mysqli_query($connexion,$requete);
@@ -33,18 +33,22 @@
                 $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
                 $exec_requete4 = mysqli_query($connexion,$requete4);
                 $reponse4 = mysqli_fetch_array($exec_requete4);
+            
 
-                if( $count!=0 && $_SESSION['login'] !== "" && password_verify($password, $reponse4[2]) )
+                 if( $count!=0 && $_SESSION['login'] !== "" && password_verify($password, $reponse4[2]) )
                 {
             
                 $_SESSION['login'] = $_POST['login'];
-                $user = $_SESSION['login'];
-                header('Location: index.php');
-                }
-                else
-                {
-                header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
-                }
+
+                 $user = $_SESSION['login'];
+                  $id=$_SESSION['id']=$reponse4['id'];
+                  
+                 header('Location: index.php');
+                  }
+                  else
+                 {
+                 header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
+                  }
             }
         }
         ?>
