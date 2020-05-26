@@ -1,0 +1,29 @@
+#stock{
+
+}
+
+.theb{
+	    border: solid 2px black;
+    display: flex;
+    /* align-content: space-around; */
+    justify-content: space-around;
+    align-items: center;
+    background-color: #bae2ba;
+}
+
+.imagebout{
+	width: 125px;
+	height: 125px;
+}
+
+
+
+.insufisant
+{
+	background-color: #ffb5b5;
+	border: solid 2px black;
+    display: flex;
+    /* align-content: space-around; */
+    justify-content: space-around;
+    align-items: center;
+}

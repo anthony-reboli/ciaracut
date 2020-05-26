@@ -69,7 +69,8 @@ include("bar-nav.php");?>
 							  	if(isset($_POST['creation']))
 							  	{
 							  		?>
-									<div id="createA">
+
+							  								<div id="createA">
 										<h3>Créer une prestation</h3>
 							  <form method="post" >
 							                    <label>titre</label></br>
@@ -96,8 +97,9 @@ include("bar-nav.php");?>
 							   		</form>
 							   </div>
 							</div>
+							<?php
 
-						<?php }
+								}
 
 						?>
 
@@ -110,11 +112,35 @@ include("bar-nav.php");?>
 						{
 							$reserv="SELECT * FROM reservation inner join utilisateurs on id_utilisateurs = utilisateurs.id";
 							$reservQ=mysqli_query($bdd,$reserv);
+
+
 						
 
 							while($data= mysqli_fetch_assoc($reservQ))
 						            {
-										include("../include/infouseradmin.php");
+										 $i=0;
+						                $nom=$data['nom'];
+						                $prenom=$data['prenom'];
+						                $nais=$data['date_naissance'];
+						                $ids=$data['id'];
+						                $debut=$data['debut'];
+						                $fin=$data['fin'];
+
+						                var_dump($data);
+						                echo"<div id='infouser'>";
+						                echo "nom:&nbsp $nom &nbsp";
+						                echo "prenom:&nbsp $prenom &nbsp";
+						                echo "née: &nbsp$nais &nbsp";
+						                echo "debut:&nbsp$debut &nbsp";
+						                echo "debut:&nbsp$fin &nbsp";
+
+						                echo "<a href=\"profil.php?U=$ids\" target=\"_blank\"><button name=\"profil\">Profil</button></a>";
+						                echo"</div>";
+
+
+
+						                $i++;
+										
 						            }
 						}
 
@@ -126,7 +152,7 @@ include("bar-nav.php");?>
 							  	<button type="submit" name="membre">client</button>
 							</form>
 						<?php 
-						if(isset($_POST['membre']))
+						if(isset($_POST['membre'])) //quand on clique sur client
 						{
 
 							?>
@@ -149,7 +175,7 @@ include("bar-nav.php");?>
 
 
 						}
-										 if(isset($_POST['butrecherche']))
+										 if(isset($_POST['butrecherche']))  //on recherche un utilistateur
 						            {
 						            	$rechercheA=$_POST['RechercheU'];
 						            	$userR="SELECT * FROM utilisateurs where nom like '$rechercheA%'";
@@ -173,7 +199,9 @@ include("bar-nav.php");?>
 							
 
 
-						
+				
 </section>
+<footer>
+	</footer>
 </body>
 </html>
