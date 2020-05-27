@@ -27,12 +27,11 @@
     ?>
     <nav class="menu">
       <ol>
-        <li class="menu-item"><a href="index.php">Home</a></li>
+        <li class="menu-item"><a href="../sources/index.php">Home</a></li>
         <li class="menu-item"><a href="profil.php">Profil</a></li>
         <li class="menu-item"><a href="boutique.php">Boutique</a></li>
-        <li class="menu-item"><a href="panier.php">Panier</a></li>
-        <li class="menu-item"><a href="index.php?deconnexion=true">Déconnexion</a>
-        <li class="menu-item"><a href="admin.php">Administrateur</a></li>
+        <li class="menu-item"><a href="../sources/index.php?deconnexion=true">Déconnexion</a>
+        <li class="menu-item"><a href="../sources/admin.php">Administrateur</a></li>
       </ol>
     </nav>
  
@@ -43,7 +42,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:index.php");
+                      header("location:../sources/index.php");
                    }
                 }
      
@@ -56,7 +55,6 @@
         <li class="menu-item"><a href="index.php">Home</a></li>
         <li class="menu-item"><a href="profil.php">Profil</a></li>
         <li class="menu-item"><a href="boutique.php">Boutique</a></li>
-        <li class="menu-item"><a href="panier.php">Panier</a></li>
         <li class="menu-item"><a href="index.php?deconnexion=true">Déconnexion</a>
      
       </ol>
@@ -69,7 +67,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:index.php");
+                      header("location:../sources/index.php");
                    }
                 }
     

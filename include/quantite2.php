@@ -9,7 +9,7 @@
 		if (isset($_POST["supp$i"])) 
 		{
 		
-				$eff= ("DELETE FROM commande WHERE id=$id_commande AND  id_prestation =$id_produits AND id_utilisateurs=$id ");
+				$eff= ("DELETE * FROM panier WHERE id=$id_commande AND  id_prestation =$id_produits AND id_utilisateurs=$id ");
 				$query2=mysqli_query($connexion,$eff);
 				header("location:../sources/admin.php");
 				

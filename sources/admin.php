@@ -33,8 +33,6 @@ date_default_timezone_set('europe/paris');
 <header>
 <?php include("../include/bar-nav.php");?>
 </header>
-
-<?php include("../include/reservformulaire.php");?>
 <?php 
 include("../include/prestation.php");?>
 <?php 

@@ -1,0 +1,55 @@
+/*PAGE BOUTIQUE PRESTATION*/
+
+#formadminprestation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.titre{
+  text-align: center;
+  font-family: serif;
+  font-size: 30px;
+}
+h1{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*PAGE BOUTIQUE PRESTATION*/
+#boutiquepresta{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main-reserv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#cadre-reserv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+}
+.imagebout{
+  width: 200px;
+  height: 100px;
+}
