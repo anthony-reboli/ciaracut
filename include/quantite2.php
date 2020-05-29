@@ -2,23 +2,24 @@
 		$connexion = mysqli_connect("localhost","root","","ciaracut");
       	$id=$_SESSION['id'];
       	$id_commande=$values[0];
-      	$id_produits=$values[2];
+      	$id_prestation=$values[2];
  	
 		
 
 		if (isset($_POST["supp$i"])) 
 		{
 		
-				$eff= ("DELETE * FROM panier WHERE id=$id_commande AND  id_prestation =$id_produits AND id_utilisateurs=$id ");
+				$eff= ("DELETE  FROM commande WHERE id=$id_commande AND  id_prestation =$id_prestation AND id_utilisateurs=$id ");
 				$query2=mysqli_query($connexion,$eff);
 				header("location:../sources/admin.php");
+				
 				
 	
 		}
 	
 		?>
 	<form method="post" >
-	<button id="suppprod" name="supp<?php echo $i ?>"><img width="50" height="50" src="upload/corbeille.png"></button>
+	<button id="suppprod" name="supp<?php echo $i ?>"><img width="50" height="50" src="../upload/corbeille.png"></button>
 	</form>	
 	
 																  

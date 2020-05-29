@@ -25,6 +25,7 @@ date_default_timezone_set('europe/paris');
 
 <html lang="fr">
 <head>
+
     <meta charset="UTF-8">
     <title>Espace Administrateur - Ciaracut </title>
     <link rel="stylesheet" href="ciaracut.css">
@@ -33,9 +34,12 @@ date_default_timezone_set('europe/paris');
 <header>
 <?php include("../include/bar-nav.php");?>
 </header>
+<main>
+
+</main>
 <?php 
-include("../include/prestation.php");?>
+include("../sources/prestation.php");?>
 <?php 
-include("../include/boutiqueprestation.php");?>
+include("../sources/boutiqueprestation.php");?>
 </body>
 </html>
