@@ -9,7 +9,7 @@
     $requete = "SELECT * FROM prestation ";
     $query = mysqli_query($connexion, $requete);
     $resultat = mysqli_fetch_all($query);
-    var_dump($resultat);
+    
     
     
     
@@ -33,8 +33,6 @@
                       foreach ($resultat as $values)
                         {
                         if (!empty($values)) {
-                                      
-                      
                         $did=$values[0];
                         $img=$values[5];
                         $nom=$values[1];

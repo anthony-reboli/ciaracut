@@ -25,16 +25,35 @@ date_default_timezone_set('europe/paris');
 
 <html lang="fr">
 <head>
-
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title>Espace Administrateur - Ciaracut </title>
-    <link rel="stylesheet" href="ciaracut.css">
+    <link rel="stylesheet" href="../css/ciaracut.css">
 </head>
-<body id="pageadmin">
-<header>
-<?php include("../include/bar-nav.php");?>
-</header>
-<main>
+
+    <body id="pageadmin">
+
+         <header>
+         <?php include("../include/bar-nav.php");?>
+         </header>
+                <main>
+  <script>
+  $(document).ready(function(){
+  $("#hide").click(function(){
+    $("#formadminprestation").hide();
+    $("#cadre-reserv").hide();
+   
+  });
+  $("#show").click(function(){
+    $("#formadminprestation").show();
+    $("#cadre-reserv").show();
+   
+  });
+});
+</script>
+
+<button id="show">Afficher les prestation</button>
+<button id="hide">Cacher les prestations</button>
 
 </main>
 <?php 

@@ -11,14 +11,14 @@
 		
 				$eff= ("DELETE FROM commande WHERE id=$id_commande AND  id_prestation =$id_produits AND id_utilisateurs=$id ");
 				$query2=mysqli_query($connexion,$eff);
-				header("location:../sources/admin.php");
+				header("location:../sources/panier.php");
 				
 	
 		}
 	
 		?>
 	<form method="post" >
-	<button id="suppprod" name="supp<?php echo $i ?>"><img width="50" height="50" src="upload/corbeille.png"></button>
+	<button id="suppprod" name="supp<?php echo $i ?>"><img width="50" height="50" src="../upload/corbeille.png"></button>
 	</form>	
 	
 																  

@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>Produit</title>
-		<link rel="stylesheet" type="text/css" href="boutique.css">
+		<link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 		<meta charset="utf-8">
 	</head>
 			<body id="pageproduit">
@@ -12,7 +12,7 @@
 				</header>
 							
 		
-						<section>
+						<section id="formprestation">
 								<H1 class="titre">Ma Selection</H1>
 								<?php
 								$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
@@ -20,14 +20,14 @@
 								$id_utilisateurs=$_SESSION['id'];
 								$reponse = $connexion->query("SELECT * FROM prestation WHERE prestation.id=$retour ");
 								$rep=$reponse->fetchAll();
-								var_dump($rep);
+								
 						
       										if (!empty($_GET['p'])) 
       										{
 													$i = 0;
-														foreach ($rep as $val)
+													foreach ($rep as $val)
 													{
-															if (!empty($val)) 
+														if (!empty($val)) 
 														{
 															  	$did=$val[0];
 										                        $img=$val[5];
@@ -44,7 +44,7 @@
 														}
 															else
 														{
-															echo "Veuillez choisir un produit!";
+															echo "Veuillez choisir une prestation!";
 					    								}
 
 					    							}
@@ -66,6 +66,7 @@
     											header("location:panier.php");
     										}
     											?>
+    										</section>
     									
     										
 						<footer>

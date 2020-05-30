@@ -4,14 +4,15 @@ session_start();
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="boutique.css">
+	<link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 	<title>Paiement</title>
 </head>
-		<body id="paiement">
+		<body>
 
 			<header>
-			<?php include("bar-nav.php");?>
+			<?php include("../include/bar-nav.php");?>
 			</header>
+			<section id="paiement">
 			<?php
 			$id_utilisateurs=$_SESSION['id'];
 			$connexion=mysqli_connect("localhost","root","","ciaracut");
@@ -32,9 +33,10 @@ session_start();
 			$id_utilisateurs=$_SESSION['id'];
 			$connexion=mysqli_connect("localhost","root","","ciaracut");
 			$req2=("DELETE FROM panier WHERE id_utilisateurs=$id_utilisateurs");
+			$req3=("DELETE FROM commande WHERE id_utilisateurs=$id_utilisateurs");
 			$query3=mysqli_query($connexion,$req2);
-		
-			
+			$query4=mysqli_query($connexion,$req3);
+			header("location:admin.php");
 			echo"<p id='validp'> Votre paiement a bien été effectué!<br>Merci de votre visite! <br>A bientot!</p>";
 	
 
@@ -45,7 +47,7 @@ session_start();
 			?>
 
 			<h1 class="titre">Votre paiement</h1>
-			<img id="logopaiement" height="100" width="400" src="upload/paiementsecur.jpg">
+			<img id="logopaiement" height="100" width="400" src="../upload/paiementsecur.jpg">
 			<div id="contpaiement">
  			<form class="formpaiement"method="post"><b>
  				<H2>Information CB</H2><br>
@@ -63,13 +65,14 @@ session_start();
  				<input class="formpaiement" type="number" name="codesec"><br>
  				<label>Nom du Porteur</label><br>
  				<input class="formpaiement" type="text" name="nomcb"><br>
- 				<button id="btpayer" name="payer"><img width="50" height="30" src="upload/boutonpayer.png"></button><br>	
+ 				<button id="btpayer" name="payer"><img width="50" height="30" src="../upload/paiement.jpg"></button><br>	
  			</form>
  			</div>
+ 		</section>
 		
 			
 		<footer>
-		<?php include("footer.php");?>
+		<?php include("../include/footer.php");?>
 		</footer>
 	</body>
 </html>
