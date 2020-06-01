@@ -5,7 +5,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="camping.css">
+    <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
+      
+
     <title>Accueil</title>
 </head>
 <body class="bodya">
@@ -35,9 +37,36 @@
     }
     ?>
   </header>
-  
+  <h1>Mes réservations</h1>
     
     <main id="logo">
+      <?php
+      $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
+      $requete = $connexion->prepare("SELECT * FROM events   ORDER BY start_event ASC
+      LIMIT 10");
+      $requete->execute();
+      var_dump($requete);
+      foreach ($requete as $values)
+                {
+                        if (!empty($values)) {
+                                      
+                      echo "<table class='stripped' width=600px>";
+                      echo "<tr>";
+                      echo "<th class='nom'>Nom client & prestations</th>";
+                      echo "<th class='nom' >Début de la prestation</th>";
+                      echo "<th class='nom' >Fin de la prestation</th>";
+                      echo "</tr>";
+                      echo "<tr>";
+                      echo "<td class='nom'>".$values[1]."</td>";
+                      echo "<td class='nom'>".$values[2]."</td>";
+                      echo "<td class='nom'>".$values[3]."</td>";
+                      echo "</tr>";
+                      echo "</table>";
+                                 
+                    }
+                     
+                  }
+        ?>
       
     </main>
   

@@ -9,6 +9,12 @@
 
 
 /*PAGE Admin*/
+.bouton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 #formadminprestation{
   display: flex;
@@ -31,11 +37,17 @@ h1{
 /*PAGE BOUTIQUE PAIEMENT*/
 
 #paiement{
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
 
+}
+#contpaiement{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
 }
 
 
@@ -54,6 +66,13 @@ h1{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+  }
+.form{
+   display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
 }
 #cadre-reserv{
   display: flex;
@@ -63,9 +82,24 @@ h1{
   flex-wrap: wrap;
   text-decoration: none;
   list-style: none;
-  width: 80%;
+  width: 60%;
 }
 .imagebout{
   width: 100px;
   height: 100px;
+}
+/*PAGE PLANNING*/
+#container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+/*PAGE INDEX*/
+#contenue{
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

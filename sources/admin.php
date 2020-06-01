@@ -51,14 +51,19 @@ date_default_timezone_set('europe/paris');
   });
 });
 </script>
-
-<button id="show">Afficher les prestation</button>
-<button id="hide">Cacher les prestations</button>
+<div class="bouton">
+<button id="show">Demarrer les prestation</button><br>
+<button id="hide">Arreter les prestations</button>
+</div>
 
 </main>
 <?php 
 include("../sources/prestation.php");?>
 <?php 
 include("../sources/boutiqueprestation.php");?>
+
+<?php 
+include("../sources/planning.php");?>
+
 </body>
 </html>

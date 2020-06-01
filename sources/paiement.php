@@ -29,7 +29,7 @@ session_start();
 			
 			if (isset($_POST['payer'])) {
 				
-				if (!empty($_POST['select'])&&!empty($_POST['codecb'])&&!empty($_POST['codesec'])&&!empty($_POST['nomcb'])) {
+				
 			$id_utilisateurs=$_SESSION['id'];
 			$connexion=mysqli_connect("localhost","root","","ciaracut");
 			$req2=("DELETE FROM panier WHERE id_utilisateurs=$id_utilisateurs");
@@ -40,21 +40,31 @@ session_start();
 			echo"<p id='validp'> Votre paiement a bien été effectué!<br>Merci de votre visite! <br>A bientot!</p>";
 	
 
-				}
+				
 
 			}
 			
 			?>
 
+ 			<div id="contpaiement">
+			<H2 class id="titre">En espèce ou chèque</H2><br>
+ 				<form class="formpaiement">
+ 				<select class="formpaiement" name="select2"><br>
+ 				<label>Choisir:</label><br>
+			    <option class="formpaiement" value="">-Choisir type paiement-</option>
+			    <option value="espece">Espece</option>
+			    <option value="cheque"s>Chèque</option>
+				</select><br>					
+ 				</form>
+ 			<h1 class="titre">OU</h1>
 			<h1 class="titre">Votre paiement</h1>
 			<img id="logopaiement" height="100" width="400" src="../upload/paiementsecur.jpg">
-			<div id="contpaiement">
  			<form class="formpaiement"method="post"><b>
  				<H2>Information CB</H2><br>
  				<label>TYPE CB</label><br>
  				<label>Choisir:</label><br>
 				<select class="formpaiement" name="select"><br>
-			    <option class="formpaiement" value="">Choisir option-</option>
+			    <option class="formpaiement" value="">-Choisir option-</option>
 			    <option value="visa">Visa</option>
 			    <option value="master">Mastercard</option>
 			    <option value="amex">AMEX</option>
