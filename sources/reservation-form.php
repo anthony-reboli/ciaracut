@@ -1,160 +1,94 @@
-<?php session_start();
-unset($_SESSION['num']); 
-?>
+<?php session_start() ?>
 <html>
 <head>
-	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="camping.css">
-	<title>Réservation</title>
+<title>Formulaire - Web Agenda</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body class="bodir">
-	<?php
-	include("bar-nav.php");
-    
-
-	if (isset($_SESSION['login']))
-	{
-        date_default_timezone_set('Europe/Paris');
-        $connexion = mysqli_connect("localhost","root","","gestioncamping");
-        $requete ="SELECT * FROM utilisateurs WHERE login ='".$_SESSION['login']."'";
-        $query = mysqli_query($connexion, $requete);
-        $resultat = mysqli_fetch_all($query, MYSQLI_ASSOC);
-
-        $requete1 = "SELECT * FROM tarif2 ";
-
-        $req = mysqli_query($connexion, $requete1);
-
-        while($row = mysqli_fetch_assoc($req))
-       {
-            $tentep= $row['tente'];
-            $bornep= $row['borne'];
-            $discop= $row['disco'];
-            $packp= $row['pack'];
-	
-    
-	?>
-	<section  id="reservation-form">
-     	<h1 id="h1reservation-form"><b>Veuillez remplir le formulaire de la réservation</b></h1>
-     	<div class="parent">
-     	<article class="reservationf">
-
-     	<form class="reserv-form" method ="post" action ="">
-     		<div class="cadref">
-     		<label class="labelreservationform" for="text"><b>Type: </b></label>
-     	    <Select id="selectreservation-form" name="type">
-                <option></option>
-                <option>Tente</option>
-                <option>Camping-car</option>               
-            </select>
-            <label class="labelreservationform" for="text"><b>lieu:</b></label>
-          <Select id="selectreservation-form" name="lieu">
-                <option></option>
-                <option>Plage</option>
-                <option>Pins</option>
-                <option>Maquis</option>                
-          </select>
-          <label class="labelreservationform" for="text"><b>Durée Séjour: </b></label>
-            <input class="input-reservation-form" type="text" name="sejour" required>
-            <label  class="labelreservationform" for="datedebut"><b>Date de début: </b></label>
-            <input  class="input-reservation-form" type="date" name="datedebut" required>
-            <label  class="labelreservationform" for="datefin"><b>Date de fin: </b></label>
-            <input  class="input-reservation-form" type="date" name="datefin" required><br>
-             
-            <label  for="text"><b>Option</b></label></br>
-            <input  type="checkbox" name="borne" value="borne">
-            <label>Bornes éléctrique (<?php echo $row['borne']?>€ /jour)</label></br>
-             <input type="checkbox" name="disco" value="disco">
-            <label>Discothèque (<?php echo $row['disco']?>€ /jour)</label></br>
-             <input type="checkbox" name="pack" value="pack">
-            <label>Activités (<?php echo $row['pack']?>€ /jour)</label></br>
-            </div>
-            <div id="bout">
-            <br><input type="submit" value="RESERVER" name="valider"></br>
-            </div>
-     	</form>
-     	</article>
-        <article class="comment">
-     	<?php
-        }
+<body>
+<?php include("../include/bar-nav.php"); ?>
+<main>
+<section class="leftsidebar">
+     <section class="quote">
+    <img src="img/gaming.jpg">
+  </section>
+    <section class="sidebartable">
+      <p>You are making a reservation, please fill the form on your right or go back home</p>
+        <a href="index.php"><button type="submit">BACK HOME</button></a>
+    </section>
+</section>
+<section class="formulaire">
+ 
+   <?php
+            date_default_timezone_set('Europe/Paris');
+            $cnx = mysqli_connect("localhost", "root", "", "ciaracut");
+            if (isset($_SESSION["login"])) 
+            {
+                    $requete2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
+                    $query2 = mysqli_query($cnx, $requete2);
+                    $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
+                    echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez passer une reservation.<br />";
+            ?>
+                   <article><h1>Veuillez rentrer les infos de reservation :</h1></article>
+                   <form class="form_site" method="post" action="reservation-form.php">
+                   <label for="text"><b>Titre</b></label>
+                   <input type="text" placeholder="Tapez le titre de l'Activite" name="titre" required>
+                   <label for="text"><b>Description</b></label>
+                   <input type="text" placeholder="Tapez une Description" name="description" required>
+                   <label for="datedebut"><b>Date debut</b></label>
+                   <input type="date" name="datedebut" required> 
+                   <label for="datefin"><b>Date fin</b></label>
+                   <input type="date" name="datefin" required> 
+                   <label for="heuredebut"><b>Heure debut</b></label>
+                   <input type="time" name="heuredebut" min="08:00" max="18:00" required> 
+                   <label for="heurefin"><b>Heure fin</b></label>
+                   <input type="time" name="heurefin" min="09:00" max="19:00" required> 
+                   
+                   <br>
+                   <input type="submit" value="SUBMIT EVENT" name="valider" />
+                   </form>
+            <?php
                     if ( isset($_POST["valider"]) )
                     {
-                    	if(!isset($_POST['borne'])){
-                         $option1 = null;
-                        }
-                        else{
-                         $option1 = $_POST['borne'];
-                        }
-                        if(!isset($_POST['disco'])){
-                        $option2 = null;
-                        }
-                        else{
-                        $option2 = $_POST['disco'];
-                        }
-                        if(!isset($_POST['pack'])){
-                         $option3 = null;
-                        }
-                        else{
-                         $option3 = $_POST['pack'];
-                        }
-
-                        $typio = $_POST['type'];
-                        $renametype = addslashes($typio); 
-                        $lieu = $_POST['lieu'];
-                        $renamelieu = addslashes($lieu);
-                        $sejourio = $_POST['sejour'];
-                        $renamesejour = addslashes($sejourio);
-                        $datedebut = $_POST['datedebut'];
-                        $datefin = $_POST['datefin'];
-                   
-                        $startdate = date('Y-m-d', strtotime($datedebut));
-                        $enddate = date('Y-m-d', strtotime($datefin));
-
-                        include("calcule.php");
+                          $titreresa = $_POST['titre'];
+                          $renametitre = addslashes($titreresa); 
+                          $descriptionresa = $_POST['description'];
+                          $renamedescritpion = addslashes($descriptionresa); 
+                          $datedebut = $_POST['datedebut']." ".$_POST['heuredebut'];
+                          $datefin = $_POST['datefin']." ".$_POST['heurefin'];
+                          $startdate = date('Y-m-d H:i:s', strtotime($datedebut));
+                          $enddate = date('Y-m-d H:i:s', strtotime($datefin));
+                          if($startdate < date('Y-m-d H:i:s')){
+                              echo "Vous ne pouvez pas reserver a une date anterieur au ".date('d-m-Y H:i:s');
                           
-                          
-                        if($startdate < date('Y-m-d')){
-                              echo "Vous ne pouvez pas reserver a une date anterieur au".date('d-m-Y');
-                          
-                        }
-                        elseif ($enddate < $startdate) {
+                          }
+                          elseif ($enddate < $startdate) {
                               echo "Vous ne pouvez pas choisir une date de fin antérieur a la date de debut";
-                        }
-                        else{
-                            
-                        		include("boucle.php");
-                                      if ( $dispook == 1 ) {
-                                      	$requete3 = "INSERT INTO reservations (type, lieu, sejour, debut, fin, option1, option2, option3, total, id_utilisateur, pseudo) VALUES ('$renametype', '$renamelieu','$renamesejour', '$startdate', '$enddate', '$option1','$option2','$option3',$total, ".$resultat[0]['id'].", '".$_SESSION['login']."')";
-                                      $query3 = mysqli_query($connexion, $requete3);
-
-                                      echo "Votre Réservation est Confirmée, vous pouvez voire sur <a href=\"planning.php\">Le Planning</a>";
-                                      }
-                                      else {
-                                      	echo "Plus de place";
-                                      }
-                                  
-                               }
+                          }
+                          else{
+                              $resaverif = "SELECT * FROM reservations WHERE (debut BETWEEN '$startdate' AND '$enddate') OR (fin BETWEEN '$startdate' AND '$enddate') ";
+                              $queryverif = mysqli_query($cnx, $resaverif);
+                              $resultatverif = mysqli_fetch_all($queryverif, MYSQLI_ASSOC);
+                              if(!empty($resultatverif)){
+                                echo "Une reservation existe deja a cette date";
+                              }
+                              else{
+                              $requete = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$renametitre', '$renamedescritpion', '$startdate', '$enddate',  ".$resultat2[0]['id'].")";
+                              $query = mysqli_query($cnx, $requete);
+                              header('Location:reservation-form.php');
+                              }   
+                          } 
                     }
-               mysqli_close($connexion);
-        ?>
-        </article>
-    </div>
-     <?php
-   }
-   else 
-   {
-   ?>
-    <section id="notcon">
-      <p>Veuillez vous connecter pour accéder à votre page !</p>
-    </section>
-  <?php
-  }
-  include("footer.php");
-?>
-                         
+            } 
+            else 
+            {
+                 echo "Bonjour Guest, Veuillez vous connecté afin de pouvoir reserver une salle.<br />";
+               
+            }
 
-	
-
-
-
+            mysqli_close($cnx);
+            ?>
+</section>
+</main>
+ <?php include("../include/footer.php"); ?>
 </body>
 </html>
