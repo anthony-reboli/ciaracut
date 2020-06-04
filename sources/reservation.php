@@ -5,10 +5,10 @@ ob_start();
 
     $connexion= mysqli_connect("localhost", "root", "", "ciaracut");
 
-    if ( isset($_SESSION['login']) ) 
+    if ( isset($_SESSION['id']) ) 
     {
       $login= $_SESSION['login'];
-     $requete = "SELECT nom,sexe,typepresta,debut,fin,pseudo FROM reservation WHERE pseudo ='".$_SESSION['login']."'";
+     $requete = "SELECT titre,description,debut, fin FROM reservations WHERE id ='".$_SESSION['id']."'";
 
     $query = mysqli_query($connexion, $requete);
     $resultat = mysqli_fetch_all($query);

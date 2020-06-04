@@ -42,7 +42,7 @@
     <main id="logo">
       <?php
       $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
-      $requete = $connexion->prepare("SELECT * FROM events   ORDER BY start_event ASC
+      $requete = $connexion->prepare("SELECT titre,description,debut,fin FROM reservations   ORDER BY debut ASC
       LIMIT 10");
       $requete->execute();
       var_dump($requete);
@@ -52,14 +52,16 @@
                                       
                       echo "<table class='stripped' width=600px>";
                       echo "<tr>";
-                      echo "<th class='nom'>Nom client & prestations</th>";
+                      echo "<th class='nom'>Nom client</th>";
+                      echo "<th class='nom'>Prestation</th>";
                       echo "<th class='nom' >Début de la prestation</th>";
                       echo "<th class='nom' >Fin de la prestation</th>";
                       echo "</tr>";
                       echo "<tr>";
+                      echo "<td class='nom'>".$values[0]."</td>";
                       echo "<td class='nom'>".$values[1]."</td>";
-                      echo "<td class='nom'>".$values[2]."</td>";
-                      echo "<td class='nom'>".$values[3]."</td>";
+                      echo "<td class='nom'>Du:".$values[2]."</td>";
+                      echo "<td class='nom'>Au:".$values[3]."</td>";
                       echo "</tr>";
                       echo "</table>";
                                  
@@ -73,7 +75,7 @@
  
  
   <?php
-  include("../include/footer.php");
+
   ?>
   
 </body>

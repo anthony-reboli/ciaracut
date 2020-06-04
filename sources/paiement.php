@@ -7,7 +7,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 	<title>Paiement</title>
 </head>
-		<body>
+		<body id="paiement">
 
 			<header>
 			<?php include("../include/bar-nav.php");?>
@@ -28,6 +28,7 @@ session_start();
 			<?php
 			
 			if (isset($_POST['payer'])) {
+				echo "string";
 				
 				
 			$id_utilisateurs=$_SESSION['id'];
@@ -36,45 +37,20 @@ session_start();
 			$req3=("DELETE FROM commande WHERE id_utilisateurs=$id_utilisateurs");
 			$query3=mysqli_query($connexion,$req2);
 			$query4=mysqli_query($connexion,$req3);
-			header("location:admin.php");
+			header("location:../sources/boutiqueprestation.php");
 			echo"<p id='validp'> Votre paiement a bien été effectué!<br>Merci de votre visite! <br>A bientot!</p>";
-	
-
-				
-
 			}
 			
 			?>
 
  			<div id="contpaiement">
 			<H2 class id="titre">En espèce ou chèque</H2><br>
- 				<form class="formpaiement">
+ 			<form method="post">
  				<select class="formpaiement" name="select2"><br>
- 				<label>Choisir:</label><br>
 			    <option class="formpaiement" value="">-Choisir type paiement-</option>
-			    <option value="espece">Espece</option>
-			    <option value="cheque"s>Chèque</option>
+			    <option value="espece" required>Espece</option>
+			    <option value="cheque"required>Chèque</option>
 				</select><br>					
- 				</form>
- 			<h1 class="titre">OU</h1>
-			<h1 class="titre">Votre paiement</h1>
-			<img id="logopaiement" height="100" width="400" src="../upload/paiementsecur.jpg">
- 			<form class="formpaiement"method="post"><b>
- 				<H2>Information CB</H2><br>
- 				<label>TYPE CB</label><br>
- 				<label>Choisir:</label><br>
-				<select class="formpaiement" name="select"><br>
-			    <option class="formpaiement" value="">-Choisir option-</option>
-			    <option value="visa">Visa</option>
-			    <option value="master">Mastercard</option>
-			    <option value="amex">AMEX</option>
-				</select><br>
- 				<label>Numéro CB</label><br>
- 				<input class="formpaiement" type="number" name="codecb"><br>
- 				<label>Code Sécurité</label><br>
- 				<input class="formpaiement" type="number" name="codesec"><br>
- 				<label>Nom du Porteur</label><br>
- 				<input class="formpaiement" type="text" name="nomcb"><br>
  				<button id="btpayer" name="payer"><img width="50" height="30" src="../upload/paiement.jpg"></button><br>	
  			</form>
  			</div>

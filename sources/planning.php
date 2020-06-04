@@ -1,30 +1,23 @@
 <html>
 
 <head>
-  <link href="reservations.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-
-
-
-<body class="planning">
-
-<?php
-
-
-?>
-
+<body id="planning">
 <header>
    <?php include("../include/bar-nav.php");?>
 </header>
+    <?php include("../sources/reservation-form.php");?>
 
+          <section id="calendrier">
               <form  method="post">
-              <input id="arriere" type="submit" name="precedent" value="-">
+              <input class="btn btn-secondary" type="submit" name="precedent" value="Précédent">
               </form>
 <?php
                    
 
                     $datejour = new DateTime("today");
-                    var_dump($datejour);
                     if (!isset($_SESSION["num"])) {
                   
                         $_SESSION["num"] = 0;
@@ -46,75 +39,79 @@
                   
 ?>
               <form  method="post">
-              <input id="avant" type="submit" name="suivant" value="+">
+              <input class="btn btn-secondary" type="submit" name="suivant" value="Suivant">
               </form>
+            </section>
 <?php 
 
 
   $db=mysqli_connect("localhost","root","","ciaracut");
   mysqli_set_charset($db, "utf8");
-  $date="SELECT * FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
+  $date="SELECT *  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
   $query=mysqli_query($db, $date);
   $result=mysqli_fetch_all($query);
-  var_dump($result);
+  $data2 ="SELECT count(*)  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
+  $query2=mysqli_query($db, $data2);
+  $result2=mysqli_fetch_all($query2);
+  echo "<div class='alert alert-dark' role='alert'>";
+  echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
+  echo "</div>";
+
+  
   
 ?>
 
-<section class="tableaux">
 
-<article class="planningtable">
-<table class="BlueTable">
-  <thead>
-    <tr>
-      <th>
-      </th>
-      <th>Lundi</th>
-      <th>Mardi</th>
-      <th>Mercredi</th>
-      <th>Jeudi</th>
-      <th>Vendredi</th>
-      <th>Samedi</th>
-      <th>Dimanche</th>
-    </tr>
-  </thead>
-  <tbody>
+<section id="agenda">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th>Lundi</th>
+          <th>Mardi</th>
+          <th>Mercredi</th>
+          <th>Jeudi</th>
+          <th>Vendredi</th>
+          <th>Samedi</th>
+          <th>Dimanche</th>
+        </tr>
+      </thead>
+      <tbody>
 <?php
     
     for($ligne =9; $ligne <= 18; $ligne++ )
     {
       echo "<tr>";
-      echo "<td>".$ligne."H</td>";
+      echo "<td class='ligne2'>".$ligne."H</td>";
 
       for($colonne = 1; $colonne <= 7; $colonne++)
       {
-        echo "<td>";
+        echo "<td class='ligne'>";
         foreach($result as $value)
         {
-        $jour=date("w", strtotime($value[3]));
-        $h=date("H", strtotime($value[3]));
-        if($h==$ligne && $jour== $colonne)
-        {
-          echo $value[1];
-          
-        ?>
-         
-        <?php         
+          $jour=date("w", strtotime($value[3]));
+          $h=date("H", strtotime($value[3]));
+          if($h==$ligne && $jour== $colonne)
+                  {
+                    echo "<div id='rendezvous'>Nom client:".$value[1]."<br>";
+                    echo "Prestation:".$value[2]."</div>";
+                  }
+               
+          }
         }
-      }
         echo "</td>";
       }
-    }
     echo "</tr>";
 
 ?>
   </tbody>
     
 </table>
-
-
-</article>
-
 </section>
+
+
+
 
 </body>
 

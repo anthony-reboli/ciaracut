@@ -1,17 +1,35 @@
+<?php session_start();
+
+if (isset($_SESSION['id'])) {
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
+</head>
+        <header>
+         <?php include("../include/bar-nav.php");?>
+         </header>
+<body>
+
+</body>
+</html>
 
 <h1>Gestion de mes prestations</h1>
     <section id="formadminprestation">
             <div class="form">
             <?php 
                 if (isset($_POST['valider'])) {
-                                  $titre = $_POST['titre'];
-                                  $type = $_POST['type'];
-                                  $prix = $_POST['prix'];
-                                  $image = $_POST['photo'];
-                                  $id=$_SESSION['id'];
-                                  $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
-                                  $requete = $connexion->prepare("INSERT INTO prestation (nom,type,prix,id_utilisateurs,image) VALUES ('$titre','$type','$prix','$id','$image')");
-                                  $requete->execute();
+                      $titre = $_POST['titre'];
+                      $type = $_POST['type'];
+                      $prix = $_POST['prix'];
+                      $image = $_POST['photo'];
+                      $id=$_SESSION['id'];
+                      $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
+                      $requete = $connexion->prepare("INSERT INTO prestation (nom,type,prix,id_utilisateurs,image) VALUES ('$titre','$type','$prix','$id','$image')");
+                      $requete->execute();
                 
                 }
                 ?>
@@ -82,3 +100,8 @@
                           </form>
                   </div>
 </section>
+<?php
+}
+?>
+</body>
+</html>

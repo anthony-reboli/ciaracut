@@ -1,23 +1,5 @@
 <?php session_start() ?>
-<html>
-<head>
-<title>Formulaire - Web Agenda</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-<?php include("../include/bar-nav.php"); ?>
-<main>
-<section class="leftsidebar">
-     <section class="quote">
-    <img src="img/gaming.jpg">
-  </section>
-    <section class="sidebartable">
-      <p>You are making a reservation, please fill the form on your right or go back home</p>
-        <a href="index.php"><button type="submit">BACK HOME</button></a>
-    </section>
-</section>
-<section class="formulaire">
- 
+<section id="formulaire">
    <?php
             date_default_timezone_set('Europe/Paris');
             $cnx = mysqli_connect("localhost", "root", "", "ciaracut");
@@ -26,25 +8,25 @@
                     $requete2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
                     $query2 = mysqli_query($cnx, $requete2);
                     $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
-                    echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez passer une reservation.<br />";
+                    echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez passer une reservation.<br><br><br>";
             ?>
                    <article><h1>Veuillez rentrer les infos de reservation :</h1></article>
-                   <form class="form_site" method="post" action="reservation-form.php">
-                   <label for="text"><b>Titre</b></label>
-                   <input type="text" placeholder="Tapez le titre de l'Activite" name="titre" required>
-                   <label for="text"><b>Description</b></label>
-                   <input type="text" placeholder="Tapez une Description" name="description" required>
-                   <label for="datedebut"><b>Date debut</b></label>
-                   <input type="date" name="datedebut" required> 
-                   <label for="datefin"><b>Date fin</b></label>
-                   <input type="date" name="datefin" required> 
-                   <label for="heuredebut"><b>Heure debut</b></label>
-                   <input type="time" name="heuredebut" min="08:00" max="18:00" required> 
-                   <label for="heurefin"><b>Heure fin</b></label>
-                   <input type="time" name="heurefin" min="09:00" max="19:00" required> 
+                   <form id="createform" class="form-row " method="post" action="reservation-form.php">
+                   <label for="formGroupExampleInput"><b>Nom du Client</b></label>
+                   <input  class="form-control" id="formGroupExampleInput" type="text" placeholder="Entrer le nom du client" name="titre" required>
+                   <label for="formGroupExampleInput"><b>Description</b></label>
+                   <input  class="form-control" id="formGroupExampleInput" type="text" placeholder="Tapez une Description" name="description" required>
+                   <label for="formGroupExampleInput"><b>Date debut</b></label><br>
+                   <input  class="form-control" id="formGroupExampleInput" type="date" name="datedebut" required> 
+                   <label for="formGroupExampleInput"><b>Date fin</b></label>
+                   <input  class="form-control" id="formGroupExampleInput" type="date" name="datefin" required> 
+                   <label for="formGroupExampleInput"><b>Heure debut</b></label><br>
+                   <input  class="form-control" id="formGroupExampleInput" type="time" name="heuredebut" min="08:00" max="18:00" required> 
+                   <label for="formGroupExampleInput"><b>Heure fin</b></label>
+                   <input  class="form-control" id="formGroupExampleInput" type="time" name="heurefin" min="09:00" max="19:00" required> 
                    
-                   <br>
-                   <input type="submit" value="SUBMIT EVENT" name="valider" />
+                   <br><br><br><br>
+                   <input class="btn btn-secondary" type="submit" value="Ajouter" name="valider" />
                    </form>
             <?php
                     if ( isset($_POST["valider"]) )
@@ -64,31 +46,22 @@
                           elseif ($enddate < $startdate) {
                               echo "Vous ne pouvez pas choisir une date de fin antérieur a la date de debut";
                           }
-                          else{
-                              $resaverif = "SELECT * FROM reservations WHERE (debut BETWEEN '$startdate' AND '$enddate') OR (fin BETWEEN '$startdate' AND '$enddate') ";
-                              $queryverif = mysqli_query($cnx, $resaverif);
-                              $resultatverif = mysqli_fetch_all($queryverif, MYSQLI_ASSOC);
-                              if(!empty($resultatverif)){
-                                echo "Une reservation existe deja a cette date";
-                              }
+                        
                               else{
                               $requete = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$renametitre', '$renamedescritpion', '$startdate', '$enddate',  ".$resultat2[0]['id'].")";
                               $query = mysqli_query($cnx, $requete);
-                              header('Location:reservation-form.php');
+                              header("Location:planning.php");
                               }   
                           } 
                     }
-            } 
+            
             else 
             {
-                 echo "Bonjour Guest, Veuillez vous connecté afin de pouvoir reserver une salle.<br />";
+                 echo "Bonjour, Veuillez vous connecté afin de pouvoir reserver un rendez-vous.<br />";
                
             }
 
             mysqli_close($cnx);
             ?>
 </section>
-</main>
- <?php include("../include/footer.php"); ?>
-</body>
-</html>
+

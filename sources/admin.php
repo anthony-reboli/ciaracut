@@ -26,9 +26,11 @@ date_default_timezone_set('europe/paris');
 <html lang="fr">
 <head>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Espace Administrateur - Ciaracut </title>
     <link rel="stylesheet" href="../css/ciaracut.css">
+
 </head>
 
     <body id="pageadmin">
@@ -37,33 +39,10 @@ date_default_timezone_set('europe/paris');
          <?php include("../include/bar-nav.php");?>
          </header>
                 <main>
-  <script>
-  $(document).ready(function(){
-  $("#hide").click(function(){
-    $("#formadminprestation").hide();
-    $("#cadre-reserv").hide();
-   
-  });
-  $("#show").click(function(){
-    $("#formadminprestation").show();
-    $("#cadre-reserv").show();
-   
-  });
-});
-</script>
-<div class="bouton">
-<button id="show">Demarrer les prestation</button><br>
-<button id="hide">Arreter les prestations</button>
-</div>
-
+ 
 </main>
-<?php 
-include("../sources/prestation.php");?>
-<?php 
-include("../sources/boutiqueprestation.php");?>
 
-<?php 
-include("../sources/planning.php");?>
+
 
 </body>
 </html>

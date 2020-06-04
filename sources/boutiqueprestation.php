@@ -1,19 +1,13 @@
 <?php
-
-
+    session_start();
     $connexion= mysqli_connect("localhost", "root", "", "ciaracut");
 
-    if ( isset($_SESSION['login']) ) 
+    if ( isset($_SESSION['id']) ) 
     {
-    $login= $_SESSION['login'];
     $requete = "SELECT * FROM prestation ";
     $query = mysqli_query($connexion, $requete);
     $resultat = mysqli_fetch_all($query);
     
-    
-    
-    
-
 ?>
     <!DOCTYPE html>
     <html>
@@ -22,12 +16,13 @@
       <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
     </head>
     <body id="boutiquepresta">
-    <main id="main-reserv">
-        <h2 id="h2-reserv">Mes prestations</h1>
- <section id="cadre-reserv">
+        <header>
+        <?php include("../include/bar-nav.php");?>
+        </header>
 
-
-
+          <main id="main-reserv">
+              <h2 id="h2-reserv">Mes prestations</h1>
+              <section id="cadre-reserv">
                       <?php 
                       $i=0;
                       foreach ($resultat as $values)
@@ -51,7 +46,6 @@
                 }
    
       ?>
-  
   </section>
 </main>
 
