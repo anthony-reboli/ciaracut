@@ -22,11 +22,11 @@ $date=date("Y-m-d H:i:s",$dateplus);
                   <h1><b>Formulaire de réservation</b></h1><br>
                   <form class="form-group " method="post" action="reservation-form.php">
                   <label for="exampleFormControlInput1"><b>Nom du client</b></label>
-                  <input class="form-control form-control-lg"  type="text" placeholder="Tapez le nom du client" name="titre" required>
+                  <input class="form-control form-control-lg"  type="text" placeholder="Tapez le nom du client" name="titre" required />
                   <label for="exampleFormControlInput1"><b>Prestation</b></label>
-                  <input class="form-control form-control-lg"  type="text" placeholder="Tapez une prestation" name="description" required>
+                  <input class="form-control form-control-lg"  type="text" placeholder="Tapez une prestation" name="description" required />
                   <label for="exampleFormControlInput1"><b>Date début</b></label>
-                  <input class="form-control form-control-lg"  type="datetime-local" name="datedebut" required> 
+                  <input class="form-control form-control-lg"  type="datetime-local" name="datedebut" required /> 
                   <label for="exampleFormControlInput1"><b>Date fin</b></label>
                   <input class="form-control form-control-lg"  type="datetime-local" name="datefin" required> 
                    <br>

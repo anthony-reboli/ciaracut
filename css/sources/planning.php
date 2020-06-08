@@ -65,7 +65,7 @@ session_start();
 
 
 <section id="agenda">
-    <table class="table table-striped table-dark">
+    <table id="agenda" class="table table-striped table-dark">
       <thead>
         <tr>
           <th>
@@ -96,11 +96,10 @@ session_start();
           $h=date("H", strtotime($value[3]));
           if($h==$ligne && $jour== $colonne)
                   {
-                    echo "<div id=\"lien\"><a href=\"reservation-form2.php\">Nom client:".$value[1]."<br>Prestation:".$value[2]."</a></div>";
+                    echo "<div><a class=\"lien\" href=\"reservation-form2.php\"><u>Client:</u>".$value[1]."<br><u>Prestation:</u>".$value[2]."</a></div>";
                 
-                  }
-               
-          }
+                  } 
+              }
         }
         echo "</td>";
       }
