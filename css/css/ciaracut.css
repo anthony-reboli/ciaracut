@@ -1,0 +1,204 @@
+/*PAGE PLANNING*/
+#planning{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ligne{
+  border:solid;
+  width: 130px;
+  height: 130px;
+}
+.ligne2{
+  border:solid;
+  width: 65px;
+  height: 130px;
+}
+#rendezvous{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:solid;
+}
+
+#calendrier{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  font-family: serif;
+}
+
+#message{
+  text-align: center;
+  font-size: 30px;
+  color: red;
+}
+#agenda{
+  width: 95%;
+
+}
+
+/*PAGE Produit*/
+#formprestation{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+/*PAGE Admin*/
+.bouton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#formadminprestation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.titre{
+  text-align: center;
+  font-family: serif;
+  font-size: 30px;
+}
+h1{
+  text-align: center;
+}
+
+/*PAGE BOUTIQUE PAIEMENT*/
+
+#paiement{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  min-height: 800px;
+  width: 100%;
+
+}
+#contpaiement{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+
+
+/*PAGE BOUTIQUE PRESTATION*/
+#boutiquepresta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#main-reserv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+.form{
+   display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#cadre-reserv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  text-decoration: none;
+  list-style: none;
+  width: 60%;
+}
+.imagebout{
+  width: 100px;
+  height: 100px;
+}
+
+/*PAGE INDEX*/
+#contenue{
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*PAGE RESEVATION-FORM*/
+#reservation-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#createform{
+  justify-content: center;
+  width: 40%;
+}
+/*PAGE RESEVATION-FORM2*/
+#modifreserva{
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+#form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*PAGE NAV BAR*/
+
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+  color:#000;
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
