@@ -80,7 +80,7 @@ $date=date("Y-m-d H:i:s",$dateplus);
                           $enddate = date('Y-m-d H:i:s', strtotime($datefin));
 
                         
-                    $entre="SELECT count(*) from reservation WHERE debut BETWEEN '$datedebut' AND '$datefin'";
+                    $entre="SELECT count(*) from reservations WHERE debut BETWEEN '$datedebut' AND '$datefin'";
                     $queryentre=mysqli_query($connexion,$entre);
                     $resultatentre=mysqli_fetch_all($queryentre);
 
@@ -102,7 +102,7 @@ $date=date("Y-m-d H:i:s",$dateplus);
                             {
                                       
 
-                                        $requete = "INSERT INTO reservation (titre, description, debut, fin) VALUES ('$renametitre', '$renamedescritpion', '$startdate', '$enddate')";
+                                        $requete = "INSERT INTO reservations (titre, description, debut, fin) VALUES ('$renametitre', '$renamedescritpion', '$startdate', '$enddate')";
                                         
                                     $query = mysqli_query($connexion, $requete);
                                     
