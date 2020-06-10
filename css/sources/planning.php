@@ -52,9 +52,11 @@ session_start();
   $date="SELECT *  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
   $query=mysqli_query($db, $date);
   $result=mysqli_fetch_all($query);
+  $idreserv=$result[0][0];
   $data2 ="SELECT count(*)  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
   $query2=mysqli_query($db, $data2);
   $result2=mysqli_fetch_all($query2);
+  var_dump($result);
   echo "<div class='alert alert-dark' role='alert'>";
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
@@ -96,7 +98,7 @@ session_start();
           $h=date("H", strtotime($value[3]));
           if($h==$ligne && $jour== $colonne)
                   {
-                    echo "<div><a class=\"lien\" href=\"reservation-form2.php\"><u>Client:</u>".$value[1]."<br><u>Prestation:</u>".$value[2]."</a></div>";
+                    echo "<div><a class=\"lien\" href=\"reservation-form2.php?reserv=$idreserv\"><u>Client:</u>".$value[1]."<br><u>Prestation:</u>".$value[2]."</a></div>";
                 
                   } 
               }
