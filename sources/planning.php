@@ -1,10 +1,16 @@
+
 <html>
 
 <head>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body id="planning">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <header>
    <?php include("../include/bar-nav.php");?>
 </header>
@@ -50,15 +56,13 @@
   $date="SELECT *  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
   $query=mysqli_query($db, $date);
   $result=mysqli_fetch_all($query);
+  $idreserv=$result[0][0];
   $data2 ="SELECT count(*)  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
   $query2=mysqli_query($db, $data2);
   $result2=mysqli_fetch_all($query2);
   echo "<div class='alert alert-dark' role='alert'>";
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
-
-  
-  
 ?>
 
 
@@ -92,10 +96,17 @@
         {
           $jour=date("w", strtotime($value[3]));
           $h=date("H", strtotime($value[3]));
+          
           if($h==$ligne && $jour== $colonne)
                   {
-                    echo "<div id='rendezvous'>Nom client:".$value[1]."<br>";
-                    echo "Prestation:".$value[2]."</div>";
+                    ?>
+                    <div class="lien">
+                      <?php echo "Client: ".$value[1]."//Prestations: ".$value[2].""?>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                     Modifier ou supprimer</button>
+                    </div>
+                      
+                    <?php
                   }
                
           }
@@ -104,7 +115,15 @@
       }
     echo "</tr>";
 
-?>
+        $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
+              $requete = $connexion->prepare("SELECT * FROM reservations WHERE id='$idreserv'");
+              $requete->execute();
+              $test = $requete->fetchAll();
+              $test[0][3]=date("Y-m-d H:m:s",strtotime($test[0][3]));
+              $test[0][4]=date("Y-m-d H:m:s",strtotime($test[0][4]));
+              $test[0][3][10]="T";
+              $test[0][4][10]="T";
+              ?>
   </tbody>
     
 </table>
@@ -112,6 +131,25 @@
 
 
 
+/*POPUPMODIF*/
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier ou supprimer mes rendez-vous</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <?php include("../sources/reservation-form2.php");?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 

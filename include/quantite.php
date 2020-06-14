@@ -11,7 +11,7 @@
 		
 				$eff= ("DELETE FROM commande WHERE id=$id_commande AND  id_prestation =$id_produits AND id_utilisateurs=$id ");
 				$query2=mysqli_query($connexion,$eff);
-				header("location:../sources/panier.php");
+				header("location:../sources/boutiqueprestation.php");
 				
 	
 		}

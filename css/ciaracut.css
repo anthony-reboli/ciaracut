@@ -44,13 +44,38 @@
   width: 95%;
 
 }
+.lien{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  border:double;
+}
 
 /*PAGE Produit*/
+#pageproduit{
+   display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+
+}
 #formprestation{
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
+}
+/*PAGE PANIER*/
+  #pagepanier{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
 }
 
 /*PAGE Admin*/
@@ -101,7 +126,7 @@ h1{
 
 /*PAGE BOUTIQUE PRESTATION*/
 #boutiquepresta{
-    width: 100%
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,6 +192,16 @@ h1{
 #createform{
   justify-content: center;
   width: 40%;
+}
+/*PAGE RESEVATION-FORM2*/
+#modifreserva{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+  
+
 }
 
 /*PAGE NAV BAR*/

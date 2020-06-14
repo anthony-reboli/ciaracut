@@ -39,6 +39,7 @@
 										                        echo "<p class=\"nomp\">{$val['2']}</p>";
 										                        echo "<p class=\"nomp\">{$val['3']}€</p>";
 										                        echo "</div>";
+										                        include("../include/quantite2.php");
 															
 															$i ++;
 														}

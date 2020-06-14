@@ -10,7 +10,7 @@
                     $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
                     echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez passer une reservation.<br><br><br>";
             ?>
-                   <article><h1>Veuillez rentrer les infos de reservation :</h1></article>
+                   <article><h1>Veuillez entrer les infos de réservation :</h1></article>
                    <form id="createform" class="form-row " method="post" action="reservation-form.php">
                    <label for="formGroupExampleInput"><b>Nom du Client</b></label>
                    <input  class="form-control" id="formGroupExampleInput" type="text" placeholder="Entrer le nom du client" name="titre" required>

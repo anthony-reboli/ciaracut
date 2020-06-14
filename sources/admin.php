@@ -39,8 +39,50 @@ date_default_timezone_set('europe/paris');
          <?php include("../include/bar-nav.php");?>
          </header>
                 <main>
+<section id="calendrier">
+              <form  method="post">
+              <input class="btn btn-secondary" type="submit" name="precedent" value="Précédent">
+              </form>
+<?php
+                   
+
+                    $datejour = new DateTime("today");
+                    if (!isset($_SESSION["num"])) {
+                  
+                        $_SESSION["num"] = 0;
+                    }
+
+                    if (isset($_POST["suivant"])) {
+                        $_SESSION["num"] += 1;
+                           
+                    }
+
+                    if (isset($_POST["precedent"])) {
+                        $_SESSION["num"] -= 1;
+                        
+                    }
+
+                    date_add($datejour, date_interval_create_from_date_string($_SESSION['num']." days"));
+                    echo date_format($datejour, 'Y-m-d');
+                    $dateselec = date_format($datejour, 'Y-m-d');
+                  
+?>
+              <form  method="post">
+              <input class="btn btn-secondary" type="submit" name="suivant" value="Suivant">
+              </form>
+            </section>
+ <?php
  
-</main>
+ $connexion=mysqli_connect("localhost","root","","ciaracut");
+ $data2 ="SELECT count(*)  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
+  $query2=mysqli_query($connexion, $data2);
+  $result2=mysqli_fetch_all($query2);
+  echo "<div class='alert alert-dark' role='alert'>";
+  echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
+  echo "</div>";
+ ?>
+
+                </main>
 
 
 

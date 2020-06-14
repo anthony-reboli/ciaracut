@@ -50,7 +50,7 @@ ob_start()
 									$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
 									$req=$connexion->query("SELECT SUM(prixglobal) FROM commande WHERE id_utilisateurs=$id_utilisateurs");
 									$total = $req->fetchAll();
-									var_dump($total);
+								
 													   			
 									?>
 									<p class="nomp">Le montant total est : <?php echo "".$total[0][0].""?>€</p>
