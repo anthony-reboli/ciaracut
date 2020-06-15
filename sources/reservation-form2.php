@@ -1,4 +1,5 @@
  <?php
+ ob_start();
  if (isset($_POST['modifier'])) {
         if (!empty($_POST['titre3']))
                             {
@@ -10,7 +11,8 @@
                 $dated = $_POST['datedebut'];
                 $datef = $_POST['datefin'];
                 $requete2 = $connexion->prepare("UPDATE reservations SET titre = '$titre2', description = '$description', debut = '$dated', fin ='$datef' WHERE titre ='$titre3'");
-                $requete2->execute();                
+                $requete2->execute();       
+                header("location:planning.php");         
                 }
              }
              ?>

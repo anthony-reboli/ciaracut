@@ -82,6 +82,8 @@ date_default_timezone_set('europe/paris');
   echo "</div>";
  ?>
 
+    <?php include("../sources/chiffre.php");?>
+
                 </main>
 
 
