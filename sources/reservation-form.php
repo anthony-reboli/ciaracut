@@ -1,5 +1,7 @@
 <?php session_start() ?>
 <section id="formulaire">
+    <script type="text/javascript" src="../js/script.js."></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
    <?php
             date_default_timezone_set('Europe/Paris');
             $cnx = mysqli_connect("localhost", "root", "", "ciaracut");
@@ -11,9 +13,13 @@
                     echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez passer une reservation.<br><br><br>";
             ?>
                    <article><h1>Veuillez entrer les infos de réservation :</h1></article>
-                   <form id="createform" class="form-row " method="post" action="reservation-form.php">
-                   <label for="formGroupExampleInput"><b>Nom du Client</b></label>
-                   <input  class="form-control" id="formGroupExampleInput" type="text" placeholder="Entrer le nom du client" name="titre" required>
+                   <label for="formGroupExampleInput"><b>Nom du client</b></label>
+                   <form id="createform" class="form-row col-3 " method="post" action="reservation-form.php">
+
+                    <input class="form-control" name="search"type="text" placeholder="Recherche nom client" id="searchBox">
+                    <div id="response"></div>
+
+
                    <label for="formGroupExampleInput"><b>Description</b></label>
                    <input  class="form-control" id="formGroupExampleInput" type="text" placeholder="Tapez une Description" name="description" required>
                    <label for="formGroupExampleInput"><b>Date debut</b></label><br>
@@ -63,5 +69,6 @@
 
             mysqli_close($cnx);
             ?>
+               <script type="text/javascript" src="../js/script.js."></script>
 </section>
 

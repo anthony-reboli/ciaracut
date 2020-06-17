@@ -25,11 +25,12 @@ date_default_timezone_set('europe/paris');
 
 <html lang="fr">
 <head>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <title>Espace Administrateur - Ciaracut </title>
-    <link rel="stylesheet" href="../css/ciaracut.css">
+  <script type="text/javascript" src="../js/script.js."></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Espace Administrateur - Ciaracut </title>
+  <link rel="stylesheet" href="../css/ciaracut.css">
 
 </head>
 
@@ -39,11 +40,16 @@ date_default_timezone_set('europe/paris');
          <?php include("../include/bar-nav.php");?>
          </header>
                 <main>
-<section id="calendrier">
+              <div class="heure">
+              <span id="date_heure"></span>
+              <script type="text/javascript">window.onload = date_heure('date_heure');</script>
+              </div>
+
+        <section id="calendrier">
               <form  method="post">
               <input class="btn btn-secondary" type="submit" name="precedent" value="Précédent">
               </form>
-<?php
+            <?php
                    
 
                     $datejour = new DateTime("today");
@@ -81,9 +87,9 @@ date_default_timezone_set('europe/paris');
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
  ?>
-
+    <div class="heure">
     <?php include("../sources/chiffre.php");?>
-
+    </div>
                 </main>
 
 

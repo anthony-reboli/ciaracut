@@ -6,7 +6,7 @@ if (isset($_SESSION['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Formulaire de prestation</title>
   <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 </head>
         <header>
@@ -19,7 +19,7 @@ if (isset($_SESSION['id'])) {
 
 <h1>Gestion de mes prestations</h1>
     <section id="formadminprestation">
-            <div class="form">
+            
             <?php 
                 if (isset($_POST['valider'])) {
                       $titre = $_POST['titre'];
@@ -33,21 +33,20 @@ if (isset($_SESSION['id'])) {
                 
                 }
                 ?>
-                <p class="titre">Créer des prestations</p>
-                <form id="form" method="post" >
-                                  <label>Nom prestation</label></br>
-                                  <input type="text" name="titre" required></br>
-                                  <label>Type de prestation</label></br>
-                                  <input type="text" name="type" required></br>
-                                  <label>Photo</label></br>                 
+                
+                <form id="form" class="form-group col-3" method="post" >
+                  <p for="exampleFormControlInput1" >Créer des prestations</p>
+                                  <label for="exampleFormControlInput1">Nom prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="titre" required></br>
+                                  <label for="exampleFormControlInput1">Type de prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="type" required></br>
+                                  <label for="exampleFormControlInput1">Photo</label></br>                 
                                   <input type="file" name="photo" required></br>
-                                  <label>Prix</label></br>
-                                  <input type="text" name="prix" required></br>
-                                  <input type="submit" value="Creer" name="valider"></br>
+                                  <label for="exampleFormControlInput1">Prix</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="prix" required></br>
+                                  <input class="btn btn-secondary" type="submit" value="Creer" name="valider"></br>
                  </form>
-              </div>
-
-              <div class="form">
+             
                   <?php
 
                 if (isset($_POST['modifier'])) {
@@ -62,22 +61,22 @@ if (isset($_SESSION['id'])) {
                           $requete2->execute();
                 }
                 ?>
-                 <p class="titre">Modifier les prestations</p>
-                    <form id="form1" method="post">
-                          <label>Recherche le titre de la prestation</label></br>
-                                  <input type="text" name="titre3" required></br>
-                                  <label>Modifier le titre</label></br>
-                                  <input type="text" name="titre2" required></br>
-                                  <label>Modifier le type de prestation</label></br>
-                                  <input type="text" name="type" required></br>
-                                  <label>Modifier la Photo</label></br>                 
+                 
+                    <form class="form-group col-3" method="post">
+                       <p for="exampleFormControlInput1">Modifier les prestations</p>
+                          <label for="exampleFormControlInput1">Recherche le titre de la prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="titre3" required></br>
+                                  <label for="exampleFormControlInput1">Modifier le titre</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="titre2" required></br>
+                                  <label for="exampleFormControlInput1">Modifier le type de prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="type" required></br>
+                                  <label for="exampleFormControlInput1">Modifier la Photo</label></br>                 
                                   <input type="file" name="photo" required></br>
-                                  <label>Modifier le Prix</label></br>
-                                  <input type="text" name="prix2" required></br>
-                                  <input type="submit" value="modifier" name="modifier"></br>
+                                  <label for="exampleFormControlInput1">Modifier le Prix</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="prix2" required></br>
+                                  <input class="btn btn-secondary" type="submit" value="modifier" name="modifier"></br>
                     </form>
-                 </div>
-                 <div class="form">
+                 
                  <?php
 
                  if (isset($_POST['effacer'])) {
@@ -92,13 +91,13 @@ if (isset($_SESSION['id'])) {
                           } 
     
                  ?>
-                  <p class="titre">Effacer une prestation</p>
-                          <form id="form2" method="post">
-                                  <label>Rechercher le titre de la prestation</label></br>
-                                  <input type="text" name="titre4" required></br>
-                                  <input type="submit" value="effacer" name="effacer"></br>
+                          <form class="form-group col-3" method="post">
+                            <p for="exampleFormControlInput1">Effacer une prestation</p>
+                                  <label for="exampleFormControlInput1">Rechercher le titre de la prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="titre4" required></br>
+                                  <input class="btn btn-secondary" type="submit" value="effacer" name="effacer"></br>
                           </form>
-                  </div>
+          
 </section>
 <?php
 }

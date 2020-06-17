@@ -78,7 +78,7 @@
   width: 100%;
 }
 
-/*PAGE Admin*/
+/*PAGE ADMIN*/
 .bouton{
   display: flex;
   flex-direction: column;
@@ -100,7 +100,15 @@
 h1{
   text-align: center;
 }
-
+.heure{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-family: serif;
+}
 
 
 
