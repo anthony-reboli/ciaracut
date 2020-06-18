@@ -29,38 +29,53 @@ function date_heure(id)
 }
 
 
-
-$(document).ready(function () {
-                $("#searchBox").keyup(function () {
-                    var query = $("#searchBox").val();
-                    console.log(query);
-                    if (query.length > 0) {
-                        $.ajax(
+$("#insert").click(function(){
+     $.ajax(
                             {
-                                url: '../include/research.php',
-                                method: 'GET',
-                                data: {
-                                search: 1,
-                                q: query
-
-                            },
-                                success: function (data) 
+                                url: '../functions/insert.php',
+                                type: 'POST',
+                                data: { valider:"go" , nom: $("#nom").val(), description: $("#description2").val(), datedebut: $("#datedebut2").val(), datefin: $("#datefin2").val() },
+                                success: function(data) 
                                 {
-                                    $("#response").html(data);
-                                    
+                                    location.reload(true);
+
                                 },
-                                dataType: 'text'
-                            }
-                        );
-                    }
-                });
+                            })
+        
 
-                $(document).on('click', 'li', function () {
-                    var nom = $(this).text();
-                    console.log(nom);
+})
 
-                    $("#searchBox").val(nom);
-                    console.log($("#searchBox"));
-                    $("#response").html("");
-                });
-           });
+$("#modif").click(function(){
+     $.ajax(
+                            {
+                                url: '../functions/modifreserv.php',
+                                type: 'POST',
+                                data: { modifier:"go", titre3: $("#titre3").val(), titre2: $("#titre2").val(), description: $("#description").val(), datedebut: $("#datedebut").val(), datefin: $("#datefin").val() },
+                                success: function(data) 
+                                {
+                                    location.reload(true);
+
+                                },
+                            })
+        
+
+})
+
+
+$("#effacer").click(function(){
+     $.ajax(
+                            {
+                                url: '../functions/deletereserv.php',
+                                type: 'POST',
+                                data: { effacer:"go", titre4: $("#titre4").val() },
+                                success: function(data) 
+                                {
+                                     location.reload(true);
+                                },
+                            })
+        
+
+})
+
+
+

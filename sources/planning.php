@@ -1,15 +1,14 @@
-
+<?php
+session_start();
+?>
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 </head>
 <body id="planning">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <header>
    <?php include("../include/bar-nav.php");?>
 </header>
@@ -21,7 +20,6 @@
               </form>
 <?php
                    
-
                     $datejour = new DateTime("today");
                     if (!isset($_SESSION["num"])) {
                   
@@ -63,8 +61,6 @@
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
 ?>
-
-
 <section id="agenda">
     <table class="table table-striped table-dark">
       <thead>
@@ -114,7 +110,7 @@
       }
     echo "</tr>";
 
-        $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
+            $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
               $requete = $connexion->prepare("SELECT * FROM reservations WHERE id='$idreserv'");
               $requete->execute();
               $test = $requete->fetchAll();
@@ -130,7 +126,7 @@
 
 
 
-/*POPUPMODIF*/
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -150,6 +146,11 @@
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="../js/script.js"></script>
 </body>
 
 </html>
