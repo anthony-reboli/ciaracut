@@ -77,5 +77,38 @@ $("#effacer").click(function(){
 
 })
 
+$(".btnRes").click(function() {
+    var id = this["id"];
+         $.ajax(
+                            {
+                                url: '../functions/recupReserv.php',
+                                type: 'POST',
+                                data: { id :id },
 
+                                success: function(data) 
+                                {
+                                    var resultat=jQuery.parseJSON(data);
+
+                                    $("#titreh1").empty();
+                                    $("#titreh1").append(resultat[0][1]);
+                                    $("#titre3").val(resultat[0][1]);
+                                    $("#titre4").val(resultat[0][1]);
+                                    $("#titre2").val(resultat[0][1]);
+                                    $("#description").val(resultat[0][2]);
+
+                                    var datedebut = resultat[0][3];
+                                    datedebut = datedebut.replace(" ", "T");
+                            
+                                    $("#datedebut").val(datedebut);
+
+                                    var datefin = resultat[0][4];
+                                    datefin = datefin.replace(" ", "T");
+                                    
+                                    $("#datefin").val(datefin);
+
+                                },
+                            })
+    
+    
+})
 

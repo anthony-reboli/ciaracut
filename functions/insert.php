@@ -19,7 +19,7 @@
                           $dated = $_POST['datedebut'];
                           $datef = $_POST['datefin'];
                           if($dated < date('Y-m-d H:i:s')){
-                              echo "Vous ne pouvez pas reserver a une date anterieur au ".date('d-m-Y H:i:s');
+                              echo "Vous ne pouvez pas reserver a une date anterieur au ".date('d-m-Y H:i:s')."";
                           
                           }
                           elseif ($datef < $dated) {

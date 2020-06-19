@@ -247,3 +247,15 @@ h1{
 /* Au survol des li du menu on replace les sous menus */
     left: auto;
 }
+
+#titreh1 {
+  color: #262626;
+}
+
+.formRes label {
+  color: #262626;
+}
+
+.modal-header * {
+  color: #262626;
+}
