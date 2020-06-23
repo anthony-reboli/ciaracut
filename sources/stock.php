@@ -1,7 +1,4 @@
 <?php 
-session_start();
-
-
 $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
 
 $all="SELECT * FROM `stock` inner join produit on stock.id_produit = produit.id";
@@ -18,18 +15,19 @@ $allQ=mysqli_query($bdd,$all);
 	
 </head>
 <body id="stock">
-	<header id="headS">
-		<?php include("../include/bar-nav.php");?>
-	</header>
+<header>
+   <?php include("../include/bar-nav.php");?>
+</header>
 		<main>
 <?php
 if (!isset($_GET['p']))
 {
 		?>
-	<h1 class="title">Le moteur de recherche du cinéma</h1>
+	<h1 class="title">Le moteur de recherche du stock</h1>
 
-             </form>
+             <form method="post">
         <input name="search"type="text" placeholder="Recherche par type" id="searchBox">
+		</form>
    
         <div id="response"></div>
         <?php
