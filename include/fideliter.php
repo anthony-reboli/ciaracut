@@ -3,7 +3,7 @@
 $datejour=date('Y-m-d');
 
 $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
-$selectotal="SELECT * FROM utilisateurs where nom ='aniv'";
+$selectotal="SELECT * FROM utilisateurs where nom ='yaga'";
 $selectotalQ=mysqli_query($bdd,$selectotal);
 $selectotalR=mysqli_fetch_all($selectotalQ);
 
@@ -43,8 +43,8 @@ $interval1 = date_diff($datetime1, $datetime3);
 
 
 
-		$selectS="SELECT * FROM sauvegarde where nom = 'aniv' and datepanier LIKE ('$datejour%')";
-		var_dump($selectS);
+		$selectS="SELECT * FROM sauvegarde where nom = 'yaga' and datepanier LIKE ('$datejour%')";
+		
 
 		$deux=mysqli_query($bdd,$selectS);
 		$trois=mysqli_fetch_all($deux);
@@ -53,7 +53,7 @@ $interval1 = date_diff($datetime1, $datetime3);
 
 			
 			 foreach ($trois as $key2) {
-			 	var_dump($key2);
+			 	
 			 	$prix=$key2[4];
 			 	
 
@@ -64,13 +64,13 @@ $interval1 = date_diff($datetime1, $datetime3);
 
 					
 						foreach ($redR as $key3) {
-							var_dump($key3);
+							
 													$a=$key3[0];
 													$b=10;
 													$resultat= $a - ($a * ($b/100));
 															
-													$prix="UPDATE sauvegarde set prixtotal= $resultat where nom = 'aniv' and datepanier LIKE  ('$datejour%')";
-													var_dump($prix);
+													$prix="UPDATE sauvegarde set prixtotal= $resultat where nom = 'yaga' and datepanier LIKE  ('$datejour%')";
+													
 													
 													$prixQ=mysqli_query($bdd,$prix);
 													

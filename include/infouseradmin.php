@@ -5,7 +5,7 @@
  										
 						                $nom=$data['nom'];
 						                $prenom=$data['prenom'];
-						                $date=$data['anniv'];
+						                $date=$data['date'];
 						                
 						                $ids=$data['id'];
 
