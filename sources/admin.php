@@ -87,9 +87,7 @@ date_default_timezone_set('europe/paris');
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
  ?>
-    <div class="heure">
-    <?php include("../include/chiffre.php");?>
-    </div>
+    
                 </main>
 
 

@@ -1,23 +1,8 @@
-<?php session_start();
+<?php 
 
 if (isset($_SESSION['id'])) {
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Formulaire de prestation</title>
-  <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
-</head>
-        <header>
-         <?php include("../include/bar-nav.php");?>
-         </header>
-<body>
-
-</body>
-</html>
-
-<h1>Gestion de mes prestations</h1>
     <section id="formadminprestation">
             
             <?php 
@@ -34,8 +19,8 @@ if (isset($_SESSION['id'])) {
                 }
                 ?>
                 
-                <form id="form" class="form-group col-3" method="post" >
-                  <p for="exampleFormControlInput1" >Créer des prestations</p>
+                <form id="form" class="form-group col-8" method="post" >
+                  <h3 >Créer des prestations</h3>
                                   <label for="exampleFormControlInput1">Nom prestation</label></br>
                                   <input class="form-control form-control-lg" type="text" name="titre" required></br>
                                   <label for="exampleFormControlInput1">Type de prestation</label></br>
@@ -47,7 +32,7 @@ if (isset($_SESSION['id'])) {
                                   <input class="btn btn-secondary" type="submit" value="Creer" name="valider"></br>
                  </form>
              
-                  <?php
+            <?php
 
                 if (isset($_POST['modifier'])) {
                           $titre3 = $_POST['titre3'];
@@ -62,8 +47,8 @@ if (isset($_SESSION['id'])) {
                 }
                 ?>
                  
-                    <form class="form-group col-3" method="post">
-                       <p for="exampleFormControlInput1">Modifier les prestations</p>
+                    <form class="form-group col-8" method="post">
+                        <h3 >Modifier des prestations</h3>
                           <label for="exampleFormControlInput1">Recherche le titre de la prestation</label></br>
                                   <input class="form-control form-control-lg" type="text" name="titre3" required></br>
                                   <label for="exampleFormControlInput1">Modifier le titre</label></br>
@@ -91,8 +76,8 @@ if (isset($_SESSION['id'])) {
                           } 
     
                  ?>
-                          <form class="form-group col-3" method="post">
-                            <p for="exampleFormControlInput1">Effacer une prestation</p>
+                          <form class="form-group col-8" method="post">
+                             <h3 >Effacer des prestations</h3>
                                   <label for="exampleFormControlInput1">Rechercher le titre de la prestation</label></br>
                                   <input class="form-control form-control-lg" type="text" name="titre4" required></br>
                                   <input class="btn btn-secondary" type="submit" value="effacer" name="effacer"></br>
@@ -102,5 +87,4 @@ if (isset($_SESSION['id'])) {
 <?php
 }
 ?>
-</body>
-</html>
+

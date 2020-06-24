@@ -6,6 +6,7 @@ ob_start()
 <html>
 <head>
 	<meta charset="utf-8">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 	<title>Panier</title>
 </head>
@@ -14,6 +15,7 @@ ob_start()
 				<?php include("../include/bar-nav.php");?>
 			</header>
 							<section id="contpanier">
+									 <a href="../sources/boutiqueprestation.php"><button class="btn btn-secondary">Retour sur la boutique</button></a>
 
  								<h1 class="titre">Votre Panier</h1>
   				<?php
@@ -65,7 +67,8 @@ ob_start()
 									$prixtotal=$total[0][0];
 									$req="INSERT INTO panier (id_utilisateurs,id_produit,datepanier,prixtotal) VALUES ('$id_utilisateurs','$id_produits',NOW(),'$prixtotal')";
 									$query=mysqli_query($connexion,$req);
-									header("location:paiement.php");
+									$id = mysqli_insert_id($connexion);
+									header("location:paiement.php?id=".$id);
 									}
 														
 							?>
