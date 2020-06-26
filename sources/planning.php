@@ -121,9 +121,8 @@ Gérer mes rendez-vous </button>
                     $idreserv=$value[0];
                     ?>
                     <div class="lien">
-                      <?php echo "Client: ".$value[1]."//Prestations: ".$value[2].""?>
-                    <button type="button" id="<?php echo $idreserv;?>" class="btn btn-secondary btnRes" data-toggle="modal" data-target="#exampleModal">
-                     Modifier ou supprimer</button>
+                      <?php echo "Client: ".$value[1]."<br>Prestations: ".$value[2].""?>
+                    <button type="button" id="<?php echo $idreserv;?>" class="material-icons btnRes" data-toggle="modal" data-target="#exampleModal" title="Modifier">create</button>
                     </div>
                       
                     <?php

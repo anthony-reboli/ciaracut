@@ -18,7 +18,7 @@ ob_start();
 			$id_utilisateurs=$_SESSION['id'];
 			$id = $_GET['id'];
 			$connexion=mysqli_connect("localhost","root","","ciaracut");
-			$req=("SELECT prixtotal FROM sauvegarde WHERE id ='$id' ");
+			$req=("SELECT prixtotal FROM panier ");
 			$query2=mysqli_query($connexion,$req);
 			$res=mysqli_fetch_all($query2);	
 			?>
@@ -49,11 +49,10 @@ ob_start();
 					
 						
 			$id_utilisateurs=$_SESSION['id'];
-			$nom=$_POST['nom'];
+			$idpanier = $_GET["id"];
 			$mode=$_POST['mode'];
-			$id = $_GET['id'];
 			$connexion=mysqli_connect("localhost","root","","ciaracut");
-			$req1=("UPDATE sauvegarde SET nom ='$nom', mode ='$mode' WHERE id ='$id'");
+			$req1=("UPDATE sauvegarde SET mode ='$mode' WHERE id_utilisateurs ='$id_utilisateurs' AND id_panier = $idpanier");
 			$query1=mysqli_query($connexion,$req1);
 			$req2=("DELETE FROM panier WHERE id_utilisateurs=$id_utilisateurs");
 			$req3=("DELETE FROM commande WHERE id_utilisateurs=$id_utilisateurs");

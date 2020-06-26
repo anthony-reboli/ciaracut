@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -7,87 +9,51 @@
 <body class="bodyc">
 
 	<?php
-    session_start();
     include("../include/bar-nav.php");
-     
-     $connexion =  mysqli_connect("localhost","root","","gestioncamping");
+    include("../functions/functions.php");
+     $connexion =  mysqli_connect("localhost","root","","ciaracut");
      if ( !isset($_SESSION['login']) )
     {
     ?>
     <section id="connexion">
 
-        <div id="main" class="container">   
-            <form name="loginform" id="loginform" action="#" method="post" class="wpl-track-me"> 
-                <p class="login-username">
-                    <label for="user_login">Username</label> 
-                    <input type="text" id="user_login" class="input" placeholder="Username" value="" size="20" name="login" required/> 
-                </p> 
-                <p class="login-password"> 
-                    <label for="user_pass">Password</label>
-                    <input type="password" name="mdp1" id="user_pass" class="input" placeholder="Password" value="" size="20" required/> 
-                </p>
-                <p class="login-password"> 
-                    <label for="user_pass">Password</label>
-                    <input type="password" name="mdp2" id="user_pass" class="input" placeholder="Confirmer Password" value="" size="20" required/> 
-                </p>       
+        <div id="main" class="container">
+            <h1>Inscrivez-vous !</h1>
 
-                <p class="login-submit"><input type="submit" name="connexion" id="submit" class="button-primary" value="Log in" />
-                    <input type="hidden" name="redirect_to" value="#"/>
-                </p>    
-                 <?php
+                <form action="inscription.php" method="post">
+                    <input type="text" name="login" required placeholder="Login"/>
+                    <input type="text" name="nom" required placeholder="Nom"/>
+                    <input type="text" name="prenom" required placeholder="Prénom"/>
+                    <input type="email" name="email" required placeholder="Email"/>
+                    <input type="password" name="pass1" required placeholder="Mot de passe"/>
+                    <input type="password" name="pass2" required placeholder="Confirmer votre mot de passe"/>
+                   <input type="date" name="date" required placeholder="Date">
+                    <input type="submit" name="signin" required value="S'inscrire"/>
+
+                    <?php
+                    if (isset($_POST['signin'])) {
+                        $user = new userpdo;
+                        $user_sign = $user->register($_POST['login'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pass1'], $_POST['pass2'], $_POST['date']);
+                             
+                            if ($user_sign == "ok") 
+                            {
+                                header ("Refresh: 1;URL=connexion.php");
+                            } 
+                            else 
+                            {
+                            echo $user_sign;
+                            }
+                    }
+                    ?>
+                </form>
+            </div>
 
 
-        if (isset($_POST['connexion']))
-       {
-            $login = $_POST['login'];
-	        $mdp= password_hash($_POST["mdp1"], PASSWORD_DEFAULT, array('cost' => 12));
-	        if ($_POST['mdp1']==$_POST['mdp2'])
-            {
-            $requet="SELECT* FROM utilisateurs WHERE login='".$login."'";
-            $query2=mysqli_query($connexion,$requet);
-            $resultat=mysqli_fetch_all($query2);
-            $trouve=false;
-            foreach ($resultat as $key => $value) 
-            {
-            if ($resultat[$key][1]==$_POST['login'])
-            {
-               $trouve=true;
-               echo "<p class='erreur'><b>Login déja existant!!</b></p>";
-            }
-           }
-           if ($trouve==false)
-           {
-            $sql = "INSERT INTO utilisateurs (login,password)
-                VALUES ('".$login."','".$mdp."')";
-            $query=mysqli_query($connexion,$sql);
-            header('location:connexion.php');
-            }
-           }
-           else
-           {
-              echo "<p class='erreur'><b>Les mots de passe doivent être identique!</b></p>";
-           }
-        }
-
-    ?>
-        
-        </form>
-    </div>
-        
-    </section>
-    <?php
-    }
-    else 
-    {
-    ?>
-    <section id="notcon">
-      <p>Vous êtes déjà connecté impossible de s'inscrire !!</p>
-    </section>
         <?php
     }
     include("../include/footer.php");
     ?>
-  
+
 
  </body>
 </html>

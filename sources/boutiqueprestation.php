@@ -2,8 +2,10 @@
     session_start();
     $connexion= mysqli_connect("localhost", "root", "", "ciaracut");
 
-    if ( isset($_SESSION['id']) ) 
-    {
+    if ($_SESSION['id_droits'] == 1337){}
+    else{
+      header("location: index.php");
+    }
     $requete = "SELECT * FROM prestation ";
     $query = mysqli_query($connexion, $requete);
     $resultat = mysqli_fetch_all($query);
@@ -42,7 +44,7 @@
                     }
                      
                   }
-                }
+                
    
       ?>
   </section>

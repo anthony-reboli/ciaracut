@@ -1,4 +1,4 @@
-<html>
+,<html>
 <head>
     <meta charset="utf-8">
         <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -17,7 +17,7 @@
     {
 	    if(isset($_POST['login']) && isset($_POST['password']))
         {
-   	        $connexion = mysqli_connect ("localhost", "root", "", "gestioncamping");
+   	        $connexion = mysqli_connect ("localhost", "root", "","ciaracut");
 
    	        $login = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['login']));
             $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
@@ -27,21 +27,25 @@
                 $requete = "SELECT count(*) FROM utilisateurs where
                 login = '".$login."' ";
                 $exec_requete = mysqli_query($connexion,$requete);
-                $reponse      = mysqli_fetch_array($exec_requete);
+                $reponse  = mysqli_fetch_array($exec_requete);
                 $count = $reponse['count(*)'];
 
                 $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
                 $exec_requete4 = mysqli_query($connexion,$requete4);
                 $reponse4 = mysqli_fetch_array($exec_requete4);
+                var_dump($reponse4);
             
+                    var_dump($count);
 
-                 if( $count!=0 && $_SESSION['login'] !== "" && password_verify($password, $reponse4[2]) )
+                 if( $count!=0 && password_verify($password, $reponse4['password']) )
                 {
-            
+                
                 $_SESSION['login'] = $_POST['login'];
+                $user = $_SESSION['login'];
+                $id=$_SESSION['id']=$reponse4['id'];
+                $_SESSION['id_droits']=$reponse4['id_droits'];
+                
 
-                 $user = $_SESSION['login'];
-                  $id=$_SESSION['id']=$reponse4['id'];
                   
                  header('Location: index.php');
                   }
