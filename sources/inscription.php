@@ -10,7 +10,7 @@
 
 	<?php
     include("../include/bar-nav.php");
-    include("../functions/functions.php");
+    include("../include/functions.php");
      $connexion =  mysqli_connect("localhost","root","","ciaracut");
      if ( !isset($_SESSION['login']) )
     {
@@ -20,7 +20,7 @@
         <div id="main" class="container">
             <h1>Inscrivez-vous !</h1>
 
-                <form action="inscription.php" method="post">
+                <form  method="post">
                     <input type="text" name="login" required placeholder="Login"/>
                     <input type="text" name="nom" required placeholder="Nom"/>
                     <input type="text" name="prenom" required placeholder="Prénom"/>
@@ -34,10 +34,12 @@
                     if (isset($_POST['signin'])) {
                         $user = new userpdo;
                         $user_sign = $user->register($_POST['login'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pass1'], $_POST['pass2'], $_POST['date']);
+                        
                              
                             if ($user_sign == "ok") 
                             {
-                                header ("Refresh: 1;URL=connexion.php");
+
+                                // header ("Refresh: 1;URL=connexion.php");
                             } 
                             else 
                             {

@@ -27,26 +27,32 @@ class userpdo
 
     public function register($login, $nom, $prenom, $email, $pass1, $pass2, $date)
     {
+        
         $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
         $etat = $user->rowCount();
+        
 
         if ($pass1 != $pass2 || strlen($pass1) < 5)
         {
             if ($pass1 != $pass2)
             {
                 $msg = "Mots de passes rentrés différents";
+                
             }
             if (strlen($pass1) < 5)
             {
                 $msg = "Mot de passe trop court";
             }
+
         }
         else
         {
             if ($etat == 0)
             {
+                
                 $hash = password_hash($pass1, PASSWORD_BCRYPT, ['cost' => 12]);
-                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date','')");
+                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date')");
+                
                 $msg = "ok";
             }
             else
@@ -103,16 +109,16 @@ class userpdo
 
     }
 
-    public function update($login, $nom, $prenom, $email, $pass1, $date)
+    public function update($login, $nom, $prenom, $email, $pass1)
     {
 
 
-        $log = $_SESSION['login'];
+        //$log = $_SESSION['login'];
         if ($_SESSION['login'] != $login)
         {
             $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
             $etat = $user->rowCount();
-
+            
             if ($etat > 0)
             {
                 $msg = "erreur";
@@ -123,18 +129,14 @@ class userpdo
             if (strlen($pass1) >= 5)
             {
                 $hash = sha1($pass1);
-                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', pass1='$hash', date='$date' WHERE 		login='$log'");
+                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', pass1='$hash' WHERE login='$login'");
 
-                $this->login = $login;
+                $this->login = $log;
                 $this->nom = $nom;
                 $this->prenom = $prenom;
                 $this->email = $email;
                 $this->pass1 = $pass1;
-                $this->date = $date;
-
-                unset($_SESSION['login']);
-                unset($_SESSION['pass1']);
-                header('location: connexion.php');
+                
             }
             else
             {

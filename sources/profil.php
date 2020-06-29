@@ -25,6 +25,7 @@ include("../include/functions.php");?>
                 {
 
                     $profil_update = $user->update($_POST['login'], $_POST['lastname'], $_POST['firstname'], $_POST['email'], $_POST['pass']);
+                    
                     if ($profil_update == "erreur")
                     { ?>
 

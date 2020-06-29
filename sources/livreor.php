@@ -4,6 +4,9 @@
 date_default_timezone_set('europe/paris');
 $connexion = mysqli_connect("localhost", "root", "", "ciaracut");
 
+$nom=$_SESSION['nom'];
+$prenom=$_SESSION['prenom'];
+
 if (isset($_POST['submit']))
 {
 
@@ -40,9 +43,18 @@ if (isset($_POST['submit']))
 
 
         <?php
-        var_dump($_SESSION);
-        if (isset($_SESSION['login'])){ ?>
-            <form method="POST" action="livreor.php">
+        
+        if (isset($_SESSION['login'])){ 
+            $requete4="SELECT count(id) FROM sauvegarde where nom = '$nom'  and prenom = '$prenom'";
+            $requete4Q=mysqli_query($connexion,$requete4);
+            $requete4R=mysqli_fetch_all($requete4Q);
+            
+
+
+            if($requete4R[0][0] != 0 or $_SESSION['login'] == 'vanessa')
+            {
+                ?>
+                <form method="POST" action="livreor.php">
                 <label>Laisser un commentaire:</label>
                 <br/><br/>
                 <textarea name="message" rows="6" maxlength="50" cols="50"></textarea>
@@ -50,9 +62,14 @@ if (isset($_POST['submit']))
 
                 <input type="submit" name="submit" value ="Poster">
 
-            </form>
+            </form> 
+                <?php
+            }
+            else
+            {
+                echo "vous ete pas client vous pouvez pas commenter";
+            }
 
-            <?php
         }
         ?>
 
@@ -70,7 +87,9 @@ if (isset($_POST['submit']))
                 <h3><b><?php echo $row['nom']?></b></h3>
 
                 <?php
-                    echo '<a href="deletecommentaire.php?id=', $row['id'], '"><img src="../img/trash.png"/></a>';
+                if(isset($_SESSION['login'] ) == true && $_SESSION['login'] == 'vanessa'){
+                    echo '<a href="../include/deletecommentaire.php?id=', $row['id'], '"><img src="../img/trash.png"/></a>';
+                }
                 ?>
             </div>
             <div id="messag">

@@ -67,10 +67,11 @@ ob_start()
 									$prixtotal=$total[0][0];
 									$req="INSERT INTO panier (id_utilisateurs,id_produit,datepanier,prixtotal) VALUES ('$id_utilisateurs','$id_produits',NOW(),'$prixtotal')";
 									$query=mysqli_query($connexion,$req);
+
 									// $req2="INSERT INTO sauvegarde (id_utilisateurs,id_produit,datepanier,prixtotal) VALUES ('$id_utilisateurs','$id_produits',NOW(),'$prixtotal')";
 									// $query2=mysqli_query($connexion,$req2);
 									$id = mysqli_insert_id($connexion);
-									header("location:paiement.php?id=".$id);
+									 header("location:paiement.php?id=".$id);
 									}
 														
 							?>

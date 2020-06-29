@@ -41,18 +41,17 @@
                 {
                 
                 $_SESSION['login'] = $_POST['login'];
+                $_SESSION['prenom'] = $reponse4['prenom'];
+                $_SESSION['nom'] = $reponse4['nom'];
                 $user = $_SESSION['login'];
                 $id=$_SESSION['id']=$reponse4['id'];
-                $_SESSION['id_droits']=$reponse4['id_droits'];
-                
-
-                  
-                 header('Location: index.php');
-                  }
-                  else
-                 {
-                 header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
-                  }
+         
+                  header('Location: index.php');
+                   }
+                   else
+                  {
+                  header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
+                   }
             }
         }
         ?>

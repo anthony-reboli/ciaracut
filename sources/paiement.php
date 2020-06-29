@@ -32,6 +32,8 @@ ob_start();
  			<form method="post">
  				<label>Nom du client</label><br>
  				<input type="text" name="nom" required><br>
+ 				<label>Prénom du client</label><br>
+ 				<input type="text" name="prenom" required><br>
  				<label>Mode de paiement</label><br>
  				<select class="formpaiement" name="mode" required><br>
 			    <option class="formpaiement">-Choisir type paiement-</option>
@@ -46,19 +48,21 @@ ob_start();
 		<?php
 			
 			if (isset($_POST['payer'])) {
-					
-						
+								
 			$id_utilisateurs=$_SESSION['id'];
 			$idpanier = $_GET["id"];
 			$mode=$_POST['mode'];
+			$nom=$_POST['nom'];
+			$prenom=$_POST['prenom'];
 			$connexion=mysqli_connect("localhost","root","","ciaracut");
-			$req1=("UPDATE sauvegarde SET mode ='$mode' WHERE id_utilisateurs ='$id_utilisateurs' AND id_panier = $idpanier");
+			$req1=("UPDATE sauvegarde SET mode ='$mode',nom ='$nom',prenom ='$prenom'  WHERE nom is null AND prenom is null");
+			var_dump($req1);
 			$query1=mysqli_query($connexion,$req1);
 			$req2=("DELETE FROM panier WHERE id_utilisateurs=$id_utilisateurs");
 			$req3=("DELETE FROM commande WHERE id_utilisateurs=$id_utilisateurs");
 			$query3=mysqli_query($connexion,$req2);
 			$query4=mysqli_query($connexion,$req3);
-			header("location:boutiqueprestation.php");
+			//header("location:boutiqueprestation.php");
 		}
 			
 			?>
