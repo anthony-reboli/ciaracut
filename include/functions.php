@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 
 // PARTIE UTILISATEURS
@@ -112,43 +112,35 @@ class userpdo
     public function update($login, $nom, $prenom, $email, $pass1)
     {
 
-        $log = $_SESSION['login'];
-        
-        
-            $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$log'");
-            $etat = $user->rowCount();
 
+        //$log = $_SESSION['login'];
+        if ($_SESSION['login'] != $login)
+        {
+            $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
+            $etat = $user->rowCount();
             
             if ($etat > 0)
             {
                 $msg = "erreur";
             }
-        
-        
-        
+        }
+        else
         {
-
             if (strlen($pass1) >= 5)
             {
-                
+                $hash = sha1($pass1);
+                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', pass1='$hash' WHERE login='$login'");
+
                 $this->login = $log;
                 $this->nom = $nom;
                 $this->prenom = $prenom;
                 $this->email = $email;
                 $this->pass1 = $pass1;
-
-                $hash = sha1($pass1);
-                $hash = password_hash($pass1, PASSWORD_DEFAULT, array('cost' => 12));
-                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', password='$hash' WHERE login='$log'");
-
-                session_unset();
                 
             }
             else
             {
                 $msg = "erreur2";
-                
-                var_dump(strlen($pass1));
             }
 
         }

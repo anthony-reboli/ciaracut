@@ -1,10 +1,5 @@
-<?php
-        if (!isset($_SESSION['login']))
-        {
-            header("location:index.php");
-        }
-    ?>
 
+<?php session_start();?>
 <html>
 	<head>
 		<title>Produit</title>
@@ -12,12 +7,13 @@
 		<meta charset="utf-8">
 	</head>
 			<body id="pageproduit">
-<header>
-   <?php include("../include/bar-nav.php");?>
-</header>
+				<header>
+				<?php	include("../include/bar-nav.php");?>
+				</header>
 							
 		
 						<section id="formprestation">
+						
 								<H1 class="titre">Ma Selection</H1>
 								<?php
 								$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');

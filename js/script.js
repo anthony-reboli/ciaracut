@@ -35,13 +35,13 @@ $("#insert").click(function(){
                                 url: '../functions/insert.php',
                                 type: 'POST',
                                 data: { valider:"go" , nom: $("#nom").val(), description: $("#description2").val(), datedebut: $("#datedebut2").val(), datefin: $("#datefin2").val() },
-                                success: function(data)
+                                success: function(data) 
                                 {
                                     location.reload(true);
 
                                 },
                             })
-       
+        
 
 })
 
@@ -51,13 +51,13 @@ $("#modif").click(function(){
                                 url: '../functions/modifreserv.php',
                                 type: 'POST',
                                 data: { modifier:"go", titre3: $("#titre3").val(), titre2: $("#titre2").val(), description: $("#description").val(), datedebut: $("#datedebut").val(), datefin: $("#datefin").val() },
-                                success: function(data)
+                                success: function(data) 
                                 {
                                     location.reload(true);
 
                                 },
                             })
-       
+        
 
 })
 
@@ -68,12 +68,12 @@ $("#effacer").click(function(){
                                 url: '../functions/deletereserv.php',
                                 type: 'POST',
                                 data: { effacer:"go", titre4: $("#titre4").val() },
-                                success: function(data)
+                                success: function(data) 
                                 {
                                      location.reload(true);
                                 },
                             })
-       
+        
 
 })
 
@@ -85,7 +85,7 @@ $(".btnRes").click(function() {
                                 type: 'POST',
                                 data: { id :id },
 
-                                success: function(data)
+                                success: function(data) 
                                 {
                                     var resultat=jQuery.parseJSON(data);
 
@@ -95,19 +95,26 @@ $(".btnRes").click(function() {
                                     $("#titre4").val(resultat[0][1]);
                                     $("#titre2").val(resultat[0][1]);
                                     $("#description").val(resultat[0][2]);
-
+                                    /*récuperation des dates pour les modifiés*/
                                     var datedebut = resultat[0][3];
+
                                     datedebut = datedebut.replace(" ", "T");
-                           
+                                    /*remplace espace par T*/
+            
                                     $("#datedebut").val(datedebut);
 
                                     var datefin = resultat[0][4];
                                     datefin = datefin.replace(" ", "T");
-                                   
+                                    
                                     $("#datefin").val(datefin);
 
                                 },
                             })
-   
-   
+    
+    
 })
+
+
+
+
+

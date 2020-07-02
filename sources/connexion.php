@@ -11,7 +11,7 @@
 
 
 	<?php
-	
+	session_start();
 	include("../include/bar-nav.php");
     if ( !isset($_SESSION['login']) )
     {

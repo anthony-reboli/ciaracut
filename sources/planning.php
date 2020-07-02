@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <html>
 <head>
   <meta charset="utf-8">
@@ -11,7 +13,30 @@
 <header>
    <?php include("../include/bar-nav.php");?>
 </header>
-    <?php include("../include/reservation-form.php");?>
+
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">
+Gérer mes rendez-vous </button>
+   <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Créer mes rendez-vous</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span class="material-icons" aria-hidden="true">close</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          <?php include("../include/reservation-form.php"); ?>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+
+
 
           <section id="calendrier">
               <form  method="post">
@@ -44,9 +69,9 @@
               <input class="btn btn-secondary" type="submit" name="suivant" value="Suivant">
               </form>
             </section>
+
+          <section id="agenda">
 <?php 
-
-
   $db=mysqli_connect("localhost","root","","ciaracut");
   mysqli_set_charset($db, "utf8");
   $date="SELECT *  FROM reservations LEFT JOIN utilisateurs ON utilisateurs.id = reservations.id_utilisateur WHERE \"$dateselec\" BETWEEN DATE_FORMAT(debut, \"%Y-%m-%d\") AND DATE_FORMAT(fin, \"%Y-%m-%d\")";
@@ -60,7 +85,7 @@
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
 ?>
-<section id="agenda">
+
     <table class="table table-striped table-dark">
       <thead>
         <tr>
@@ -96,9 +121,8 @@
                     $idreserv=$value[0];
                     ?>
                     <div class="lien">
-                      <?php echo "Client: ".$value[1]."//Prestations: ".$value[2].""?>
-                    <button type="button" id="<?php echo $idreserv;?>" class="btn btn-secondary btnRes" data-toggle="modal" data-target="#exampleModal">
-                     Modifier ou supprimer</button>
+                      <?php echo "Client: ".$value[1]."<br>Prestations: ".$value[2].""?>
+                    <button type="button" id="<?php echo $idreserv;?>" class="material-icons btnRes" data-toggle="modal" data-target="#exampleModal" title="Modifier">create</button>
                     </div>
                       
                     <?php
@@ -107,7 +131,6 @@
                     $requete->execute();
                     $test = $requete->fetchAll();
               
-            
               foreach ($test as  $teste) {
                 
                 $idtest=$teste;
@@ -123,9 +146,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                      
                           <?php include("../include/reservation-form2.php"); ?>
-                      
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -147,17 +168,12 @@
       }
     echo "</tr>";
 
-            
-              
+        
               ?>
   </tbody>
     
 </table>
 </section>
-
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

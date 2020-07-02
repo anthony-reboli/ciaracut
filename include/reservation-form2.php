@@ -2,6 +2,7 @@
           
                     <h5 class="modal-title" id="exampleModalLabel">Modifier le rendez-vous</h5>
                     <form class="form-group formRes" method="post">
+                    <h3 for="exampleFormControlInput1">Modifier le rendez-vous</h3>
                     <h1 id="titreh1"></h1></br>
                     <input id="titre3" class="form-control form-control-lg" type="hidden" name="titre3" required value="" > </br>
                     <label for="exampleFormControlInput1"><b>Entrez le nom<b></label></br>

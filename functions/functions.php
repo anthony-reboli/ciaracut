@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 
 // PARTIE UTILISATEURS
@@ -27,7 +27,7 @@ class userpdo
 
     public function register($login, $nom, $prenom, $email, $pass1, $pass2, $date)
     {
-        $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
+        $user = $this->connectdb()->query("SELECT * FROM utilisateurs WHERE login='$login'");
         $etat = $user->rowCount();
 
         if ($pass1 != $pass2 || strlen($pass1) < 5)
@@ -46,8 +46,7 @@ class userpdo
             if ($etat == 0)
             {
                 $hash = password_hash($pass1, PASSWORD_BCRYPT, ['cost' => 12]);
-                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date')");
-                echo "votre inscription est confirmer";
+                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date',0)");
                 $msg = "ok";
             }
             else

@@ -1,7 +1,8 @@
 
 <!-- ---------------------------------------------- -->
 <!-- ---------- FORMULAIRE HTML-------------------- -->
-
+<?php
+include("../include/functions.php");?>
 <html>
     <head>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -10,10 +11,9 @@
 
     <body>
         <?php
+        include("../include/bar-nav.php") ?>
 
-        
-        include("../include/bar-nav.php"); 
-        include("../include/functions.php");
+        <?php
         $user = new userpdo;
         $monprofil = $user->getAllInfos();
         ?>
