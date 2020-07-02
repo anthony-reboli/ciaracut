@@ -1,17 +1,16 @@
 
 <!-- ---------------------------------------------- -->
 <!-- ---------- FORMULAIRE HTML-------------------- -->
-<?php
-include("../include/functions.php");?>
 <html>
     <head>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="boutique.css" rel="stylesheet">
+        
     </head>
 
     <body>
         <?php
-        include("../include/bar-nav.php") ?>
+        include("../include/bar-nav.php");
+        include("../include/functions.php");?>
 
         <?php
         $user = new userpdo;
@@ -24,7 +23,8 @@ include("../include/functions.php");?>
                 if (isset($_POST['update']))
                 {
 
-                    $profil_update = $user->update($_POST['login'], $_POST['lastname'], $_POST['firstname'], $_POST['email'], $_POST['pass']);
+                    $profil_update = $user->update($_POST['login'], $_POST['lastname'], $_POST['firstname'], $_POST['email'], $_POST['pass'] , $_POST['tel']);
+                    
                     
                     if ($profil_update == "erreur")
                     { ?>
@@ -42,17 +42,14 @@ include("../include/functions.php");?>
                 ?>
                 <?
                 if (isset($_GET))
+                    var_dump($_GET);
                 ?>
-                <input type="text" name="login" required placeholder="Login" value="<?php
-                echo $monprofil[0][1]; ?>">
-                <input type="text" name="lastname" required placeholder="Nom" value="<?php
-                echo $monprofil[0][2]; ?>">
-                <input type="text" name="firstname" required placeholder="Prénom"
-                       value="<?php
-                       echo $monprofil[0][3]; ?>">
-                <input type="email" name="email" required placeholder="Email" value="<?php
-                echo $monprofil[0][4]; ?>">
+                <input type="text" name="login" required placeholder="Login" value="<?php echo $monprofil[0][1]; ?>">
+                <input type="text" name="lastname" required placeholder="Nom" value="<?php echo $monprofil[0][2]; ?>">
+                <input type="text" name="firstname" required placeholder="Prénom"value="<?php echo $monprofil[0][3]; ?>">
+                <input type="email" name="email" required placeholder="Email" value="<?php echo $monprofil[0][4]; ?>">
                 <input type="password" name="pass" required placeholder="Mot de passe" value="">
+                <input type="text" name="tel" required placeholder="Votre tel" value="<?php echo $monprofil[0][7]; ?>">
                 <input type="submit" name="update" required value="Modifier">
             </form>
         </div>
@@ -94,10 +91,5 @@ include("../include/functions.php");?>
 
         ?>
 
-
-
-
-        <?php
-        include("../include/footer.php"); ?>
     </body>
 </html>

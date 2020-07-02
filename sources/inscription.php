@@ -27,19 +27,20 @@
                     <input type="email" name="email" required placeholder="Email"/>
                     <input type="password" name="pass1" required placeholder="Mot de passe"/>
                     <input type="password" name="pass2" required placeholder="Confirmer votre mot de passe"/>
-                   <input type="date" name="date" required placeholder="Date">
+                    <input type="date" name="date" required placeholder="Date">
+                    <input type="text" name="tel" required placeholder="Votre tel">
                     <input type="submit" name="signin" required value="S'inscrire"/>
 
                     <?php
                     if (isset($_POST['signin'])) {
                         $user = new userpdo;
-                        $user_sign = $user->register($_POST['login'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pass1'], $_POST['pass2'], $_POST['date']);
+                        $user_sign = $user->register($_POST['login'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pass1'], $_POST['pass2'], $_POST['date'], $_POST['tel']);
                         
                              
                             if ($user_sign == "ok") 
                             {
 
-                                // header ("Refresh: 1;URL=connexion.php");
+                                header ("Refresh: 1;URL=connexion.php");
                             } 
                             else 
                             {
