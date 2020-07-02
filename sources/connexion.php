@@ -8,8 +8,6 @@
     <title>Connexion</title>
 </head>
 <body class="bodyc">
-
-
 	<?php
 	session_start();
 	include("../include/bar-nav.php");

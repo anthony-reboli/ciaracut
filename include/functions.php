@@ -16,6 +16,7 @@ class userpdo
     public  $pass1  = '';
     public  $pass2  = '';
     public  $date   = '';
+    public  $tel   = '';
 
 
     function connectdb()
@@ -25,7 +26,7 @@ class userpdo
         return $base;
     }
 
-    public function register($login, $nom, $prenom, $email, $pass1, $pass2, $date)
+    public function register($login, $nom, $prenom, $email, $pass1, $pass2, $date, $tel)
     {
         
         $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
@@ -51,7 +52,7 @@ class userpdo
             {
                 
                 $hash = password_hash($pass1, PASSWORD_BCRYPT, ['cost' => 12]);
-                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date')");
+                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date','$tel')");
                 
                 $msg = "ok";
             }
@@ -109,33 +110,37 @@ class userpdo
 
     }
 
-    public function update($login, $nom, $prenom, $email, $pass1)
+    public function update($login, $nom, $prenom, $email, $pass1, $tel)
     {
 
 
-        //$log = $_SESSION['login'];
-        if ($_SESSION['login'] != $login)
-        {
-            $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
+        $log = $_SESSION['login'];
+       
+            $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$log'");
+
             $etat = $user->rowCount();
+            var_dump($user);
+        
             
             if ($etat > 0)
             {
                 $msg = "erreur";
             }
-        }
-        else
-        {
+        
             if (strlen($pass1) >= 5)
             {
-                $hash = sha1($pass1);
-                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', pass1='$hash' WHERE login='$login'");
+                
+                $hash= password_hash($_POST["pass"], PASSWORD_DEFAULT, array('cost' => 12));
+                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', password='$hash' , tel='$tel' WHERE login='$log'");
 
                 $this->login = $log;
                 $this->nom = $nom;
                 $this->prenom = $prenom;
                 $this->email = $email;
                 $this->pass1 = $pass1;
+                $this->tel = $tel;
+                
+
                 
             }
             else
@@ -143,7 +148,7 @@ class userpdo
                 $msg = "erreur2";
             }
 
-        }
+        
         return $msg;
     }
 
@@ -189,6 +194,7 @@ class userpdo
         $this->email = $donnees['email'];
         $this->pass1 = $donnees['pass1'];
         $this->date = $donnees['date'];
+        $this->tel = $donnees['tel'];
 
     }
 
