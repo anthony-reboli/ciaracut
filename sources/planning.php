@@ -14,7 +14,7 @@ session_start();
    <?php include("../include/bar-nav.php");?>
 </header>
 
-<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">
+<button id="pop1" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal2">
 Gérer mes rendez-vous </button>
    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -29,18 +29,15 @@ Gérer mes rendez-vous </button>
                           <?php include("../include/reservation-form.php"); ?>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Fermer</button>
                       </div>
                     </div>
                   </div>
                 </div>
-    
-
-
-
+  
           <section id="calendrier">
               <form  method="post">
-              <input class="btn btn-secondary" type="submit" name="precedent" value="Précédent">
+              <input class="btn btn-dark" type="submit" name="precedent" value="Précédent">
               </form>
 <?php
                    
@@ -66,7 +63,7 @@ Gérer mes rendez-vous </button>
                   
 ?>
               <form  method="post">
-              <input class="btn btn-secondary" type="submit" name="suivant" value="Suivant">
+              <input class="btn btn-dark" type="submit" name="suivant" value="Suivant">
               </form>
             </section>
 
@@ -149,7 +146,7 @@ Gérer mes rendez-vous </button>
                           <?php include("../include/reservation-form2.php"); ?>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Fermer</button>
                       </div>
                     </div>
                   </div>

@@ -1,7 +1,5 @@
 <?php
 session_start();
-ob_start()
-
 ?>
 <html>
 <head>
@@ -11,9 +9,9 @@ ob_start()
 	<title>Panier</title>
 </head>
 		<body id="pagepanier">
-			<header>
+			
 				<?php include("../include/bar-nav.php");?>
-			</header>
+			
 							<section id="contpanier">
 									 <a href="../sources/boutiqueprestation.php"><button class="btn btn-secondary">Retour sur la boutique</button></a>
 
@@ -79,9 +77,7 @@ ob_start()
 								<button class="ajoutpanier" name="ajoutpanier"/><img width="50" height="50" src="../upload/panier.jpg"></button>
 							</form>
 						</section>
-						<footer>
-								<?php include("../include/footer.php");?>
-						</footer>
+					
 	
 			</body>
 </html>

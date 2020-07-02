@@ -8,8 +8,8 @@
                   <label for="formGroupExampleInput"><b>Date debut</b></label>
                   <input id="datedebut2" id="formGroupExampleInput" class="form-control" type="datetime-local" name="datedebut"/>
                   <label for="formGroupExampleInput"><b>Date fin</b></label>
-                  <input id="datefin2" id="formGroupExampleInput" class="form-control" type="datetime-local" name="datefin"/>
-                  <input id="insert" class="btn btn-secondary" type="button" value="Ajouter" name="valider" />
+                  <input id="datefin2" id="formGroupExampleInput" class="form-control" type="datetime-local" name="datefin"/><br>
+                  <input id="insert" class="btn btn-dark" type="button" value="Ajouter" name="valider" />
                   </form>
                 
          

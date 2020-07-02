@@ -31,23 +31,21 @@
                         $img=$values[5];
                         $nom=$values[1];
                         $type=$values[2];
-                        echo" <div class=\"presta\">";
+                        echo" <div class=\"card\" style=\"width: 10rem;>";
                         echo "<h1 class=\"nomp\">$nom </h1><br>";
-                        echo "<a href=\"produit.php?p=$did\"><img class=\"imagebout\" src=\"../upload/$img\"></a>";
-                        echo "<p class=\"nomp\">{$values['2']}</p>";
-                        echo "<p class=\"nomp\">{$values['3']}€</p>";
+                        echo "<a href=\"produit.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/$img\"></a>";
+                        echo "<p class=\"card-text\">{$values['2']}</p>";
+                        echo "<p class=\"card-text\">{$values['3']}€</p>";
                         echo "</div>";
-                                
+                             
                     }
                      
                   }
-                
-   
-      ?>
-  </section>
-  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+              ?>
+            </section>
+  <button id="btnprest" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
   Gestion de mes prestations
-</button>
+  </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

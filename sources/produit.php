@@ -4,12 +4,13 @@
 	<head>
 		<title>Produit</title>
 		<link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta charset="utf-8">
 	</head>
 			<body id="pageproduit">
-				<header>
+			
 				<?php	include("../include/bar-nav.php");?>
-				</header>
+			
 							
 		
 						<section id="formprestation">
@@ -34,13 +35,14 @@
 										                        $img=$val[5];
 										                        $nom=$val[1];
 										                        $type=$val[2];
-										                        echo" <div class=\"presta\">";
-										                        echo "<h1 class=\"nomp\">$nom </h1><br>";
-										                        echo "<a href=\"panier.php?p=$did\"><img class=\"imagebout\" src=\"../upload/$img\"></a>";
-										                        echo "<p class=\"nomp\">{$val['2']}</p>";
-										                        echo "<p class=\"nomp\">{$val['3']}€</p>";
+										                        echo" <div id=\"formprestation\" class=\"card\" style=\"width: 18rem;>";
+										                        echo "<h3 class=\"nomp\">$nom </h3><br>";
+										                        echo "<a href=\"panier.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/$img\"></a>";
+										                        echo "<p class=\"card-text\">{$val['2']}</p>";
+										                        echo "<p class=\"card-text\">Prix:{$val['3']}€</p>";
+										                           include("../include/quantite2.php");
 										                        echo "</div>";
-										                        include("../include/quantite2.php");
+										                        
 															
 															$i ++;
 														}
@@ -53,8 +55,11 @@
 								    		}
 								    		?>
 								    		<form method="post">
-								    		<button id="btvalprod" name="valider2"><img id="imgbtval" height="65" width="65" src="../upload/ajout.png"></button>
+								    		<button id="btvalprod" name="valider2"><span class="material-icons">
+											add_circle
+											</span></button>
 	    									</form>
+	    									
 								
 								    		<?php
     										if (isset($_POST['valider2'])) 
@@ -72,7 +77,7 @@
     									
     										
 						<footer>
-								<?php include("../include/footer.php");?>
+						
 						</footer>
 						
 				
