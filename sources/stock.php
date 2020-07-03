@@ -1,4 +1,6 @@
 <?php 
+
+        
 $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
 
 $all="SELECT * FROM `stock` inner join produit on stock.id_produit = produit.id";
