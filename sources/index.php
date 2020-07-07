@@ -5,8 +5,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
-      
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 
     <title>Accueil</title>
 </head>
@@ -15,6 +15,7 @@
     <?php 
     include("../include/bar-nav.php");
     ?>
+      </header>
     <main id="user">
     <?php
     if (isset($_SESSION['login'])==false)
@@ -36,43 +37,18 @@
        }
     }
     ?>
-  </header>
-  <h1>Mes réservations</h1>
+  <h1>Mon actu Faceboock</h1>
     
     <main id="logo">
-      <?php
-      $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
-      $requete = $connexion->prepare("SELECT titre,description,debut,fin FROM reservations   ORDER BY debut ASC
-      LIMIT 10");
-      $requete->execute();
-      foreach ($requete as $values)
-                {
-                        if (!empty($values)) {
-                                      
-                      echo "<table class='stripped' width=600px>";
-                      echo "<tr>";
-                      echo "<th class='nom'>Prestations</th>";
-                      echo "<th class='nom' >Début de la prestation</th>";
-                      echo "<th class='nom' >Fin de la prestation</th>";
-                      echo "</tr>";
-                      echo "<tr>";
-                      echo "<td class='nom'>".$values[1]."</td>";
-                      echo "<td class='nom'>Du:".$values[2]."</td>";
-                      echo "<td class='nom'>Au:".$values[3]."</td>";
-                      echo "</tr>";
-                      echo "</table>";
-                                 
-                    }
-                     
-                  }
-        ?>
+       <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCiara-cut-103232688121762&tabs=timeline&width=600&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="600" height="800" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+     
 
       
     </main>
   <?php
 
   ?>
-  <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCiara-cut-103232688121762&tabs=timeline&width=600&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="600" height="800" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
   
 </body>
 </html>

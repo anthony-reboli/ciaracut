@@ -35,7 +35,7 @@ if(!isset($_SESSION)){
                         									$img=$val[5];
                         									$nom=$val[1];
                         									$type=$val[2];
-															echo" <div class=\"presta\">";
+															echo" <div class=\"card\">";
                         									echo "<h1 class=\"nomp\">$nom </h1><br>";
                         									echo "<a href=\"../include/produit.php?p=$did\"><img class=\"imagebout\" src=\"../upload/$img\"></a>";
                         									echo "<p class=\"nomp\">{$val['2']}</p>";

@@ -1,17 +1,111 @@
-/*PAGE PLANNING*/
-#planning{
+@font-face {
+  font-family :'police';
+  src: url('../upload/Brightly Crush Shine.otf') format('truetype');
+  }
+/*PAGE LIVREOR*/
+#livreor{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:;
+  align-items: center;
+
+}
+#comment{
+  justify-content: center;
+  align-items: center;
+  background-color:#000000bf;
+  color: white;
+  margin: 3%;
+  padding: 3%;
+  font-size: 25px;
+  width: 100%;
+}
+#contlivreor{
+  width: 80%;
+}
+.poster{
+  background-color:#e91e63e3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 3%;
+
+}
+#suppcomment{
+  color: black;
+}
+#user{
+  font-size: 20px;
+}
+#messag p{
+  word-wrap: break-word;
+  font-size: 20px;
+  width: 70vw;
+}
+
+/*PAGE PROFIL*/
+#profil{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+#continfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height:871px;;
+  
+}
+#infoclient{
+  margin: 3%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#292626c7;
+}
+
+/*PAGE PLANNING*/
+#planning{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#tableauplanning{
+  background-color: #1c1d1fd9;
+  width: 95%;
+  margin: 3%;
+
+}
+#alertplanning{
+  background-color: #1c1d1fd9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 #pop1{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 3%;
 }
 
 .ligne{
-  border:solid;
+  border:solid white;
   width: 330px;
   height: 65px;
 }
@@ -22,15 +116,17 @@
 }
 
 #calendrier{
+  background-color:#1c1d1fd9;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  width: 100%;
+  align-items:stretch;
+  width: 80%;
   font-size: 35px;
   font-family: serif;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  color: white;
+  margin: 2%;
+  padding: 2%;
 }
 
 #message{
@@ -44,8 +140,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   margin-bottom: 50px;
-  margin-top: 50px;
+  margin: 3%;
 
 
 }
@@ -60,30 +155,93 @@
   border:double;
 }
 
-/*PAGE Produit*/
+/*PAGE PRODUIT*/
 #pageproduit{
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content:center;
-  align-items: center;
   width: 100%;
 
 }
 #formprestation{
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
-      height: -webkit-fill-available;
-}
-/*PAGE PANIER*/
-  #pagepanier{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
   width: 100%;
+  height: -webkit-fill-available;
+  font-family: sans-serif;
+  color: white;
 }
+#formprestation2{
+  background-color:#4a4144a8;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: -webkit-fill-available;
+  font-family: sans-serif;
+  color: white;
+}
+/*PAGE PANIER*/
+  #pagepanier{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+}
+#btnretour{
+  margin-bottom: 50px;
+  margin-top:50px;
+}
+#contpanier{
+  background-color:#0000009e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:stretch;
+  flex-wrap: wrap;
+  width: 70%;
+  padding: 3%;
+  margin: 3%;
+  min-height: 650px;
+}
+#produitpanier{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom:20px;
+}
+#cardpanier{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: serif;
+  color: black;
+  width: 20%;
+  margin: 2%;
+
+}
+#infopanier{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: serif;
+  font-size: 30px;
+
+}
+
 
 /*PAGE ADMIN*/
 .bouton{
@@ -101,20 +259,25 @@
   margin-bottom: 50px;
   margin-top: 50px;
 }
-.titre{
+.title{
+  margin-bottom: 30px;
+  margin-top:30px;
   text-align: center;
-  font-family: serif;
-  font-size: 30px;
+  font-family:police;
+  font-size: 40px;
+  color:white;
 }
 h1{
   text-align: center;
 }
 .heure{
+  background-color:#211d1d91;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   font-family: serif;
+  width: 90%;
 }
 
 
@@ -127,52 +290,129 @@ h1{
 }
 
 #paiement{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin: 0px;
+  padding: 0px;
+  min-height:750px;
+
+
+}
+
+#paiementbloc1{
+  background-color:#0000009c;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  min-height: 800px;
+  min-height:770px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 3%;
+  width: 70%;
+
+}
+
+#paiementbloc{
+  background-color:#e91e638f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 70%;
+  padding: 3%;
+  
+}
+#paiementbloc h1{
+ font-size: 1.8vw;
+}
+#montant h1{
+  font-size: 1.8vw;
+}
+#btnpayer{
+  display: flex;
+  justify-content: center;
   width: 100%;
 
 }
-#contpaiement{
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
-}
+
+
 
 
 
 /*PAGE BOUTIQUE PRESTATION*/
 #boutiquepresta{
-    
+    background-color:#fadbdd;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 #main-reserv{
+    
+    background-image: url("../upload/panierfond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
   }
 
 #cadre-reserv{
+  background-color: #211d1d91;
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
   justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items:center;
+  flex-wrap:wrap;
   text-decoration: none;
   list-style: none;
-  width: 60%;
+  width: 85%;  
+  
+
 }
-.imagebout{
-  width: 100px;
-  height: 100px;
+#contpresta{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:stretch;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 5%;
 }
+
+.headeri{
+
+  background-color:#e91e63 ;
+  width: 100%;
+
+}
+.cardproduit{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2%;
+  background-color:#e91e638c; 
+  color: white;
+}
+#alertchiffre{
+  background-color:;
+  font-family:sans-serif;
+  color: white;
+
+}
+
 
 /*PAGE INDEX*/
 #contenue{
@@ -182,16 +422,82 @@ h1{
   align-items: center;
 }
 
+/*PAGE STOCK*/
+#insufisant{
+  
+  color: red;
+}
+#stockquant{
+  
+  color:green;
+}
 
-/*PAGE RESEVATION-FORM2*/
-#modifreserva{
+#stock{
+  background-color: black;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 100px;
+  flex-direction: column;
+  justify-content: center;
   
 
+}
+#corpstock{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  min-height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#produit{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color:#000000a6;
+  padding: 2%;
+  margin-bottom: 10%;
+  width:50%;
+}
+#cardstock{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 50px;
+  margin-top: 150px;
+}
+#bloccardstock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+#autostock{
+  margin-bottom: 150px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#quantite{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /*PAGE NAV BAR*/

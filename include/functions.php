@@ -119,7 +119,6 @@ class userpdo
             $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$log'");
 
             $etat = $user->rowCount();
-            var_dump($user);
         
             
             if ($etat > 0)

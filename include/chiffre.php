@@ -11,19 +11,23 @@
     $req="SELECT SUM(prixtotal) FROM sauvegarde WHERE mode='espece' AND datepanier BETWEEN '".$startTime."' AND '".$fintemps."'";
     $query=mysqli_query($connexion,$req);
     $resultat=mysqli_fetch_all($query);
-
-    echo "Vous avez fait ".$resultat[0][0]."€ en espèce cette semaine<br>";
-
-    $req2="SELECT SUM(prixtotal) FROM sauvegarde WHERE mode='cheque'AND datepanier BETWEEN '".$startTime."' AND '".$fintemps."'";
     
+    echo "<div id=\"alertchiffre\">";
+    echo "<div class=\"alert\" role=\"alert\">";
+    echo "Votre chiffre d'affaire en espèce est de ".$resultat[0][0]."€  cette semaine<br>";
+    echo "</div>";
+    $req2="SELECT SUM(prixtotal) FROM sauvegarde WHERE mode='cheque'AND datepanier BETWEEN '".$startTime."' AND '".$fintemps."'"; 
     $query2=mysqli_query($connexion,$req2);
     $resultat2=mysqli_fetch_all($query2);
 
-
-      echo "Vous avez fait ".$resultat2[0][0]."€ en chèque cette semaine";
-    
+    echo "<div class=\"alert\" role=\"alert\">";
+    echo "Votre chiffre d'affaire en chèque est de ".$resultat2[0][0]."€  cette semaine";
+    echo "</div>";
+    echo "</div>";
 
     ?>
+
+
 
 
 
