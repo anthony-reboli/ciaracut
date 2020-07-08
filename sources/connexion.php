@@ -1,15 +1,22 @@
-,<html>
+<html>
 <head>
     <meta charset="utf-8">
         <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,800,700,900,300,100' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="camping.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+        <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
+
+        <link rel="stylesheet" type="text/css" href="ciaracut.css">
     <title>Connexion</title>
 </head>
-<body class="bodyc">
+<body class="TSbody">
 	<?php
-	session_start();
+    session_start();
 	include("../include/bar-nav.php");
     if ( !isset($_SESSION['login']) )
     {
@@ -44,7 +51,7 @@
                 $user = $_SESSION['login'];
                 $id=$_SESSION['id']=$reponse4['id'];
          
-                  header('Location: index.php');
+                 header('Location: index.php');
                    }
                    else
                   {
@@ -55,18 +62,18 @@
         ?>
     <section id="connexion">
 
-        <div id="main" class="container">   
+        <div id="main" class="container" >
             <form name="loginform" id="loginform" action="#" method="post" class="wpl-track-me"> 
                 <p class="login-username">
                     <label for="user_login">Username</label> 
-                    <input type="text" id="user_login" class="input" placeholder="Username" value="" size="20" name="login" required/> 
+                    <input type="text" id="user_login" class="form-control" class="input" placeholder="Username" value="" size="20" name="login" required/>
                 </p> 
                 <p class="login-password"> 
                     <label for="user_pass">Password</label>
-                    <input type="password" name="password" id="user_pass" class="input" placeholder="Password" value="" size="20" required/> 
+                    <input type="password" name="password" id="user_pass" class="form-control" class="input" placeholder="Password" value="" size="20" required/>
                 </p>    
-
-                <p class="login-submit"><input type="submit" name="submit" id="submit" class="button-primary" value="Log in" />
+<br/><br/>
+                <p class="login-submit"><input type="submit" name="submit" class="form-control" id="submit" value="Log in" />
                     <input type="hidden" name="redirect_to" value="#"/>
                 </p>    
          
@@ -85,6 +92,7 @@
                 
                 ?>
             </main>
+                <br/><br/>
             <main class="inscri">
                 <p>Pas encore membre ? <a href="inscription.php" class="btn">Inscrivez-vous gratuitement</a></p>
             </main>
@@ -102,6 +110,7 @@
     <section id="notcon">
       <p>Vous êtes déjà connecté !!</p>
     </section>
+
         <?php
     }
 

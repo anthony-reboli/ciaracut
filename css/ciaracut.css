@@ -228,3 +228,67 @@ h1{
 .modal-header * {
   color: #262626;
 }
+
+
+/*  PARTIE THOMAS*/
+
+
+/*PAGE INSCRIPTION*/
+.TSbodyc{
+    background-image: url("../upload/fondlogo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#TSinscription{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#TSmain{
+    display: flex;
+    width: min-content;
+    background-color: rgba(156, 21, 21, 0.62);
+    margin: 15em;
+    border-radius: 30px;
+}
+
+/*PAGE CONNEXION*/
+.TSbody{
+    background-image: url("../upload/outils.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
+
+}
+
+#connexion{
+    display: flex;
+    text-align: center;
+    padding: 10%;
+
+}
+
+#loginform{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.78);
+    border-radius: 30px;
+    width: 30vw;
+    height: min-content;
+    margin-left: 300px;
+}
+
+/*FOOTER*/
+.page-footer{
+    background-color: #e91e63;
+    opacity: 0.85;
+    margin: 0;
+
+}
+
+.TSrow{
+display: flex;
+    justify-content: center;
+}

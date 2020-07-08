@@ -4,8 +4,6 @@
 date_default_timezone_set('europe/paris');
 $connexion = mysqli_connect("localhost", "root", "", "ciaracut");
 
-$nom=$_SESSION['nom'];
-$prenom=$_SESSION['prenom'];
 
 if (isset($_POST['submit']))
 {
@@ -44,7 +42,10 @@ if (isset($_POST['submit']))
 
         <?php
         
-        if (isset($_SESSION['login'])){ 
+        if (isset($_SESSION['login'])){
+
+            $nom=$_SESSION['nom'];
+            $prenom=$_SESSION['prenom'];
             $requete4="SELECT count(id) FROM sauvegarde where nom = '$nom'  and prenom = '$prenom'";
             $requete4Q=mysqli_query($connexion,$requete4);
             $requete4R=mysqli_fetch_all($requete4Q);

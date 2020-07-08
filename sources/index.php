@@ -9,7 +9,9 @@
 </head>
 <body class="bodya">
   <header class="headeri">
-    <?php 
+    <?php
+
+    session_start();
     include("../include/bar-nav.php");
     ?>
     <main id="user">

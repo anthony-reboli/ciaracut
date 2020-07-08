@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="camping.css">
+    <link rel="stylesheet" type="text/css" href="ciaracut.css">
 	<title>Inscription</title>
 </head>
-<body class="bodyc">
+<body class="TSbodyc">
 
 	<?php
     include("../include/bar-nav.php");
@@ -15,21 +15,21 @@
      if ( !isset($_SESSION['login']) )
     {
     ?>
-    <section id="connexion">
+    <section id="TSinscription">
 
-        <div id="main" class="container">
+        <div id="TSmain" class="column">
             <h1>Inscrivez-vous !</h1>
 
                 <form  method="post">
-                    <input type="text" name="login" required placeholder="Login"/>
-                    <input type="text" name="nom" required placeholder="Nom"/>
-                    <input type="text" name="prenom" required placeholder="Prénom"/>
-                    <input type="email" name="email" required placeholder="Email"/>
-                    <input type="password" name="pass1" required placeholder="Mot de passe"/>
-                    <input type="password" name="pass2" required placeholder="Confirmer votre mot de passe"/>
-                    <input type="date" name="date" required placeholder="Date">
-                    <input type="text" name="tel" required placeholder="Votre tel">
-                    <input type="submit" name="signin" required value="S'inscrire"/>
+                    <input class="form-control" type="text" name="login" required placeholder="Login"/>
+                    <input class="form-control" type="text" name="nom" required placeholder="Nom"/>
+                    <input class="form-control" type="text" name="prenom" required placeholder="Prénom"/>
+                    <input class="form-control" type="email" name="email" required placeholder="Email"/>
+                    <input class="form-control" type="password" name="pass1" required placeholder="Mot de passe"/>
+                    <input class="form-control" type="password" name="pass2" required placeholder="Confirmer votre mot de passe"/>
+                    <input class="form-control" type="date" name="date" required placeholder="Date">
+                    <input class="form-control" type="text" name="tel" required placeholder="Votre tel">
+                    <input class="form-control" type="submit" name="signin" required value="S'inscrire"/>
 
                     <?php
                     if (isset($_POST['signin'])) {
@@ -50,13 +50,10 @@
                     ?>
                 </form>
             </div>
-
-
-        <?php
+    </section>
+</body>
+    <?php
     }
     include("../include/footer.php");
     ?>
-
-
- </body>
 </html>

@@ -9,10 +9,10 @@
 
     <body>
         <?php
+        include("../include/functions.php");
         include("../include/bar-nav.php");
-        include("../include/functions.php");?>
 
-        <?php
+
         $user = new userpdo;
         $monprofil = $user->getAllInfos();
         ?>

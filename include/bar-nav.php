@@ -52,6 +52,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
+                      session_destroy();
                       header("location:../sources/index.php");
                    }
                 }
