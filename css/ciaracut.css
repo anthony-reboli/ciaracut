@@ -2,6 +2,71 @@
   font-family :'police';
   src: url('../upload/Brightly Crush Shine.otf') format('truetype');
   }
+/*PAGE CLIENT*/
+#pageclient{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+#contclient{
+  margin: 3%;
+  background-color:#000000c4;
+  width: 80%;
+  min-height: 890px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+}
+#formclient{
+  padding: 3%;
+  margin: 3%;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color:#e91e6391;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  
+}
+#popclient{
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+#heureclient{
+  font-size: 15px;
+  font-family: sans-serif;
+}
+#compteclient{
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+}
+#tableauclient{
+  flex-wrap: wrap;
+  width: 60%;
+}
+#infouser{
+  font-size: 20px;
+  padding: 1%;
+  margin: 3%;
+  border:solid;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
 /*PAGE LIVREOR*/
 #livreor{
   background-image: url("../upload/panierfond.jpg");
@@ -50,6 +115,7 @@
 }
 
 /*PAGE PROFIL*/
+
 #profil{
   background-image: url("../upload/panierfond.jpg");
   background-repeat: no-repeat;
@@ -58,22 +124,66 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-#continfo{
+}
+#fiche{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height:871px;;
-  
-}
-#infoclient{
+  align-items: center;
+  width: 50%;
+  padding: 1%;
   margin: 3%;
+  background-color:#e91e6387;
+  font-size: 20px;
   color: white;
+}
+
+#contentinfos{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  background-color:#171616c9;
+  width: 80%;
+  padding: 2%;
+  margin: 3%;
+}
+#dernierpresta{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color:#292626c7;
+  margin: 3%;
+  width: 50%;
+  background-color:#e91e6387;
+
+}
+
+#infouser2{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 3%;
+  margin: 3%;
+  background-color:#171616c9;
+  width: 80%;
+}
+#popclient{
+  margin: 3%;
+}
+#formprofil{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#272525d1;
+  color: white;
+  width: 60%;
+  height: 751px;
+  margin: 3%;
 }
 
 /*PAGE PLANNING*/
@@ -256,17 +366,25 @@
   flex-direction:column;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 50px;
-  margin-top: 50px;
+ 
 }
 .title{
   margin-bottom: 30px;
   margin-top:30px;
   text-align: center;
   font-family:police;
-  font-size: 40px;
+  font-size: 50px;
   color:white;
 }
+.title2{
+  margin-bottom: 30px;
+  margin-top:30px;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:black;
+}
+
 h1{
   text-align: center;
 }

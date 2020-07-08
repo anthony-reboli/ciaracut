@@ -10,7 +10,7 @@ date_default_timezone_set('europe/paris');
       elseif(isset($_SESSION['login'])==true)
 
       {
-       if($_SESSION['login'] =="admin")
+       if($_SESSION['login'] =="vanessa")
        {
         $user = $_SESSION['login'];
             echo "<h3><b>Bonjour <u>$user,</u> vous êtes connecté.</b></h3>";
@@ -35,10 +35,9 @@ date_default_timezone_set('europe/paris');
 </head>
 
     <body id="pageadmin">
-
-         <header>
-         <?php include("../include/bar-nav.php");?>
-         </header>
+    <header class="headeri">
+        <?php include("../include/bar-nav.php"); ?>      
+    </header>
                 <main>
               <div class="heure">
               <span id="date_heure"></span>

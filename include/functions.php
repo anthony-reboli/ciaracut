@@ -52,7 +52,7 @@ class userpdo
             {
                 
                 $hash = password_hash($pass1, PASSWORD_BCRYPT, ['cost' => 12]);
-                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date','$tel')");
+                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date','$tel', NULL, NULL)");
                 
                 $msg = "ok";
             }
@@ -130,13 +130,13 @@ class userpdo
             {
                 
                 $hash= password_hash($_POST["pass"], PASSWORD_DEFAULT, array('cost' => 12));
-                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', password='$hash' , tel='$tel' WHERE login='$log'");
+                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', password='$hash' , tel='$tel' ,fiche= NULL, datefiche= NULL WHERE login='$log'");
 
                 $this->login = $log;
                 $this->nom = $nom;
                 $this->prenom = $prenom;
                 $this->email = $email;
-                $this->pass1 = $pass1;
+                $this->password = $pass1;
                 $this->tel = $tel;
                 
 

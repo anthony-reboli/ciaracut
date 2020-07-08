@@ -11,11 +11,9 @@
     <title>Accueil</title>
 </head>
 <body class="bodya">
-  <header class="headeri">
-    <?php 
-    include("../include/bar-nav.php");
-    ?>
-      </header>
+    <header class="headeri">
+        <?php include("../include/bar-nav.php"); ?>      
+    </header>
     <main id="user">
     <?php
     if (isset($_SESSION['login'])==false)
