@@ -19,7 +19,6 @@ include("../include/functions.php");
     <?php include("../include/bar-nav.php");?>
     </header>
     
-    <h1 class='title2'>Le fichier client</h1>
 
 <?php
         if (!isset($_SESSION['login']))
@@ -41,6 +40,7 @@ include("../include/functions.php");
             $aniv=$fetch['date'];
             $tel=$fetch['tel'];
             echo "<div id=\"infouser2\">";
+            echo "<h1 class='title'>Le fichier client</h1>";
 
             echo "<h1>Les infos de $nom";
                 echo" Pseudo: $login<br>";
@@ -67,8 +67,8 @@ include("../include/functions.php");
             $fetch2 = mysqli_fetch_all($affichage);
             echo "<h1 class='title2'>Les infos client</h1>";
     
-            echo "<div id='contentinfos' >";
-                        echo "<div id='dernierpresta'>";
+            echo "<div id='contentinfos' class='row justify-content-space-around p-4 m-3' >";
+                        echo "<div id='dernierpresta' class='col-lg-7 col-sm-12'>";
                         echo "<h1 class='title'>Les derniers rendez-vous</h1>";
             foreach ($fetch2 as $key => $value){
                 echo '<br/>';
@@ -79,10 +79,12 @@ include("../include/functions.php");
             }
             
                         echo "</div>";
-                            echo "<div id='fiche'>";
+                            echo "<div id='fiche' class='col-lg-4 col-sm-12 p-4'>";
+                            echo "<div id='contfiche' class='p-3' >";
                             echo "<h1 class='title'>fiche client de $nom</h1><br>";
                             echo "Date: ".$fetch['datefiche']."<br>";
                             echo "Dernière prestation: ".$fetch['fiche']."";
+                            echo "</div>";
                             echo "</div>";
 
             echo "</div>";

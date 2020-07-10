@@ -6,7 +6,7 @@ $allQ=mysqli_query($bdd,$all);
 
 <html>
 <head>
-	<title>Boutique</title>
+	<title>Stock</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@ if (!isset($_GET['p']))
 		?>
 
         <form id="autostock" method="post">
-        <label class="title">Le moteur de recherche du stock</label>
+        <label class="title2">Le moteur de recherche du stock</label>
         <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche par type" id="searchBox">
 		</form>
         <div id="response"></div>
@@ -52,7 +52,7 @@ if (!isset($_GET['p']))
     </div>
   </div>
 </div>
-        <label class="title">Mon stock</label>
+        <label class="title2">Mon stock</label>
         <div id="produit">           
         <?php
         echo"<div id='bloccardstock' class='card' style=\"width: 15rem;>";

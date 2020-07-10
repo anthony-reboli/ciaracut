@@ -2,6 +2,187 @@
   font-family :'police';
   src: url('../upload/Brightly Crush Shine.otf') format('truetype');
   }
+/*PAGE INDEX*/
+#index{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#presentation{
+  
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items: center;
+
+}
+
+#descriptionphoto {
+  background-image: url("../upload/fondforfait.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-family:serif;
+  margin: 3%;
+  padding: 3%;
+  
+}
+#forfait{
+  background-image: url("../upload/fondforfait.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.bulle{
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  border-radius: 100%;
+  border:double 15px;
+  font-family:sans-serif;
+  font-size: 18px;
+  width: 250px;
+  height: 250px;
+}
+#bulle1{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+
+}
+#bulle2{
+   display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+}
+
+#services{
+  background-image: url("../upload/fondprestation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+
+
+}
+#contservices{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+/*PAGE TARIFS*/
+#tarif{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#conttarif{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/*FOOTER*/
+#foot{
+color: white;
+font-family:serif;
+font-size: 20px;
+}
+/*PAGE INSCRIPTION*/
+#inscription{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#continscription{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+}
+#main{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#191717a8;
+  width: 50%;
+}
+#main2{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#191717a8;
+  width: 50%;
+
+}
+/*PAGE CONNEXION*/
+#connexion{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contconnexion{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-height: 641px;
+
+}
+.inscri{
+  background-color: pink;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+}
+#notcon{
+  color: black;
+  font-size: 30px;
+  font-family: police;
+}
+
+
+
 /*PAGE CLIENT*/
 #pageclient{
   background-image: url("../upload/panierfond.jpg");
@@ -29,7 +210,7 @@
   justify-content: center;
   font-family: sans-serif;
   font-size: 20px;
-  background-color:#e91e6391;
+  background-color:#d4215e;
   width: 100%;
   display: flex;
   flex-direction:row;
@@ -131,32 +312,34 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  padding: 1%;
-  margin: 3%;
-  background-color:#e91e6387;
+  background-color:#d4215e;
+  word-break: break-all;
   font-size: 20px;
   color: white;
 }
-
+#contfiche{
+  background-color:#343a40;
+}
+#formfiche{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #contentinfos{
   display: flex;
   flex-direction:row;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
   background-color:#171616c9;
-  width: 80%;
-  padding: 2%;
-  margin: 3%;
+
 }
 #dernierpresta{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3%;
-  width: 50%;
-  background-color:#e91e6387;
+  background-color:#d4215e;
 
 }
 
@@ -620,6 +803,7 @@ h1{
 
 /*PAGE NAV BAR*/
 
+
 #menu-deroulant, #menu-deroulant ul {
     padding: 0;
     margin: 0;
@@ -628,6 +812,7 @@ h1{
 #menu-deroulant {
 /* on centre le menu dans la page */
     text-align: center;
+    align-items: center;
 }
 #menu-deroulant li {
 /* on place les liens du menu horizontalement */
@@ -640,7 +825,8 @@ h1{
 #menu-deroulant a {
     text-decoration: none;
     display: block;
-  color:#000;
+    align-items: center;
+    color:#000;
 }
 #menu-deroulant ul {
     position: absolute;
