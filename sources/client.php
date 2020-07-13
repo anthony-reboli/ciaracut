@@ -49,19 +49,18 @@ var timerID = setInterval(runClock,1000);
     		<?php include("../include/bar-nav.php");?>
     		</header>
 
-	<main id="contclient">
-		
-							  	
-							<section id="formclient">
-             				<form class="form-row" method="post">
-             				<label class="title2">Barre de recherche clients</label>
-        					<input id="formGroupExampleInput" class="form-control"  name="search"type="text" placeholder="Recherche par type" id="searchBox">
-							</form>
+				<main id="contclient">		  	
+					<section id="formclient">
+             			<form class="form-row" method="post">
+             				<label class="title">Barre de recherche clients</label>
+        						<input id="formGroupExampleInput" class="form-control"  name="search"type="text" placeholder="Recherche par type" id="searchBox"/><br>
+        						 <small class="exemplescript" class="form-text text-muted">(Exemple: Nom)</small>
+						</form>
         					<div id="response"></div>
-        					</section>
+        			</section>
 
-        					<section id="popclient">
-        					<button type="button"  class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-sm">Inscription membre</button>
+        			<section id="popclient">
+        					<button type="button"  class="btn btn-light" data-toggle="modal" data-target=".bd-example-modal-sm">Inscription membre</button>
 
 					<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm">
@@ -71,7 +70,7 @@ var timerID = setInterval(runClock,1000);
     						</div>
   						</div>
 					</div>
-							</section>
+					</section>	
 
 							<section id="tableauclient">
 
@@ -82,7 +81,6 @@ var timerID = setInterval(runClock,1000);
 							$CR=$countR[0][0];
 
 							echo "<div id =\"compteclient\"> Il y a $CR clients inscrits </div>";
-
 							if(isset($_POST['search']))
 								{
 									

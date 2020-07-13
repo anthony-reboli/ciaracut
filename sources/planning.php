@@ -37,7 +37,7 @@ Gérer mes rendez-vous </button>
   
           <section id="calendrier">
               <form  method="post">
-              <input class="btn btn-dark" type="submit" name="precedent" value="Précédent">
+              <input class="btn btn-light" type="submit" name="precedent" value="Précédent">
               </form>
 <?php
                    
@@ -63,7 +63,7 @@ Gérer mes rendez-vous </button>
                   
 ?>
               <form  method="post">
-              <input class="btn btn-dark" type="submit" name="suivant" value="Suivant">
+              <input class="btn btn-light" type="submit" name="suivant" value="Suivant">
               </form>
             </section>
 

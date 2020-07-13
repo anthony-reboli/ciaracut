@@ -46,15 +46,18 @@
 
 
 <div id="presentation">
-  <div id="photo">
-    <img  src="../upload/vane.jpg">
-</div>
+
+  <div>
+    <img class="img-fluid photo" src="../upload/vane.jpg">
+  </div>
+
   <div id="descriptionphoto">
     <h1 style="text-align: center;" class="title">Présentation de Vanessa</h1>
-    <p>Véritable passionnée de coiffure depuis plus de 25 ans je vous invite à découvrir votre salon de coiffure dans le 8e à Marseille.
-    Un endroit relaxant avec une ambiance reposante et entièrement dédiée à la coiffure.
+    <p>Véritable passionnée de coiffure depuis plus de 25 ans je vous invite à découvrir votre salon de coiffure dans le 9e à Marseille.
+    Un endroit Simple avec une ambiance atypique et entièrement dédiée à la coiffure.
     Plus qu’un simple passage chez le coiffeur, vous embarquez pour un moment de détente et de relaxation.</p>
   </div>
+
 </div>
 
 

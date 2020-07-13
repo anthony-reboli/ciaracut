@@ -15,10 +15,17 @@
   background-size: cover;
   display: flex;
   flex-direction:row;
-  justify-content:space-around;
+  justify-content:center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 0px 14px 0px;
 
 }
+
+.photo{
+  border:black 8px double;
+}
+
 
 #descriptionphoto {
   background-image: url("../upload/fondforfait.jpg");
@@ -29,11 +36,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   text-align: center;
   font-size: 30px;
   font-family:serif;
-  margin: 3%;
   padding: 3%;
+  width: 64vw;
+  height: 100%;
   
 }
 #forfait{
@@ -44,6 +53,7 @@
   flex-direction:column;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 
 }
 .bulle{
@@ -64,6 +74,7 @@
   flex-direction:row;
   justify-content: space-around;
   width: 80%;
+  flex-wrap: wrap;
 
 }
 #bulle2{
@@ -71,6 +82,7 @@
   flex-direction:row;
   justify-content: space-around;
   width: 80%;
+  flex-wrap: wrap;
 }
 
 #services{
@@ -92,7 +104,6 @@
 
 /*PAGE TARIFS*/
 #tarif{
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +115,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+#conttableau{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#121213d1;
+  padding: 3%;
+   
 }
 
 
@@ -129,7 +149,7 @@ font-size: 20px;
   justify-content: center;
   align-items: center;
   color: white;
-
+  min-height: 690px;
 }
 #main{
   margin: 3%;
@@ -231,6 +251,7 @@ font-size: 20px;
   font-size: 25px;
   color: white;
   font-family: sans-serif;
+
 }
 #tableauclient{
   flex-wrap: wrap;
@@ -240,7 +261,7 @@ font-size: 20px;
   font-size: 20px;
   padding: 1%;
   margin: 3%;
-  border:solid;
+  border:solid pink;
   display: flex;
   flex-direction: row;
   justify-content:space-around;
@@ -314,10 +335,11 @@ font-size: 20px;
   align-items: center;
   background-color:#d4215e;
   word-break: break-all;
-  font-size: 20px;
+  font-size: 30px;
   color: white;
 }
 #contfiche{
+  padding: 1%;
   background-color:#343a40;
 }
 #formfiche{
@@ -332,6 +354,7 @@ font-size: 20px;
   justify-content:space-around;
   align-items: center;
   background-color:#171616c9;
+  width: 80%;
 
 }
 #dernierpresta{
@@ -340,6 +363,7 @@ font-size: 20px;
   justify-content: center;
   align-items: center;
   background-color:#d4215e;
+
 
 }
 
@@ -580,10 +604,16 @@ h1{
   font-family: serif;
   width: 90%;
 }
+.exemplescript{
+  color: white;
+}
+
+
 
 
 
 /*PAGE BOUTIQUE PAIEMENT*/
+
 #btnprest{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -715,14 +745,6 @@ h1{
 }
 
 
-/*PAGE INDEX*/
-#contenue{
- display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /*PAGE STOCK*/
 #insufisant{
   
@@ -850,4 +872,3 @@ h1{
 
 .modal-header * {
   color: #262626;
-}

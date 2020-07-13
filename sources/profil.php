@@ -40,9 +40,9 @@ include("../include/functions.php");
             $aniv=$fetch['date'];
             $tel=$fetch['tel'];
             echo "<div id=\"infouser2\">";
-            echo "<h1 class='title'>Le fichier client</h1>";
+            echo "<h1 class='title'>Le fichier client:</h1>";
 
-            echo "<h1>Les infos de $nom";
+            echo "<h1>Les infos de $nom<br>";
                 echo" Pseudo: $login<br>";
                 echo" Nom: $nom<br>";
                 echo" Prénom: $prenom<br>";
@@ -60,28 +60,26 @@ include("../include/functions.php");
     
 
             $profil = $_GET['U'];
-            
-
-            $req = ("SELECT titre, description, debut FROM reservations WHERE id_utilisateur ='".$profil."' ORDER BY debut DESC LIMIT 3" );
+            $req = ("SELECT titre, description, debut FROM reservations  WHERE id_utilisateur=".$profil."  ORDER BY debut DESC LIMIT 3" );
             $affichage = mysqli_query($connexion, $req);
             $fetch2 = mysqli_fetch_all($affichage);
             echo "<h1 class='title2'>Les infos client</h1>";
     
             echo "<div id='contentinfos' class='row justify-content-space-around p-4 m-3' >";
-                        echo "<div id='dernierpresta' class='col-lg-7 col-sm-12'>";
-                        echo "<h1 class='title'>Les derniers rendez-vous</h1>";
+                        echo "<div id='dernierpresta' class='col-lg-4 col-sm-12'>";
+                        echo "<h1>Les derniers rendez-vous</h1>";
             foreach ($fetch2 as $key => $value){
                 echo '<br/>';
-                echo '<div class=" container row justify-content-md-center table-dark"> <p class="bg-dark">Nom et prémon  : </p>', $value[0],'</div>';
-                echo '<div class=" container row justify-content-md-center table-dark"> <p class="bg-dark">Prestation  :</p>', $value[1],'</div>';
-                echo '<div class=" container row justify-content-md-center table-dark"> <p class="bg-dark">Date de début  :</p>', $value[2],'</div>';
+                echo '<div class=" container row justify-content-md-center table-dark"> <p class="bg-dark">Nom et prémon  : </p>',$value[0],'</div>';
+                echo '<div class=" container row justify-content-md-center table-dark"> <p class="bg-dark">Prestation  :</p>',$value[1],'</div>';
+                echo '<div class=" container row justify-content-md-center table-dark"> <p class="bg-dark">Date de début  :</p>',$value[2],'</div>';
                 echo '<br/>';
             }
             
                         echo "</div>";
-                            echo "<div id='fiche' class='col-lg-4 col-sm-12 p-4'>";
+                            echo "<div id='fiche' class='col-lg-6 col-sm-12 p-4'>";
                             echo "<div id='contfiche' class='p-3' >";
-                            echo "<h1 class='title'>fiche client de $nom</h1><br>";
+                            echo "<h1>Fiche client: $nom</h1><br>";
                             echo "Date: ".$fetch['datefiche']."<br>";
                             echo "Dernière prestation: ".$fetch['fiche']."";
                             echo "</div>";

@@ -29,10 +29,13 @@
                 <form class="form-column d-flex justify-content-center flex-column align-items-center"  method="post">
                     <label for="formGroupExampleInput"><b>Login</b></label>
                     <input class="form-control col-6" type="text" name="login" required placeholder="Login"/>
+                    <small class="exemplescript" class="form-text text-muted">(Exemple: Login)</small><br>
                     <label for="formGroupExampleInput"><b>Nom</b></label>
                     <input class="form-control col-6" type="text" name="nom" required placeholder="Nom"/>
+                    <small class="exemplescript" class="form-text text-muted">(Exemple: Nom)</small><br>
                     <label for="formGroupExampleInput"><b>Prénom</b></label>
                     <input class="form-control col-6" type="text" name="prenom" required placeholder="Prénom"/>
+                    <small class="exemplescript" class="form-text text-muted">(Exemple: Prénom)</small><br>
                     <label for="formGroupExampleInput"><b>Email</b></label>
                     <input class="form-control col-6" type="email" name="email" required placeholder="Email"/>
                     <label for="formGroupExampleInput"><b>Mot de passe</b></label>
@@ -70,9 +73,9 @@
     }
     ?>
 </main>
- <header class="headeri">
+ <footer class="headeri">
     <?php include("../include/footer.php");?>
-    </header>
+    </footer>
 
  </body>
 </html>

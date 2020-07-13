@@ -38,10 +38,12 @@ ob_start();
 				    <div class="col-10">
 				    	 <label for="validationDefault01">Nom</label>
 				      <input name="nom" type="text" class="form-control" placeholder="Nom client">
+				          <small class="exemplescript" class="form-text text-muted">(Exemple:Dupont)</small><br>
 				    </div>
 				    <div class="col-10">
 				    	 <label for="validationDefault01">Prénom</label>
 				      <input name="prenom" type="text" class="form-control" placeholder="Prénom client">
+				          <small class="exemplescript" class="form-text text-muted">(Exemple:Madeleine)</small><br>
 				    </div>
 				    <div class="form-group col-md-10">
 				      <label for="inputState">Paiement</label>
@@ -51,7 +53,7 @@ ob_start();
 						<option value="cheque"required>Chèque</option>
 				      </select>
 				    </div>
-				     <button name="payer" class="btn btn-dark" type="submit">Payer</button>
+				     <button name="payer" class="btn btn-light" type="submit">Payer</button>
 				  </div>
 			</form>	
  		</section>

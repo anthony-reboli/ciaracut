@@ -3,19 +3,34 @@ if (($_SESSION['login']) == "vanessa")
 {
 	?>
 		  <!-- Large modal -->
-		<button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">fiche client</button>
+		<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">fiche client</button>
+		<!-- Button trigger modal -->
 
-		<div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		  <div class="modal-dialog modal-lg">
-		    <div class="modal-content">
-		      	<form id="formfiche" class="form-column" method="post">
-				<label for="formGroupExampleInput"><b>Remplir la fiche du client:<b></label>
-				<textarea class="form-control col-12" id="ficheS" name="fiche" rows="5" cols="30"></textarea><br>
-				<input class="btn btn-dark" type="submit" name="ficheE" value="valider">
-				</form>
-		    </div>
-		  </div>
-		</div>
+			
+		<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Remplir la fiche du client:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<form id="formfiche" class="form-column" method="post">
+		<textarea class="form-control col-lg-12" id="ficheS" name="fiche" rows="5" cols="30"></textarea><br>
+		<input class="btn btn-dark" type="submit" name="ficheE" value="valider">
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+			
 		<?php
 }
 
