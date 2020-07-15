@@ -5,6 +5,7 @@
     ?>
   <ul class="nav justify-content-end  bg- text-white">
     <li class="nav-item"><a class="nav-link text-white active" href="index.php">Home</a></li>
+    <li class="nav-item"><a class="nav-link text-white active" href="../sources/tarif.php">Tarifs</a></li>
     <li class="nav-item"><a class="nav-link text-white active" href="../sources/livreor.php">Livre d'or</a></li>
     <li class="nav-item"><a class="nav-link text-white active" href="connexion.php">Connexion</a></li>
     <li class="nav-item"><a class="nav-link text-white active" href="inscription.php">Inscription</a></li>
@@ -23,7 +24,8 @@
     ?>
     <ul id="menu-deroulant" class="nav justify-content-end  text-white">
       <li class="nav-item"><a class="nav-link text-white active" href="index.php">Home</a></li>
-      <li class="nav-item"><a class="nav-link text-white active" href="../sources/livreor.php">Livre d'or</a></li>
+       <li class="nav-item"><a class="nav-link text-white active" href="../sources/livreor.php">Livre d'or</a></li>
+      <li class="nav-item"><a class="nav-link text-white active" href="../sources/tarif.php">Tarifs</a></li>
       <li class="nav-item"><a class="nav-link text-white active" href="../sources/profil.php">Profil</a></li>
       <li class="nav-item"><a class="nav-link text-white active" href="index.php?deconnexion=true">Déconnexion</a></li>
       <li class="list-group-item  bg-dark"><a class="nav-link text-white" href="#">Administrateur</a>

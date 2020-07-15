@@ -1,0 +1,874 @@
+@font-face {
+  font-family :'police';
+  src: url('../upload/Brightly Crush Shine.otf') format('truetype');
+  }
+/*PAGE INDEX*/
+#index{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#presentation{
+  
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 0px 14px 0px;
+
+}
+
+.photo{
+  border:black 8px double;
+}
+
+
+#descriptionphoto {
+  background-image: url("../upload/fondforfait.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 30px;
+  font-family:serif;
+  padding: 3%;
+  width: 64vw;
+  height: 100%;
+  
+}
+#forfait{
+  background-image: url("../upload/fondforfait.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.bulle{
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  border-radius: 100%;
+  border:double 15px;
+  font-family:sans-serif;
+  font-size: 18px;
+  width: 250px;
+  height: 250px;
+}
+#bulle1{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+  flex-wrap: wrap;
+
+}
+#bulle2{
+   display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+#services{
+  background-image: url("../upload/fondprestation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+
+
+}
+#contservices{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+/*PAGE TARIFS*/
+#tarif{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#conttarif{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#conttableau{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#121213d1;
+  padding: 3%;
+   
+}
+
+
+/*FOOTER*/
+#foot{
+color: white;
+font-family:serif;
+font-size: 20px;
+}
+/*PAGE INSCRIPTION*/
+#inscription{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#continscription{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-height: 690px;
+}
+#main{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#191717a8;
+  width: 50%;
+}
+#main2{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#191717a8;
+  width: 50%;
+
+}
+/*PAGE CONNEXION*/
+#connexion{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contconnexion{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-height: 641px;
+
+}
+.inscri{
+  background-color: pink;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+}
+#notcon{
+  color: black;
+  font-size: 30px;
+  font-family: police;
+}
+
+
+
+/*PAGE CLIENT*/
+#pageclient{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+#contclient{
+  margin: 3%;
+  background-color:#000000c4;
+  width: 80%;
+  min-height: 890px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+}
+#formclient{
+  padding: 3%;
+  margin: 3%;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color:#d4215e;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  
+}
+#popclient{
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+#heureclient{
+  font-size: 15px;
+  font-family: sans-serif;
+}
+#compteclient{
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+
+}
+#tableauclient{
+  flex-wrap: wrap;
+  width: 60%;
+}
+#infouser{
+  font-size: 20px;
+  padding: 1%;
+  margin: 3%;
+  border:solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
+/*PAGE LIVREOR*/
+#livreor{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:;
+  align-items: center;
+
+}
+#comment{
+  justify-content: center;
+  align-items: center;
+  background-color:#000000bf;
+  color: white;
+  margin: 3%;
+  padding: 3%;
+  font-size: 25px;
+  width: 100%;
+}
+#contlivreor{
+  width: 80%;
+}
+.poster{
+  background-color:#e91e63e3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 3%;
+
+}
+#suppcomment{
+  color: black;
+}
+#user{
+  font-size: 20px;
+}
+#messag p{
+  word-wrap: break-word;
+  font-size: 20px;
+  width: 70vw;
+}
+
+/*PAGE PROFIL*/
+
+#profil{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#fiche{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#d4215e;
+  word-break: break-all;
+  font-size: 30px;
+  color: white;
+}
+#contfiche{
+  padding: 1%;
+  background-color:#343a40;
+}
+#formfiche{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contentinfos{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items: center;
+  background-color:#171616c9;
+  width: 80%;
+
+}
+#dernierpresta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#d4215e;
+
+
+}
+
+#infouser2{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 3%;
+  margin: 3%;
+  background-color:#171616c9;
+  width: 80%;
+}
+#popclient{
+  margin: 3%;
+}
+#formprofil{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#272525d1;
+  color: white;
+  width: 60%;
+  height: 751px;
+  margin: 3%;
+}
+
+/*PAGE PLANNING*/
+#planning{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#tableauplanning{
+  background-color: #1c1d1fd9;
+  width: 95%;
+  margin: 3%;
+
+}
+#alertplanning{
+  background-color: #1c1d1fd9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#pop1{
+  margin: 3%;
+}
+
+.ligne{
+  border:solid white;
+  width: 330px;
+  height: 65px;
+}
+.ligne2{
+  border:solid;
+  width: 65px;
+  height: 65px;
+}
+
+#calendrier{
+  background-color:#1c1d1fd9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:stretch;
+  width: 80%;
+  font-size: 35px;
+  font-family: serif;
+  color: white;
+  margin: 2%;
+  padding: 2%;
+}
+
+#message{
+  font-family: serif;
+  text-align: center;
+  font-size: 30px;
+  
+}
+#agenda{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+
+
+}
+.lien{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  border:double;
+}
+
+/*PAGE PRODUIT*/
+#pageproduit{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+
+}
+#formprestation{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+  height: -webkit-fill-available;
+  font-family: sans-serif;
+  color: white;
+}
+#formprestation2{
+  background-color:#4a4144a8;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: -webkit-fill-available;
+  font-family: sans-serif;
+  color: white;
+}
+/*PAGE PANIER*/
+  #pagepanier{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+}
+#btnretour{
+  margin-bottom: 50px;
+  margin-top:50px;
+}
+#contpanier{
+  background-color:#0000009e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:stretch;
+  flex-wrap: wrap;
+  width: 70%;
+  padding: 3%;
+  margin: 3%;
+  min-height: 650px;
+}
+#produitpanier{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom:20px;
+}
+#cardpanier{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: serif;
+  color: black;
+  width: 20%;
+  margin: 2%;
+
+}
+#infopanier{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: serif;
+  font-size: 30px;
+
+}
+
+
+/*PAGE ADMIN*/
+.bouton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#formadminprestation{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+.title{
+  margin-bottom: 30px;
+  margin-top:30px;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:white;
+}
+.title2{
+  margin-bottom: 30px;
+  margin-top:30px;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:black;
+}
+
+h1{
+  text-align: center;
+}
+.heure{
+  background-color:#211d1d91;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: serif;
+  width: 90%;
+}
+.exemplescript{
+  color: white;
+}
+
+
+
+
+
+/*PAGE BOUTIQUE PAIEMENT*/
+
+#btnprest{
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+#paiement{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin: 0px;
+  padding: 0px;
+  min-height:750px;
+
+
+}
+
+#paiementbloc1{
+  background-color:#0000009c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  min-height:770px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 3%;
+  width: 70%;
+
+}
+
+#paiementbloc{
+  background-color:#e91e638f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 70%;
+  padding: 3%;
+  
+}
+#paiementbloc h1{
+ font-size: 1.8vw;
+}
+#montant h1{
+  font-size: 1.8vw;
+}
+#btnpayer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+
+
+
+
+/*PAGE BOUTIQUE PRESTATION*/
+#boutiquepresta{
+    background-color:#fadbdd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#main-reserv{
+    
+    background-image: url("../upload/panierfond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+#cadre-reserv{
+  background-color: #211d1d91;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap:wrap;
+  text-decoration: none;
+  list-style: none;
+  width: 85%;  
+  
+
+}
+#contpresta{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:stretch;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 5%;
+}
+
+.headeri{
+
+  background-color:#e91e63 ;
+  width: 100%;
+
+}
+.cardproduit{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2%;
+  background-color:#e91e638c; 
+  color: white;
+}
+#alertchiffre{
+  background-color:;
+  font-family:sans-serif;
+  color: white;
+
+}
+
+
+/*PAGE STOCK*/
+#insufisant{
+  
+  color: red;
+}
+#stockquant{
+  
+  color:green;
+}
+
+#stock{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+
+}
+#corpstock{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  min-height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#produit{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color:#000000a6;
+  padding: 2%;
+  margin-bottom: 10%;
+  width:50%;
+}
+#cardstock{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 50px;
+  margin-top: 150px;
+}
+#bloccardstock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+#autostock{
+  margin-bottom: 150px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#quantite{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/*PAGE NAV BAR*/
+
+
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+    align-items: center;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    color:#000;
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+
+#titreh1 {
+  color: #262626;
+}
+
+.formRes label {
+  color: #262626;
+}
+
+.modal-header * {
+  color: #262626;

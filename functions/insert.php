@@ -5,9 +5,7 @@
             $cnx = mysqli_connect("localhost", "root", "", "ciaracut");
             if (isset($_SESSION["login"])) 
             {
-                    $requete2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
-                    $query2 = mysqli_query($cnx, $requete2);
-                    $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
+               
                     echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez prendre une réservation.<br><br><br>";
             
                     if ( isset($_POST["valider"]) )
@@ -18,6 +16,9 @@
                           $renamedescritpion = addslashes($descriptionresa); 
                           $dated = $_POST['datedebut'];
                           $datef = $_POST['datefin'];
+                          $requete2 = "SELECT * FROM utilisateurs WHERE login='$renametitre'";
+                          $query2 = mysqli_query($cnx, $requete2);
+                          $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
                           if($dated < date('Y-m-d H:i:s')){
                               echo "Vous ne pouvez pas reserver a une date anterieur au ".date('d-m-Y H:i:s')."";
                           
