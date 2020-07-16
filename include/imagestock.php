@@ -44,8 +44,7 @@ if(isset($_POST['description']) & isset($_POST['nom']) )
 			    		$image=$chemin;
 			    		$description=$_POST['description'];
 			          $req = $bdd->prepare("INSERT INTO `produit`(`nom`, `image`, `description`) VALUES ('$nom','$image','$description')");
-			          var_dump($req);
-			          echo "INSERT INTO produit VALUES('$nom','$image','$description')";
+			          
 
 
 			          // Evidemment il faut mettre un WHERE .. = .. (car l'image est forcément liée à un utilisateur?)
