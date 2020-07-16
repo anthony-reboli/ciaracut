@@ -1,41 +1,91 @@
-<?php 
-
-        
+<?php        
 $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
 
-$all="SELECT * FROM `stock` inner join produit on stock.id_produit = produit.id";
-$allQ=mysqli_query($bdd,$all);
+
+
 ?>
 
 <html>
 <head>
-	<title>Boutique</title>
-	<link rel="stylesheet" href= "../CSS/cira.css">
- 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="../JS/stock.js"></script>
-	<script type="text/javascript" src="../include/script.js"></script>
-	
+	<title>Stock</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href= "../css/ciaracut.css">
 </head>
 <body id="stock">
-<header>
+
+<header id="headeri">
    <?php include("../include/bar-nav.php");?>
 </header>
-		<main>
+		<main id="corpstock">
 <?php
+
 if (!isset($_GET['p']))
 {
-		?>
-	<h1 class="title">Le moteur de recherche du stock</h1>
 
-             <form method="post">
-        <input name="search"type="text" placeholder="Recherche par type" id="searchBox">
+		?>
+
+        <form id="autostock" method="post">
+        <label class="title2">Le moteur de recherche du stock</label>
+        <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche par type" id="searchBox">
 		</form>
-   
         <div id="response"></div>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal6">
+  		Gérer mon stock
+		</button>
+		<!-- Modal -->
+<div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Gestion stock</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       ...............
+       <?php 
+       include("../include/imagestock.php");
+       ?>
+       		       <form method="post"  enctype="multipart/form-data">
+				    
+				     
+				    <label for="mon_fichier"></label><br />
+				       <input type="hidden" name="MAX_FILE_SIZE" value="1048576" required />
+				     <input type="file" name="mon_fichier" id="mon_fichier" required/><br /> 
+				    <label for="titre"></label><br />
+				     <input type="text" name="nom" value="nom du produit" id="nom" required /><br />
+				    <label for="description"></label><br />
+				     <textarea name="description" id="description"></textarea><br />  
+				    <input type="submit" name="submit" value="Envoyer" />
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <label class="title2">Mon stock</label>
+        <div id="produit">           
         <?php
-        echo"<div id='stockcont'>";
+        $all="SELECT * FROM stock inner join produit on stock.id_produit = produit.id";
+        
+        
+		$allQ=mysqli_query($bdd,$all);
+		
+        
+         // echo"<div id='bloccardstock' class='card' style=\"width: 15rem;>";
+         echo "<div>";
+
+
 		while($data= mysqli_fetch_assoc($allQ))
 			{
+				
 				
 				$i=1;
 				$did=$data['id'];
@@ -44,26 +94,13 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 
 
-										if ($cmb < 3)
-					{
-						echo"<div class='insufisant'>";
-					}
-					else 
-					{
-						echo" <div class=\"theb\">";
-					}
-				
-
-				echo "<a href=\"stock.php?p=$did\"><img class=\"imagebout\" src=\"../upload/$img\"></a>";
-
+					echo" <div id='bloccardstock' class=\"card\" style=\"width: 15rem\";>";
+					echo "<a href=\"stock.php?p=$did\"><img id=\"photostock\" src=\"../upload/stock/$img\"></a>";
 					echo" <div class=\"titrestock\">";
-
-					echo "<h1 class=\"dnp\">$dnp </h1><br>";
-
+					echo "<h1 class=\"dnp\">Nom:$dnp</h1><br>";
 					echo "</div>";
-
-
-						if ($cmb < 3)
+					
+					if ($cmb < 3)
 					{
 						echo"<div id='insufisant'>";
 					}
@@ -72,15 +109,14 @@ if (!isset($_GET['p']))
 						echo"<div id='stockquant'>";
 					}
 					
-					echo " quantité $cmb";
+					echo " Quantité: $cmb";
 					echo "</div>";
-				echo "</div>";
+					echo "</div>";
 
 				$i++;
 				
-
 			}
-			echo"</div>";
+					echo"</div>";
 
 }
 
@@ -102,23 +138,24 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 
 
-				echo" <div class=\"theb\">";
-				echo "<h1 class=\"dnp\">$dnp </h1><br>";
-				echo "<a href=\"stock.php?p=$did\"><img class=\"imagebout\" src=\"../upload/$img\"></a>";
+				echo" <div id=\"bloccardstock\"  class=\"card\">";
+				echo "<h1 class=\"form-control\">$dnp </h1><br>";
+				echo "<a href=\"stock.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/$img\"></a>";
 				echo "<div>";
 				echo "$cmb";
 				echo "</div>";
 
 
 				?>
-				<form method="post">
-					<div id="quantité">
-						<label>Quantité</label>
-						<input type="number" name="nombre">
+				<form class="form-group" id="quantite" method="post">
+					<div>
+						<label>Quantité:</label>
+						<input name="nombre" class="form-control" type="number">
+						<br>
 					</div>
 
-						<div id="buts">
-							<input type="submit" name="stockV">
+						<div>
+							<button name="stockV" type="submit" class="btn btn-dark">Valider</button>
 						</div>
 
 				</form>
@@ -126,9 +163,6 @@ if (!isset($_GET['p']))
 
 				$i++;
 				
-
-			
-
 				if(isset($_POST['stockV']))
 					{
 						$qtt=$_POST['nombre'];
@@ -142,10 +176,19 @@ if (!isset($_GET['p']))
 }
 
 ?>
+</div>
 </main>
 <footer>
 
 </footer>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../JS/stock.js"></script>
+	<script type="text/javascript" src="../include/script.js"></script>
+
+</body>
 
 
 <!-- SCRIPT -->

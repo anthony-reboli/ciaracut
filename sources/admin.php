@@ -1,3 +1,27 @@
+ 
+<?php
+session_start();
+date_default_timezone_set('europe/paris');
+
+      if (isset($_SESSION['login'])==false)
+      {
+       echo "<h3>Connectez vous et achetez maintenant";
+      }
+      elseif(isset($_SESSION['login'])==true)
+
+      {
+       if($_SESSION['login'] =="vanessa")
+       {
+        $user = $_SESSION['login'];
+            echo "<h3><b>Bonjour <u>$user,</u> vous êtes connecté.</b></h3>";
+       }
+       else
+       {
+        $user = $_SESSION['login'];
+            echo "<h3><b>Bonjour <u>$user,</u> vous êtes connecté vous pouvez achetez.</b></h3>"; 
+       }
+      }
+?>
 
 <html lang="fr">
 <head>
@@ -11,33 +35,9 @@
 </head>
 
     <body id="pageadmin">
-
-         <header>
-         <?php include("../include/bar-nav.php");?>
-         </header>
-<?php
-
-date_default_timezone_set('europe/paris');
-
-      if (isset($_SESSION['login'])==false)
-      {
-       echo "<h3>Connectez vous et achetez maintenant";
-      }
-      elseif(isset($_SESSION['login'])==true)
-
-      {
-       if($_SESSION['login'] =="admin")
-       {
-        $user = $_SESSION['login'];
-            echo "<h3><b>Bonjour <u>$user,</u> vous êtes connecté.</b></h3>";
-       }
-       else
-       {
-        $user = $_SESSION['login'];
-            echo "<h3><b>Bonjour <u>$user,</u> vous êtes connecté vous pouvez achetez.</b></h3>"; 
-       }
-      }
-?>
+    <header class="headeri">
+        <?php include("../include/bar-nav.php"); ?>      
+    </header>
                 <main>
               <div class="heure">
               <span id="date_heure"></span>
@@ -86,9 +86,7 @@ date_default_timezone_set('europe/paris');
   echo "<p id='message'>Vous avez ".$result2[0][0]." rendez-vous pour cette date!</p>";
   echo "</div>";
  ?>
-    <div class="heure">
-    <?php include("../sources/chiffre.php");?>
-    </div>
+    
                 </main>
 
 
