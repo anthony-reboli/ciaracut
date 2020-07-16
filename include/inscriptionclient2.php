@@ -4,18 +4,15 @@ $connexion =  mysqli_connect("localhost","root","","ciaracut");
 
 ?>
 
-<form  method="post">
-                    
-                    <input type="text" name="nom" required placeholder="Nom"/>
-                    <input type="text" name="prenom" required placeholder="Prénom"/>
-                    <input type="email" name="email" required placeholder="Email"/>
-                    <input type="password" name="mdp" required placeholder="mdp"/>
-                   <input type="date" name="date" required placeholder="Date">
-                   <input type="text" name="tel" required placeholder="tel">
-
-                    <br><input type="submit" name="formI" required value="S'inscrire"/>
-
-</form>
+                <form class="form-group d-flex flex-column align-items-center m-4"  method="post">
+                    <input class="form-control form-control-lg" type="text" name="nom" required placeholder="Nom"/>
+                    <input class="form-control form-control-lg" type="text" name="prenom" required placeholder="Prénom"/>
+                    <input class="form-control form-control-lg" type="email" name="email" required placeholder="Email"/>
+                    <input class="form-control form-control-lg" type="password" name="mdp" required placeholder="mdp"/>
+                    <input class="form-control form-control-lg" type="date" name="date" required placeholder="Date">
+                    <input class="form-control form-control-lg" type="text" name="tel" required placeholder="tel">
+                    <br><input class="btn btn-dark" type="submit" name="formI" required value="S'inscrire"/>
+                </form>
 
 <?php
 

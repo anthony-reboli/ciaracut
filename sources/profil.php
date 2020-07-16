@@ -115,7 +115,7 @@ include("../include/functions.php");
                <form class="form-row col-4 justify-content-center"  method="post">
                  <label for="formGroupExampleInput"><b>Login</b></label>
                 <input  class="form-control " type="text" name="login" required placeholder="Login" value="<?php echo $monprofil[0][1]; ?>">
-                 <label for="formGroupExampleInput"><b>Nomt</b></label>
+                 <label for="formGroupExampleInput"><b>Nom</b></label>
                 <input  class="form-control " type="text" name="lastname" required placeholder="Nom" value="<?php echo $monprofil[0][2]; ?>">
                  <label for="formGroupExampleInput"><b>Prénom</b></label>
                 <input  class="form-control" type="text" name="firstname" required placeholder="Prénom"value="<?php echo $monprofil[0][3]; ?>">
@@ -125,7 +125,7 @@ include("../include/functions.php");
                 <input  class="form-control" type="password" name="pass" required placeholder="Mot de passe" value="">
                 <label for="formGroupExampleInput"><b>Votre téléphone</b></label>
                 <input  class="form-control" type="text" name="tel" required placeholder="Votre tel" value="<?php echo $monprofil[0][7]; ?>">
-                <input class="btn btn-light" type="submit" name="update" required value="Modifier">
+                <input class="btn btn-light m-4" type="submit" name="update" required value="Modifier">
             </form>
         </div>
     
