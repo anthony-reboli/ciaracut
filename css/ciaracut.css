@@ -270,7 +270,6 @@ font-size: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:center;
   align-items: center;
 }
 #contclient{
@@ -336,9 +335,15 @@ font-size: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:;
   align-items: center;
+  width: 100%;
 
+
+}
+#contm{
+
+  overflow: scroll;
+  height: 600px;
 }
 #comment{
   justify-content: center;
@@ -348,22 +353,27 @@ font-size: 20px;
   margin: 3%;
   padding: 3%;
   font-size: 25px;
-  width: 100%;
+  width: 95%;
 }
 #contlivreor{
+  
   width: 80%;
+  background-color:#000000bf;
+ 
+
 }
 .poster{
+
   background-color:#e91e63e3;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 95%;
   margin: 3%;
-
 }
+
 #suppcomment{
   color: black;
 }
@@ -384,7 +394,6 @@ font-size: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
 }
@@ -670,9 +679,6 @@ h1{
 }
 
 
-
-
-
 /*PAGE BOUTIQUE PAIEMENT*/
 
 #btnprest{
@@ -687,7 +693,6 @@ h1{
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:center;
   margin: 0px;
   padding: 0px;
   min-height:750px;
@@ -832,23 +837,22 @@ h1{
   min-height: 750px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  
 }
 #produit{
   display: flex;
-  flex-direction:column;
+  flex-direction:row;
   justify-content:space-around;
   align-items: center;
   flex-wrap: wrap;
   background-color:#000000a6;
   padding: 2%;
   margin: 3%;
-  width:50%;
+  width: 80%;
 }
 #cardstock{
   
@@ -857,33 +861,48 @@ h1{
   justify-content: center;
   align-items: center;
   width: 90%;
-  margin-bottom: 50px;
-  margin-top: 150px;
+  
 }
 #bloccardstock{
+  background-color:#00000026;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  padding: 4%;
+  margin: 4%;
   font-family: sans-serif;
+  font-size: 20px;
+  border:double white 10px;
+  color: white;
 }
 #autostock{
-  margin: 3%;
-  padding: 3%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color:#000000a6;
+  margin: 3%;
+  padding: 3%;
 }
 #quantite{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 3%;
+}
+#cadrestock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#1010109c;
+  padding: 3%;
+  width: 100%;
+}
+#photostock{
+  width: 250px;
+  height: 250px;
 }
 
 /*PAGE NAV BAR*/
