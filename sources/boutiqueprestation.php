@@ -3,8 +3,7 @@
     $connexion= mysqli_connect("localhost", "root", "", "ciaracut");
     $requete = "SELECT * FROM prestation ";
     $query = mysqli_query($connexion, $requete);
-    $resultat = mysqli_fetch_all($query);
-    
+    $resultat = mysqli_fetch_all($query);  
 ?>
     <!DOCTYPE html>
     <html>
@@ -19,7 +18,7 @@
     </header>
           <main id="main-reserv">
             <section id="cadre-reserv">
-                  <h1 class="title">Mes prestations</h1>
+                  <h1 class="title"><u>Mes prestations</u></h1>
                   <div id="contpresta">
                       <?php 
                       $i=0;
@@ -33,8 +32,8 @@
                         echo" <div class=\"cardproduit\" class=\"card\" style=\"width: 15rem\";>";
                         echo "<h1 class=\"nomp\">$nom </h1><br>";
                         echo "<a href=\"produit.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/$img\"></a>";
-                        echo "<p class=\"card-text\">Détails:{$values['2']}</p>";
-                        echo "<p class=\"card-text\">Prix:{$values['3']}€</p>";
+                        echo "<p class=\"card-text\">Détails: {$values['2']}</p>";
+                        echo "<p class=\"card-text\">Prix: {$values['3']}€</p>";
                         echo "</div>";
                              
                     }
@@ -44,7 +43,7 @@
               </div>
             </section>
 
-  <button id="btnprest" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+  <button id="btnprest" type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal">
   Gestion de mes prestations
   </button>
 
@@ -59,7 +58,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <?php include("../include/prestation.php");?>
+      <?php  include("../include/prestation.php");?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -67,6 +66,7 @@
     </div>
   </div>
 </div>
+
   <div class="heure">
     <?php include("../include/chiffre.php");?>
     </div>
@@ -79,6 +79,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="../js/script.js"></script>
+<footer class="headeri">
+    <?php include("../include/footer.php");?>
+</footer>
 </body>
 </html>
 

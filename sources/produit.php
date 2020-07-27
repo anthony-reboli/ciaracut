@@ -81,6 +81,8 @@
     											?>
     									</div>
     								</section>						
-				
+				<footer class="headeri">
+    			<?php include("../include/footer.php");?>
+				</footer>
 			</body>
 </html>

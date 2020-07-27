@@ -10,12 +10,12 @@
             
                     if ( isset($_POST["valider"]) )
                     {
-                          $titreresa = $_POST['nom'];
+                          $titreresa = htmlspecialchars($_POST['nom']);
                           $renametitre = addslashes($titreresa); 
-                          $descriptionresa = $_POST['description'];
+                          $descriptionresa = htmlspecialchars($_POST['description']);
                           $renamedescritpion = addslashes($descriptionresa); 
-                          $dated = $_POST['datedebut'];
-                          $datef = $_POST['datefin'];
+                          $dated =htmlspecialchars($_POST['datedebut']);
+                          $datef =htmlspecialchars($_POST['datefin']);
                           $requete2 = "SELECT * FROM utilisateurs WHERE login='$renametitre'";
                           $query2 = mysqli_query($cnx, $requete2);
                           $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);

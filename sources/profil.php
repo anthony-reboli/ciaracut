@@ -40,7 +40,7 @@ include("../include/functions.php");
             $aniv=$fetch['date'];
             $tel=$fetch['tel'];
             echo "<div id=\"infouser2\">";
-            echo "<h1 class='title'>Le fichier client:</h1>";
+            echo "<h1 class='title'><u>Le fichier client:</u></h1>";
 
             echo "<h1>Les infos de $nom<br>";
                 echo" Pseudo: $login<br>";
@@ -63,9 +63,10 @@ include("../include/functions.php");
             $req = ("SELECT titre, description, debut FROM reservations  WHERE id_utilisateur=".$profil."  ORDER BY debut DESC LIMIT 3" );
             $affichage = mysqli_query($connexion, $req);
             $fetch2 = mysqli_fetch_all($affichage);
-            echo "<h1 class='title2'>Les infos client</h1>";
     
             echo "<div id='contentinfos' class='row justify-content-space-around p-4 m-3' >";
+            echo "<div id='titreclient' h1 class='title' 'container'>Les infos client</h1></div>";
+            echo "<div id='continfo'>";
                         echo "<div id='dernierpresta' class='col-lg-4 col-sm-12'>";
                         echo "<h1>Les derniers rendez-vous</h1>";
             foreach ($fetch2 as $key => $value){
@@ -86,6 +87,8 @@ include("../include/functions.php");
                             echo "</div>";
 
             echo "</div>";
+            echo "</div>";
+
 
         }
         else
@@ -133,6 +136,9 @@ include("../include/functions.php");
         }
 
         ?>
+        <footer class="headeri">
+        <?php include("../include/footer.php");?>
+        </footer>
     
     </body>
 </html>

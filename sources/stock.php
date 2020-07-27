@@ -31,7 +31,7 @@ if (!isset($_GET['p']))
         <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche par type" id="searchBox">
 		</form>
         <div id="response"></div>
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal6">
+        <button type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal6">
   		Gérer mon stock
 		</button>
 		<!-- Modal -->
@@ -44,7 +44,7 @@ if (!isset($_GET['p']))
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body flex-column">
        <?php 
        include("../include/imagestock.php");
        ?>
@@ -69,9 +69,10 @@ if (!isset($_GET['p']))
       </div>
     </div>
   </div>
-</div>
-<label class="title2">Mon stock</label>    
-        <div id="produit">       
+</div>   
+        <div id="produit"> 
+        <label class="title">Mon stock</label> 
+        <div id="titlestock">
         <?php
         $all="SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id";
 		$allQ=mysqli_query($bdd,$all);
@@ -140,6 +141,7 @@ if (!isset($_GET['p']))
 				echo "</div>";
 				
 				?>
+				  </div>  
 				<form class="form-group" id="quantite" method="post">
 					<div>
 						<label>Modifier quantité:</label>
@@ -166,22 +168,20 @@ if (!isset($_GET['p']))
 					}
 					echo "</div>";
 
-
 }
 
 ?>
 </div>
 </main>
-<footer>
-
-</footer>
+	<footer class="headeri">
+    <?php include("../include/footer.php");?>
+	</footer>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../JS/stock.js"></script>
 	<script type="text/javascript" src="../include/script.js"></script>
-
 </body>
 </html>
 

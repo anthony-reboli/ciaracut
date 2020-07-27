@@ -183,7 +183,7 @@ class userpdo
 
 
         $login = $_SESSION['login'];
-        $queryuser = $this->connectdb()->query("SELECT *from utilisateurs WHERE login='$login'");
+        $queryuser = $this->connectdb()->query("SELECT * FROM utilisateurs WHERE login='$login'");
         $donnees = $queryuser->fetch();
 
         $this->id = $donnees['id'];

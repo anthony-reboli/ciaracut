@@ -19,16 +19,16 @@ session_start();
         			</header>
         			
         			<div id="btnretour">
-        			<a href="../sources/boutiqueprestation.php"><button class="btn btn-dark">Retour sur la boutique</button></a>
+        			<a href="../sources/boutiqueprestation.php"><button class="btn-lg btn-dark">Retour sur la boutique</button></a>
         			</div>
 					<section id="contpanier">
 						<h1 class="title">Votre Panier</h1>
 						<div id="produitpanier">
   				<?php
  							
-                            $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
-							$id_utilisateurs=$_SESSION['id'];
-							$rep= $connexion->query("SELECT * FROM commande INNER JOIN prestation ON commande.id_prestation=prestation.id ");
+        $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
+		$id_utilisateurs=$_SESSION['id'];
+		$rep= $connexion->query("SELECT * FROM commande INNER JOIN prestation ON commande.id_prestation=prestation.id ");
 							$test = $rep->fetchAll();
 							$i=0;
 	            			foreach ($test as $values)
@@ -58,16 +58,12 @@ session_start();
 									<?php
 									$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
 									$req=$connexion->query("SELECT SUM(prixglobal) FROM commande WHERE id_utilisateurs=$id_utilisateurs");
-									$total = $req->fetchAll();
-								
-													   			
+									$total = $req->fetchAll();			   			
 									?>
 
 								<div id="infopanier" class="alert" role="alert">
 									<p>Le montant total est : <?php echo "".$total[0][0].""?>€</p>
-							
 									<?php
-
 									if (isset($_POST['ajoutpanier'])) 
 									{
 
@@ -89,7 +85,9 @@ session_start();
 								</div>
 						</section>
 				
-					
+					<footer class="headeri">
+    				<?php include("../include/footer.php");?>
+					</footer>
 	
 			</body>
 </html>

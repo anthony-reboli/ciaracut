@@ -81,13 +81,13 @@ if (isset($_POST['submit']))
         ?>
         <div class="poster">
             <div id="user">
-                <p><b>Date: <?php echo $row['date']?></b></p>
+                <p><b><u>Date:</u> <?php echo $row['date']?></b></p>
                 <hr>
-                <h3><b>Nom: <?php echo $row['nom']?></b></h3>
+                <h3><b><u>Nom:</u> <?php echo $row['nom']?></b></h3>
                 <hr>
             </div>
             <div id="messag">
-                <p>Messages: <?php echo $row['commentaire']?></p>
+                <p><b><u>Messages:</u></b> <?php echo $row['commentaire']?></p>
             </div>
                 <hr>
                 <?php
@@ -104,6 +104,8 @@ if (isset($_POST['submit']))
 ?>
  </div>
 </main>
-
+<footer class="headeri">
+    <?php include("../include/footer.php");?>
+</footer>
     </body>
 </html>

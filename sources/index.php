@@ -52,7 +52,7 @@
   </div>
 
   <div id="descriptionphoto">
-    <h1 style="text-align: center;" class="titrecoupe">Présentation de Vanessa</h1>
+    <h1 style="text-align: center;" class="titrecoupe">Ciara cut by "Vanessa"</h1>
     <p>Véritable passionnée de coiffure depuis plus de 25 ans je vous invite à découvrir votre salon de coiffure dans le 9e à Marseille.
     Un endroit Simple avec une ambiance atypique et entièrement dédiée à la coiffure.
     Plus qu’un simple passage chez le coiffeur, vous embarquez pour un moment de détente et de relaxation.</p>

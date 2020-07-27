@@ -60,7 +60,7 @@ var timerID = setInterval(runClock,1000);
         			</section>
 
         			<section id="popclient">
-        					<button type="button"  class="btn btn-light" data-toggle="modal" data-target=".bd-example-modal-sm">Inscription membre</button>
+        					<button type="button"  class="btn-lg btn-light" data-toggle="modal" data-target=".bd-example-modal-sm">Inscription membre</button>
 
 					<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm">
@@ -109,6 +109,9 @@ var timerID = setInterval(runClock,1000);
 						</section>			
     	
 					</main>
+					<footer class="headeri">
+    				<?php include("../include/footer.php");?>
+					</footer>
 				</body>
 			</html>
 

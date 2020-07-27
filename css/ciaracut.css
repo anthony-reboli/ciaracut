@@ -2,6 +2,22 @@
   font-family :'police';
   src: url('../upload/Brightly Crush Shine.otf') format('truetype');
   }
+.title{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:white;
+}
+.title2{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:black;
+}
 
 /*PAGE INDEX*/
 #index{
@@ -9,6 +25,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: pink;
+  width: 100%;
 }
 
 #contindex{
@@ -150,6 +167,7 @@
 }
 #contfacebook{
   background-color:#0c0c0cbf;
+  border:double white 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,6 +175,7 @@
   flex-wrap: wrap;
   padding: 3%;
   margin: 2%;
+
 }
 
 
@@ -167,6 +186,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 #conttarif{
   background-image: url("../upload/panierfond.jpg");
@@ -271,12 +291,14 @@ font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 #contclient{
+  border: double white 10px; 
   margin: 3%;
   background-color:#000000c4;
   width: 80%;
-  min-height: 890px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -284,6 +306,7 @@ font-size: 20px;
 
 }
 #formclient{
+  border: solid white 5px;
   padding: 3%;
   margin: 3%;
   justify-content: center;
@@ -317,6 +340,7 @@ font-size: 20px;
   width: 60%;
 }
 #infouser{
+  border:double white 10px;
   font-size: 20px;
   padding: 1%;
   margin: 3%;
@@ -339,11 +363,22 @@ font-size: 20px;
   width: 100%;
 
 
+
+}
+#contlivreor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+  padding: 5%;
 }
 #contm{
 
   overflow: scroll;
   height: 600px;
+  margin: 3%;
+  padding: 5%;
 }
 #comment{
   justify-content: center;
@@ -356,9 +391,11 @@ font-size: 20px;
   width: 95%;
 }
 #contlivreor{
-  
-  width: 80%;
   background-color:#000000bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
  
 
 }
@@ -370,12 +407,23 @@ font-size: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 95%;
+  padding: 3%;
   margin: 3%;
 }
 
 #suppcomment{
+
   color: black;
+  background-color:white; 
+  border: double;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  margin: 3%;
+
+  
 }
 #user{
   font-size: 20px;
@@ -384,6 +432,8 @@ font-size: 20px;
   word-wrap: break-word;
   font-size: 20px;
   width: 70vw;
+  padding: 3%;
+  margin: 3%;
 }
 
 /*PAGE PROFIL*/
@@ -398,6 +448,7 @@ font-size: 20px;
 
 }
 #fiche{
+  border: double white 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -406,6 +457,8 @@ font-size: 20px;
   word-break: break-all;
   font-size: 30px;
   color: white;
+  width: 60%;
+  margin: 3%;
 }
 #contfiche{
   padding: 1%;
@@ -418,26 +471,31 @@ font-size: 20px;
   align-items: center;
 }
 #contentinfos{
+
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:space-around;
   align-items: center;
   background-color:#171616c9;
-  width: 80%;
+  border:double white 10px;
+  width: 90%;
 
 }
 #dernierpresta{
+  border: double white 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color:#d4215e;
+  width: 40%;
+  margin:3%;
 
 
 }
 
 #infouser2{
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -446,9 +504,12 @@ font-size: 20px;
   margin: 3%;
   background-color:#171616c9;
   width: 80%;
+  border: double white 10px;
 }
 #popclient{
+  background-color:#171616c9;
   margin: 3%;
+  border: double white 10px;
 }
 #formprofil{
   display: flex;
@@ -457,9 +518,20 @@ font-size: 20px;
   align-items: center;
   background-color:#272525d1;
   color: white;
-  width: 60%;
-  height: 751px;
   margin: 3%;
+  min-height: 80vh;
+}
+#titreclient{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#continfo{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
 }
 
 /*PAGE PLANNING*/
@@ -471,6 +543,14 @@ font-size: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#contplanning{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
 }
 #tableauplanning{
   background-color: #1c1d1fd9;
@@ -502,6 +582,7 @@ font-size: 20px;
 }
 
 #calendrier{
+  border:double white 10px;
   background-color:#1c1d1fd9;
   display: flex;
   flex-direction: row;
@@ -522,11 +603,14 @@ font-size: 20px;
   
 }
 #agenda{
+  border:double white 10px;
+  background-color: #1b1a1ac7;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 3%;
+  padding: 2%;
 
 
 }
@@ -539,6 +623,8 @@ font-size: 20px;
   list-style: none;
   color: white;
   border:double;
+  margin:2%;
+  padding: 2%;
 }
 
 /*PAGE PRODUIT*/
@@ -561,16 +647,21 @@ font-size: 20px;
   height: -webkit-fill-available;
   font-family: sans-serif;
   color: white;
+
 }
 #formprestation2{
   background-color:#4a4144a8;
+  border:double white 10px;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  height: -webkit-fill-available;
   font-family: sans-serif;
+  border:double white 10px;
+  font-size: 20px;
   color: white;
+  padding: 3%;
+  
 }
 /*PAGE PANIER*/
   #pagepanier{
@@ -585,8 +676,10 @@ font-size: 20px;
 }
 
 #btnretour{
-  margin-bottom: 50px;
-  margin-top:50px;
+  background-color:#0000009e;
+  border:double white 5px;
+  margin:3%;
+  padding: 1%;
 }
 #contpanier{
   background-color:#0000009e;
@@ -599,7 +692,8 @@ font-size: 20px;
   width: 70%;
   padding: 3%;
   margin: 3%;
-  min-height: 650px;
+  min-height: 80vh;
+  border:double white 10px;
 }
 #produitpanier{
   display: flex;
@@ -627,55 +721,6 @@ font-size: 20px;
   font-family: serif;
   font-size: 30px;
 
-}
-
-
-/*PAGE ADMIN*/
-.bouton{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#formadminprestation{
-  display: flex;
-  flex-direction:column;
-  justify-content: space-around;
-  align-items: center;
- 
-}
-.title{
-  margin: 2%;
-  padding: 2%;
-  text-align: center;
-  font-family:police;
-  font-size: 50px;
-  color:white;
-}
-.title2{
-  margin: 2%;
-  padding: 2%;
-  text-align: center;
-  font-family:police;
-  font-size: 50px;
-  color:black;
-}
-
-h1{
-  text-align: center;
-}
-.heure{
-  background-color:#211d1d91;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  font-family: serif;
-  width: 90%;
-}
-.exemplescript{
-  color: white;
 }
 
 
@@ -707,7 +752,7 @@ h1{
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  min-height:770px;
+  min-height:80vh;
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 3%;
@@ -750,6 +795,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 #main-reserv{
     
@@ -761,12 +807,11 @@ h1{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
   }
 
 #cadre-reserv{
   background-color: #211d1d91;
+  border:double white 10px;
   display: flex;
   flex-direction:column;
   justify-content: space-around;
@@ -774,10 +819,19 @@ h1{
   flex-wrap:wrap;
   text-decoration: none;
   list-style: none;
-  width: 85%;  
+  margin: 3%;
+  padding: 3%;  
   
 
 }
+#alertchiffre{
+  background-color:#2f2d2ead;
+  font-family:sans-serif;
+  color:black;
+  font-size: 30px;
+
+}
+
 #contpresta{
   display: flex;
   flex-direction: row;
@@ -799,14 +853,20 @@ h1{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 2%;
   background-color:#e91e638c; 
   color: white;
+  border:double white 10px;
+  font-size: 20px;
+  margin: 2%;
+  padding: 1%;
 }
 #alertchiffre{
   background-color:;
   font-family:sans-serif;
   color: white;
+  border:double white 10px;
+  margin: 1%;
+  padding: 3%;
 
 }
 
@@ -820,13 +880,20 @@ h1{
   
   color:green;
 }
+#titlestock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
+}
 #stock{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-content: center;
+  align-items: center;
   background-color: #e91e63;
+  width: 100%;
   
 }
 
@@ -834,18 +901,17 @@ h1{
   background-image: url("../upload/panierfond.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 750px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content:space-between;
   align-items: center;
-  flex-wrap: wrap;
   width: 100%;
   
 }
 #produit{
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:space-around;
   align-items: center;
   flex-wrap: wrap;

@@ -3,7 +3,7 @@ if (($_SESSION['login']) == "vanessa")
 {
 	?>
 		  <!-- Large modal -->
-		<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">fiche client</button>
+		<button type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal">fiche client</button>
 		<!-- Button trigger modal -->
 
 			
