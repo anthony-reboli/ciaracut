@@ -19,7 +19,7 @@
 
 <main id="conttarif">
   <section id="conttableau" class="container d-flex flex-column justify-content-center m-4">
-   <label class="title">Mes tarifs</label>
+   <label style="text-align: center;" class="titrecoupe">Mes tarifs</label>
   <table class="table table-dark m-4">
   <thead>
     <tr>

@@ -24,7 +24,6 @@
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -54,15 +53,15 @@
   <div id="descriptionphoto">
     <h1 style="text-align: center;" class="titrecoupe">Ciara cut by "Vanessa"</h1>
     <p>Véritable passionnée de coiffure depuis plus de 25 ans je vous invite à découvrir votre salon de coiffure dans le 9e à Marseille.
-    Un endroit Simple avec une ambiance atypique et entièrement dédiée à la coiffure.
-    Plus qu’un simple passage chez le coiffeur, vous embarquez pour un moment de détente et de relaxation.</p>
+    Un endroit Simple avec une ambiance décontractée et entièrement dédiée à la coiffure.
+    Plus qu’un simple passage chez le coiffeur, vous embarquez pour un moment de plaisir et de relaxation.</p>
   </div>
 
 </div>
 
 
 <div id="forfait" class="p-4">
-   <h1 style="text-align: center;" class="title">Mes Forfaits</h1>
+   <h1 style="text-align: center;" class="titrecoupe">Mes Forfaits</h1>
   <div id="bulle1">
   <div class="bulle"><b>Forfait<br>Ombre Hair<br>ou Tye and Dye<br>A partir de 95€</b></div>
   <div class="bulle"><b>Forfait Coloration<br>Masque/Shamp<br>Coupe/Brush<br>A partir de 45€</b></div>
@@ -180,7 +179,7 @@
 
       <div  id="facebook">
       <div id="contfacebook">
-      <h1 class="title">Mon actu Faceboock</h1>
+      <h1 class="titrecoupe" style="text-align: center;">Mon actu Faceboock</h1>
        <iframe  class="d-flex flex-column justify-content-center align-items-center" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCiara-cut-103232688121762&tabs=timeline&width=485&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="800" style="border:double white 10px " scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
        </div>
 

@@ -86,7 +86,7 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 
 
-					echo"<div id='bloccardstock' class='card'>";
+					echo"<div id='bloccardstock' class='card'style=\"width: 20rem\";>";
 					echo "<a href=\"stock.php?p=$did\"><img id=\"photostock\" src=\"../upload/stock/$img\"></a>";
 					echo" <div class=\"titrestock\">";
 					echo "<h1 class=\"dnp\">$dnp</h1><br>";
@@ -130,7 +130,7 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 				$description=$data['description'];
 
-				echo" <div id='bloccardstock' class=\"card\";>";
+				echo" <div id='bloccardstock' class=\"card\" style=\"width: 25rem\";>";
 				echo "<div id='cadrestock'>";
 				echo "<h1 class=\"form-control\">$dnp</h1><br>";
 				echo "<a href=\"stock.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/stock/$img\"></a>";
