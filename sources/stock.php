@@ -25,13 +25,13 @@ if (!isset($_GET['p']))
 {
 
 		?>
-
+		<div id="autostock">
         <form id="autostock" method="post">
         <label class="title">Le moteur de recherche du stock</label>
         <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche par type" id="searchBox">
 		</form>
         <div id="response"></div>
-        <button type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal6">
+        <button type="button" class="btn-lg btn-light" data-toggle="modal" data-target="#exampleModal6">
   		Gérer mon stock
 		</button>
 		<!-- Modal -->
@@ -44,22 +44,22 @@ if (!isset($_GET['p']))
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body flex-column">
+      <div class="modal-body d-flex flex-column justify-content-center">
        <?php 
        include("../include/imagestock.php");
        ?>
        		       <form method="post"  enctype="multipart/form-data">
-				    <label for="mon_fichier"></label><br />
+				    <label for="mon_fichier"></label><br/>
 				     <label for="formGroupExampleInput"><b>Images</b></label>
 				    <input type="hidden" name="MAX_FILE_SIZE" value="1048576" required />
-				    <input type="file" name="mon_fichier" id="mon_fichier" required/><br /> 
+				    <input type="file" name="mon_fichier" id="mon_fichier" required/><br/> 
 				     <label for="formGroupExampleInput"><b>Nom du produit:</b></label>
-				    <label for="titre"></label><br />
+				    <label for="titre"></label><br/>
 				    <input id="formGroupExampleInput" class="form-control" type="text" name="nom" value="Nom du produit" id="nom" required /><br />
-				    <label for="description"></label><br />
+				    <label for="description"></label><br/>
 				    <label for="formGroupExampleInput"><b>commentaires:</b></label>
-				    <textarea class="form-control" id="exampleFormControlTextarea1" name="description" id="description"></textarea><br />  
-				    <input class="btn btn-dark m-4" type="submit" name="submit" value="Envoyer" />
+				    <textarea class="form-control" id="exampleFormControlTextarea1" name="description" id="description"></textarea><br/>  
+				    <input class="btn btn-dark m-4" type="submit" name="submit" value="Envoyer"/>
 				</form>
       </div>
        <div class="modal-footer">
@@ -69,9 +69,10 @@ if (!isset($_GET['p']))
       </div>
     </div>
   </div>
-</div>   
+</div>  
+</div> 
         <div id="produit"> 
-        <label class="title">Mon stock</label> 
+        <label class="titrecoupe">Mon stock</label> 
         <div id="titlestock">
         <?php
         $all="SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id";
@@ -86,7 +87,7 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 
 
-					echo"<div id='bloccardstock' class='card'style=\"width: 20rem\";>";
+					echo"<div id='bloccardstock' class='card'style=15rem\";>";
 					echo "<a href=\"stock.php?p=$did\"><img id=\"photostock\" src=\"../upload/stock/$img\"></a>";
 					echo" <div class=\"titrestock\">";
 					echo "<h1 class=\"dnp\">$dnp</h1><br>";
@@ -100,7 +101,6 @@ if (!isset($_GET['p']))
 					{
 						echo"<div id='stockquant'>";
 					}
-					
 					echo " Quantité: $cmb";
 					echo "</div>";
 					echo "</div>";
@@ -130,27 +130,27 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 				$description=$data['description'];
 
-				echo" <div id='bloccardstock' class=\"card\" style=\"width: 25rem\";>";
+				echo" <div id='bloccardstock' class=\"card\" style=\"width:30rem\";>";
 				echo "<div id='cadrestock'>";
 				echo "<h1 class=\"form-control\">$dnp</h1><br>";
 				echo "<a href=\"stock.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/stock/$img\"></a>";
 				echo "<label  for=\"formGroupExampleInput\"><u>Description:</u></label>$description";
 				echo "<div>";
 				echo "Quantité: $cmb";
-				
 				echo "</div>";
 				
 				?>
-				  </div>  
-				<form class="form-group" id="quantite" method="post">
-					<div>
+				  </div> 
+				  <div id="quantite"> 
+				<form class="form-group"method="post">
+					
 						<label>Modifier quantité:</label>
 						<input name="nombre" class="form-control" type="number">
 						<br>
 					</div>
 
 						<div>
-							<button name="stockV" type="submit" class="btn btn-light">Valider</button>
+							<button name="stockV" type="submit" class="btn btn-dark">Valider</button>
 						</div>
 
 				</form>

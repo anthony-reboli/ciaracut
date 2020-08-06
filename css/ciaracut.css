@@ -1,7 +1,15 @@
+ /*Curseur*/
+a  ,.bulle{
+  cursor: url('../upload/ciseau.png'), auto; 
+} 
+
+/*format écriture*/
 @font-face {
   font-family :'police';
   src: url('../upload/Brightly Crush Shine.otf') format('truetype');
   }
+
+/*CLASS TITRES*/
 .title{
   margin: 2%;
   padding: 2%;
@@ -33,7 +41,6 @@
   flex-direction: column;
   justify-content: center;
 
-
 }
 #presentation{
   
@@ -52,7 +59,6 @@
 .photo{
   border:black 10px double;
 }
-
 
 #descriptionphoto {
   background-image: url("../upload/fondforfait.jpg");
@@ -354,8 +360,12 @@ font-size: 20px;
 
 }
 #tableauclient{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 60%;
+  width: 80%;
 }
 #infouser{
   border:double white 10px;
@@ -860,7 +870,6 @@ font-size: 20px;
 
   background-color:#e91e63 ;
   width: 100%;
-
 }
 .cardproduit{
   display: flex;
@@ -907,7 +916,7 @@ font-size: 20px;
   justify-content: center;
   align-items: center;
   background-color: #e91e63;
-  width: 100%;
+  
   
 }
 
@@ -924,6 +933,7 @@ font-size: 20px;
   
 }
 #produit{
+  border:double white 10px;
   display: flex;
   flex-direction:column;
   justify-content:space-around;
@@ -934,7 +944,6 @@ font-size: 20px;
   margin: 3%;
 }
 #cardstock{
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -955,6 +964,8 @@ font-size: 20px;
   color: white;
 }
 #autostock{
+  color: black;
+   border:double white 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -976,6 +987,7 @@ font-size: 20px;
   align-items: center;
   background-color:#1010109c;
   padding: 3%;
+  width: 100%;
   
 }
 #photostock{
