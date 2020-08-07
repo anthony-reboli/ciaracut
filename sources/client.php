@@ -52,7 +52,7 @@ var timerID = setInterval(runClock,1000);
 				<main id="contclient">		  	
 					<section id="formclient">
              			<form class="form-row" method="post">
-             				<label class="title">Barre de recherche clients</label>
+             				<label class="title2">Barre de recherche clients</label>
         						<input id="formGroupExampleInput" class="form-control"  name="search"type="text" placeholder="Recherche par ordre alphabétique" id="searchBox"/><br>
         						 <small class="exemplescript" class="form-text text-muted">(Exemple: Nom)</small>
 						</form>

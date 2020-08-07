@@ -28,7 +28,7 @@ if (!isset($_GET['p']))
 		<div id="autostock">
         <form id="autostock" method="post">
         <label class="title">Le moteur de recherche du stock</label>
-        <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche par type" id="searchBox">
+        <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche produits" id="searchBox">
 		</form>
         <div id="response"></div>
         <button type="button" class="btn-lg btn-light" data-toggle="modal" data-target="#exampleModal6">
@@ -72,7 +72,7 @@ if (!isset($_GET['p']))
 </div>  
 </div> 
         <div id="produit"> 
-        <label class="titrecoupe">Mon stock</label> 
+        <label class="title">Mon stock</label> 
         <div id="titlestock">
         <?php
         $all="SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id";
@@ -88,7 +88,7 @@ if (!isset($_GET['p']))
 
 
 					echo"<div id='bloccardstock' class='card'style=15rem\";>";
-					echo "<a href=\"stock.php?p=$did\"><img id=\"photostock\" src=\"../upload/stock/$img\"></a>";
+					echo "<a href=\"stock.php?p=$did\"><img class=\"photostock\" src=\"../upload/stock/$img\"></a>";
 					echo" <div class=\"titrestock\">";
 					echo "<h1 class=\"dnp\">$dnp</h1><br>";
 					echo "</div>";
@@ -132,29 +132,24 @@ if (!isset($_GET['p']))
 
 				echo" <div id='bloccardstock' class=\"card\" style=\"width:30rem\";>";
 				echo "<div id='cadrestock'>";
-				echo "<h1 class=\"form-control\">$dnp</h1><br>";
-				echo "<a href=\"stock.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/stock/$img\"></a>";
-				echo "<label  for=\"formGroupExampleInput\"><u>Description:</u></label>$description";
-				echo "<div>";
-				echo "Quantité: $cmb";
-				echo "</div>";
+				echo "<h1 class=\"title\">$dnp</h1><br>";
+				echo "<a href=\"stock.php?p=$did\"><img class=\"photostock\" src=\"../upload/stock/$img\"></a>";
+				echo "<br>";
+				echo "<label for=\"formGroupExampleInput\"><b>Description:</b></label>$description";
 				
+				echo "<br><br>";
+				echo "<b>Quantité:</b> $cmb";
+				echo "<br><br>";
 				?>
-				  </div> 
-				  <div id="quantite"> 
-				<form class="form-group"method="post">
-					
-						<label>Modifier quantité:</label>
+				
+				<form id="formqts" method="post">
+						<label><b>Modifier quantité:</b></label>
 						<input name="nombre" class="form-control" type="number">
 						<br>
-					</div>
-
-						<div>
-							<button name="stockV" type="submit" class="btn btn-dark">Valider</button>
-						</div>
-
+			            <button name="stockV" type="submit" class="btn btn-light">Valider</button>
 				</form>
 				<?php
+				echo "</div>";
 
 				$i++;
 				
@@ -166,7 +161,7 @@ if (!isset($_GET['p']))
 						$updateQ=mysqli_query($bdd,$update);
 						 header("refresh:0");
 					}
-					echo "</div>";
+					
 
 }
 

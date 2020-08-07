@@ -66,7 +66,7 @@ if (isset($_POST['submit']))
             }
             else
             {
-                echo "Vous n'êtes pas client vous ne pouvez pas commenter !!";
+                echo "<p id='notclient'>Vous n'êtes pas client vous ne pouvez pas commenter !!</p>";
             }
 
         }
