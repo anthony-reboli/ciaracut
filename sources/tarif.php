@@ -13,7 +13,9 @@
 
 <body id="tarif">
 <header class ="headeri">
-   <?php include("../include/bar-nav.php");?>
+   <?php
+   session_start();
+    include("../include/bar-nav.php");?>
 </header>
  
 
