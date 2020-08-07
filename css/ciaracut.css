@@ -2,15 +2,42 @@
   font-family :'police';
   src: url('../upload/Brightly Crush Shine.otf') format('truetype');
   }
+.title{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:white;
+}
+.title2{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:black;
+}
+
 /*PAGE INDEX*/
 #index{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: pink;
+  width: 100%;
+}
+
+#contindex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
 }
 #presentation{
   
-  background-image: url("../upload/panierfond.jpg");
+  background-image: url("../upload/fondfacebook.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -23,7 +50,7 @@
 }
 
 .photo{
-  border:black 8px double;
+  border:black 10px double;
 }
 
 
@@ -41,6 +68,7 @@
   font-size: 30px;
   font-family:serif;
   padding: 3%;
+  margin: 2%;
   width: 64vw;
   height: 100%;
   
@@ -51,7 +79,7 @@
   background-size: cover;
   display: flex;
   flex-direction:column;
-  justify-content: space-around;
+  justify-content:space-between;
   align-items: center;
   flex-wrap: wrap;
 
@@ -63,26 +91,48 @@
   justify-content:space-around;
   align-items: center;
   border-radius: 100%;
-  border:double 15px;
-  font-family:sans-serif;
-  font-size: 18px;
+  border:double 20px;
+  font-family:"Times New Roman", Times, serif;
+  font-size: 20px;
   width: 250px;
   height: 250px;
+  margin: 2%;
+}
+.forfait div #bulle1 {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.bulle:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  transition: all 0.25s ease-in-out;
+
+}
+.bulle:not(:hover) {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.25s ease-in-out;
 }
 #bulle1{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 1%;
+
+}
+#bulle2{
   display: flex;
   flex-direction:row;
   justify-content: space-around;
   width: 80%;
   flex-wrap: wrap;
-
-}
-#bulle2{
-   display: flex;
-  flex-direction:row;
-  justify-content: space-around;
-  width: 80%;
-  flex-wrap: wrap;
+  margin: 2%;
+   padding: 1%;
 }
 
 #services{
@@ -91,14 +141,61 @@
   background-size: cover;
   display: flex;
   flex-direction:column;
-
-
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
 #contservices{
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.theme{
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
+
+#demo{
+  align-items: center;
+  margin: 8%;
+  padding: 5%;
+  width: 700px;
+}
+.titrecoupe{
+  margin: 2%;
+  font-size: 60px;
+  color: pink;
+  font-family: police;
+}
+
+#facebook{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#contfacebook{
+  background-color:#0c0c0cbf;
+  border:double white 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3%;
+  margin: 2%;
+
+}
+
 
 
 
@@ -107,6 +204,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 #conttarif{
   background-image: url("../upload/panierfond.jpg");
@@ -210,21 +308,23 @@ font-size: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:center;
   align-items: center;
+  width: 100%;
 }
 #contclient{
+  border: double white 10px; 
   margin: 3%;
   background-color:#000000c4;
-  width: 80%;
-  min-height: 890px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
+  padding: 30px;
 
 }
 #formclient{
+  border: solid white 5px;
   padding: 3%;
   margin: 3%;
   justify-content: center;
@@ -258,6 +358,7 @@ font-size: 20px;
   width: 60%;
 }
 #infouser{
+  border:double white 10px;
   font-size: 20px;
   padding: 1%;
   margin: 3%;
@@ -276,9 +377,26 @@ font-size: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:;
   align-items: center;
+  width: 100%;
 
+
+
+}
+#contlivreor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+  padding: 5%;
+}
+#contm{
+
+  overflow: scroll;
+  height: 600px;
+  margin: 3%;
+  padding: 5%;
 }
 #comment{
   justify-content: center;
@@ -288,24 +406,42 @@ font-size: 20px;
   margin: 3%;
   padding: 3%;
   font-size: 25px;
-  width: 100%;
+  width: 95%;
 }
 #contlivreor{
-  width: 80%;
+  background-color:#000000bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
 }
 .poster{
+
   background-color:#e91e63e3;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  padding: 3%;
+  margin: 3%;
+}
+
+#suppcomment{
+
+  color: black;
+  background-color:white; 
+  border: double;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
   margin: 3%;
 
-}
-#suppcomment{
-  color: black;
+  
 }
 #user{
   font-size: 20px;
@@ -314,6 +450,8 @@ font-size: 20px;
   word-wrap: break-word;
   font-size: 20px;
   width: 70vw;
+  padding: 3%;
+  margin: 3%;
 }
 
 /*PAGE PROFIL*/
@@ -324,11 +462,11 @@ font-size: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
 }
 #fiche{
+  border: double white 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,6 +475,8 @@ font-size: 20px;
   word-break: break-all;
   font-size: 30px;
   color: white;
+  width: 60%;
+  margin: 3%;
 }
 #contfiche{
   padding: 1%;
@@ -349,26 +489,31 @@ font-size: 20px;
   align-items: center;
 }
 #contentinfos{
+
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:space-around;
   align-items: center;
   background-color:#171616c9;
-  width: 80%;
+  border:double white 10px;
+  width: 90%;
 
 }
 #dernierpresta{
+  border: double white 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color:#d4215e;
+  width: 40%;
+  margin:3%;
 
 
 }
 
 #infouser2{
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -377,9 +522,12 @@ font-size: 20px;
   margin: 3%;
   background-color:#171616c9;
   width: 80%;
+  border: double white 10px;
 }
 #popclient{
+  background-color:#171616c9;
   margin: 3%;
+  border: double white 10px;
 }
 #formprofil{
   display: flex;
@@ -388,9 +536,20 @@ font-size: 20px;
   align-items: center;
   background-color:#272525d1;
   color: white;
-  width: 60%;
-  height: 751px;
   margin: 3%;
+  min-height: 80vh;
+}
+#titreclient{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#continfo{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
 }
 
 /*PAGE PLANNING*/
@@ -402,6 +561,14 @@ font-size: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#contplanning{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
 }
 #tableauplanning{
   background-color: #1c1d1fd9;
@@ -433,6 +600,7 @@ font-size: 20px;
 }
 
 #calendrier{
+  border:double white 10px;
   background-color:#1c1d1fd9;
   display: flex;
   flex-direction: row;
@@ -453,11 +621,14 @@ font-size: 20px;
   
 }
 #agenda{
+  border:double white 10px;
+  background-color: #1b1a1ac7;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 3%;
+  padding: 2%;
 
 
 }
@@ -470,6 +641,8 @@ font-size: 20px;
   list-style: none;
   color: white;
   border:double;
+  margin:2%;
+  padding: 2%;
 }
 
 /*PAGE PRODUIT*/
@@ -492,16 +665,21 @@ font-size: 20px;
   height: -webkit-fill-available;
   font-family: sans-serif;
   color: white;
+
 }
 #formprestation2{
   background-color:#4a4144a8;
+  border:double white 10px;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  height: -webkit-fill-available;
   font-family: sans-serif;
+  border:double white 10px;
+  font-size: 20px;
   color: white;
+  padding: 3%;
+  
 }
 /*PAGE PANIER*/
   #pagepanier{
@@ -514,9 +692,12 @@ font-size: 20px;
   align-items: center;
   width: 100%;
 }
+
 #btnretour{
-  margin-bottom: 50px;
-  margin-top:50px;
+  background-color:#0000009e;
+  border:double white 5px;
+  margin:3%;
+  padding: 1%;
 }
 #contpanier{
   background-color:#0000009e;
@@ -529,7 +710,8 @@ font-size: 20px;
   width: 70%;
   padding: 3%;
   margin: 3%;
-  min-height: 650px;
+  min-height: 80vh;
+  border:double white 10px;
 }
 #produitpanier{
   display: flex;
@@ -560,58 +742,6 @@ font-size: 20px;
 }
 
 
-/*PAGE ADMIN*/
-.bouton{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#formadminprestation{
-  display: flex;
-  flex-direction:column;
-  justify-content: space-around;
-  align-items: center;
- 
-}
-.title{
-  margin-bottom: 30px;
-  margin-top:30px;
-  text-align: center;
-  font-family:police;
-  font-size: 50px;
-  color:white;
-}
-.title2{
-  margin-bottom: 30px;
-  margin-top:30px;
-  text-align: center;
-  font-family:police;
-  font-size: 50px;
-  color:black;
-}
-
-h1{
-  text-align: center;
-}
-.heure{
-  background-color:#211d1d91;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  font-family: serif;
-  width: 90%;
-}
-.exemplescript{
-  color: white;
-}
-
-
-
-
-
 /*PAGE BOUTIQUE PAIEMENT*/
 
 #btnprest{
@@ -626,7 +756,6 @@ h1{
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:center;
   margin: 0px;
   padding: 0px;
   min-height:750px;
@@ -641,7 +770,7 @@ h1{
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  min-height:770px;
+  min-height:80vh;
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 3%;
@@ -673,10 +802,6 @@ h1{
 
 }
 
-
-
-
-
 /*PAGE BOUTIQUE PRESTATION*/
 #boutiquepresta{
     background-color:#fadbdd;
@@ -684,6 +809,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 #main-reserv{
     
@@ -695,12 +821,11 @@ h1{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
   }
 
 #cadre-reserv{
   background-color: #211d1d91;
+  border:double white 10px;
   display: flex;
   flex-direction:column;
   justify-content: space-around;
@@ -708,10 +833,19 @@ h1{
   flex-wrap:wrap;
   text-decoration: none;
   list-style: none;
-  width: 85%;  
+  margin: 3%;
+  padding: 3%;  
   
 
 }
+#alertchiffre{
+  background-color:#2f2d2ead;
+  font-family:sans-serif;
+  color:black;
+  font-size: 30px;
+
+}
+
 #contpresta{
   display: flex;
   flex-direction: row;
@@ -733,14 +867,20 @@ h1{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 2%;
   background-color:#e91e638c; 
   color: white;
+  border:double white 10px;
+  font-size: 20px;
+  margin: 2%;
+  padding: 1%;
 }
 #alertchiffre{
   background-color:;
   font-family:sans-serif;
   color: white;
+  border:double white 10px;
+  margin: 1%;
+  padding: 3%;
 
 }
 
@@ -754,44 +894,45 @@ h1{
   
   color:green;
 }
-#photostock
-{
-  height: 335px;
+#titlestock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
 }
 
 #stock{
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-
-}
-#corpstock{
-  background-image: url("../upload/panierfond.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: black;
-  min-height: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  background-color: #e91e63;
   width: 100%;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  
+}
+
+#corpstock{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+  
 }
 #produit{
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:space-around;
   align-items: center;
   flex-wrap: wrap;
   background-color:#000000a6;
   padding: 2%;
-  margin-bottom: 10%;
-  width:50%;
+  margin: 3%;
 }
 #cardstock{
   
@@ -799,32 +940,48 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin-bottom: 50px;
-  margin-top: 150px;
+  
 }
 #bloccardstock{
+  background-color:#00000026;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  padding: 4%;
+  margin: 4%;
   font-family: sans-serif;
+  font-size: 20px;
+  border:double white 10px;
+  color: white;
 }
 #autostock{
-  margin-bottom: 150px;
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  background-color:#000000a6;
+  margin: 3%;
+  padding: 3%;
 }
 #quantite{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 3%;
+}
+#cadrestock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#1010109c;
+  padding: 3%;
+  
+}
+#photostock{
+  width: 250px;
+  height: 250px;
 }
 
 /*PAGE NAV BAR*/

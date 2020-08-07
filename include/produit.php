@@ -16,12 +16,12 @@ if(!isset($_SESSION)){
 							
 		
 						<section>
-								<H1 class="titre">Ma Selection</H1>
+								
 								<?php
 								$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
 								$retour=$_GET['p'];
 								$id_utilisateurs=$_SESSION['id'];
-								$reponse = $connexion->query("SELECT * FROM prestation WHERE prestation.id=$retour ");
+								$reponse = $connexion->prepare("SELECT * FROM prestation WHERE prestation.id=$retour ");
 								$rep=$reponse->fetchAll();
 								
       										if (!empty($_GET['p'])) 

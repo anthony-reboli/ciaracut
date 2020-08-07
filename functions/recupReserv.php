@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['id'])) {
-	$id=$_POST['id'];
+	$id=htmlspecialchars($_POST['id']);
 	$connexion=mysqli_connect("localhost","root","","ciaracut");
 	$req="SELECT * FROM reservations WHERE id=$id";
 	$query=mysqli_query($connexion,$req);

@@ -1,6 +1,13 @@
  
 <?php
-
+session_start();
+if (isset($_SESSION['login']) =="vanessa" ) {
+	
+}
+else 
+{
+	header('location:index.php');
+}
 
 
 date_default_timezone_set('europe/paris');
@@ -53,19 +60,19 @@ var timerID = setInterval(runClock,1000);
 					<section id="formclient">
              			<form class="form-row" method="post">
              				<label class="title">Barre de recherche clients</label>
-        						<input id="formGroupExampleInput" class="form-control"  name="search"type="text" placeholder="Recherche par type" id="searchBox"/><br>
+        						<input id="formGroupExampleInput" class="form-control"  name="search"type="text" placeholder="Recherche par ordre alphabétique" id="searchBox"/><br>
         						 <small class="exemplescript" class="form-text text-muted">(Exemple: Nom)</small>
 						</form>
         					<div id="response"></div>
         			</section>
 
         			<section id="popclient">
-        					<button type="button"  class="btn btn-light" data-toggle="modal" data-target=".bd-example-modal-sm">Inscription membre</button>
+        					<button type="button"  class="btn-lg btn-light" data-toggle="modal" data-target=".bd-example-modal-sm">Inscription client</button>
 
-					<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					<div class="modal fade justify-content-center text-align-center bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm">
     						<div class="modal-content">
-    						<h1>Inscription du membre</h1>
+    						<label style="text-align: center; font-size: 30px;"><b>Inscription client</b></label>
       					<?php include("../include/inscriptionclient2.php");?>
     						</div>
   						</div>
@@ -109,6 +116,9 @@ var timerID = setInterval(runClock,1000);
 						</section>			
     	
 					</main>
+					<footer class="headeri">
+    				<?php include("../include/footer.php");?>
+					</footer>
 				</body>
 			</html>
 

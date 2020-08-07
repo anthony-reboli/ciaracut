@@ -8,9 +8,35 @@ if (isset($_SESSION['id'])) {
 <h1>Gestion de mes prestations</h1>
     <section id="formadminprestation">
             
-                 
+            <?php 
+                if (isset($_POST['valider'])) {
+                      $titre = $_POST['titre'];
+                      $type = $_POST['type'];
+                      $prix = $_POST['prix'];
+                      $image = $_POST['photo'];
+                      $id=$_SESSION['id'];
+                      $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
+                      $requete = $connexion->prepare("INSERT INTO prestation (nom,type,prix,id_utilisateurs,image) VALUES ('$titre','$type','$prix','$id','$image')");
+                      $requete->execute();
+                
+                }
+                ?>
+                
+                <form id="form" class="form-group col-8" method="post" >
+                  <h3 >Créer des prestations</h3>
+                                  <label for="exampleFormControlInput1">Nom prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="titre" required></br>
+                                  <label for="exampleFormControlInput1">Type de prestation</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="type" required></br>
+                                  <label for="exampleFormControlInput1">Photo</label></br>                 
+                                  <input type="file" name="photo" required></br>
+                                  <label for="exampleFormControlInput1">Prix</label></br>
+                                  <input class="form-control form-control-lg" type="text" name="prix" required></br>
+                                  <input class="btn btn-secondary" type="submit" value="Creer" name="valider"></br>
+                 </form>
+             
                   <?php
-                    include("../include/imageprestation.php");
+
                 if (isset($_POST['modifier'])) {
                           $titre3 = $_POST['titre3'];
                           $titre2 =  $_POST['titre2'];

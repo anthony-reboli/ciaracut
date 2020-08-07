@@ -24,7 +24,6 @@
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -52,17 +51,17 @@
   </div>
 
   <div id="descriptionphoto">
-    <h1 style="text-align: center;" class="title">Présentation de Vanessa</h1>
+    <h1 style="text-align: center;" class="titrecoupe">Ciara cut by "Vanessa"</h1>
     <p>Véritable passionnée de coiffure depuis plus de 25 ans je vous invite à découvrir votre salon de coiffure dans le 9e à Marseille.
-    Un endroit Simple avec une ambiance atypique et entièrement dédiée à la coiffure.
-    Plus qu’un simple passage chez le coiffeur, vous embarquez pour un moment de détente et de relaxation.</p>
+    Un endroit Simple avec une ambiance décontractée et entièrement dédiée à la coiffure.
+    Plus qu’un simple passage chez le coiffeur, vous embarquez pour un moment de plaisir et de relaxation.</p>
   </div>
 
 </div>
 
 
 <div id="forfait" class="p-4">
-   <h1 style="text-align: center;" class="title">Mes Forfaits</h1>
+   <h1 style="text-align: center;" class="titrecoupe">Mes Forfaits</h1>
   <div id="bulle1">
   <div class="bulle"><b>Forfait<br>Ombre Hair<br>ou Tye and Dye<br>A partir de 95€</b></div>
   <div class="bulle"><b>Forfait Coloration<br>Masque/Shamp<br>Coupe/Brush<br>A partir de 45€</b></div>
@@ -76,35 +75,114 @@
 </div>
 
 
-<div class="p-4" id="services">
-  
-    <h1 class="title">Avant/Aprés</h1>
+<div id="services">
+   <h1 class="titrecoupe" style="text-align: center;">Mes Prestations</h1>
     <div id="contservices">
-    <div id="theme">
-    <h1 class="title">Dessus de mèches et bas de nuque marron chocolat</h1>
-    </div>
-    <div id="carouselExampleSlidesOnly m-4 d-flex flex-column  " class="carousel slide w-50 p-4 " data-ride="carousel">
+  <div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="4"></li>
+    <li data-target="#demo" data-slide-to="5"></li>
+    <li data-target="#demo" data-slide-to="6"></li>
+    <li data-target="#demo" data-slide-to="7"></li>
+    <li data-target="#demo" data-slide-to="8"></li>
+  </ul>
   <div class="carousel-inner">
+
     <div class="carousel-item active">
-        <img src="../upload/prest9.jpg" class="d-block w-50" alt="...">
+      <img src="../upload/avantmecheblanche.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Avant</h3>
+        <p>Dessus de mèches blanche </p>
+      </div>   
     </div>
+
     <div class="carousel-item">
-      <img src="../upload/prest1.jpg" class="d-block w-50" alt="...">
+      <img src="../upload/FullSizeR2.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Après Mèches</h3>
+        <p>Dessus de mèches blanche</p>
+      </div>   
     </div>
+
+      <div class="carousel-item">
+      <img src="../upload/avantcuivre.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Avant</h3>
+        <p>Cuivré chaud</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+      <img src="../upload/prest2.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Cuivré chaud</h3>
+        <p>Avec soin au botox!!</p>
+      </div>   
+    </div>
+
+     <div class="carousel-item">
+      <img src="../upload/avantdessusmeches.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Avant</h3>
+        <p>Dessus mèches et bas marron!</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+      <img src="../upload/choco.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Dessus de mèches</h3>
+        <p>Et le bas marron chocolat!</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+      <img src="../upload/blond.jpg"  width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Mèche blonde</h3>
+        <p>Avec soin au botox!!</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+      <img src="../upload/avantmiel.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Avant</h3>
+        <p>Mèches miel</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+      <img src="../upload/miel.jpg" width="600" height="600">
+      <div class="carousel-caption">
+        <h3>Mèches miel</h3>
+        <p>Avec soin au botox!!</p>
+      </div>   
+    </div>
+
   </div>
-    
-  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 </div>
 
 </div>
+</div>
 
- 
 
+      <div  id="facebook">
+      <div id="contfacebook">
+      <h1 class="titrecoupe" style="text-align: center;">Mon actu Faceboock</h1>
+       <iframe  class="d-flex flex-column justify-content-center align-items-center" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCiara-cut-103232688121762&tabs=timeline&width=485&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="800" style="border:double white 10px " scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+       </div>
 
-  
-      <div id="facebook">
-        <h1 class="title">Mon actu Faceboock</h1>
-       <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCiara-cut-103232688121762&tabs=timeline&width=600&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="600" height="800" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
        </div>
     </main>
 

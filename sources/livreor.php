@@ -3,8 +3,12 @@
 <?php
 date_default_timezone_set('europe/paris');
 $connexion = mysqli_connect("localhost", "root", "", "ciaracut");
+if (isset($_SESSION['nom'])) 
+{
 $nom=$_SESSION['nom'];
 $prenom=$_SESSION['prenom'];
+}
+
 if (isset($_POST['message']))
 {
     $msg=addslashes($_POST['message']);
@@ -29,6 +33,7 @@ if (isset($_POST['submit']))
 <html lang="FR">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -43,6 +48,7 @@ if (isset($_POST['submit']))
     </header>
 
     <main id="contlivreor">
+       
         <?php
         
         if (isset($_SESSION['login'])){ 
@@ -54,7 +60,7 @@ if (isset($_POST['submit']))
                 ?>
                 <form id="comment" method="POST" action="livreor.php">
                 <h1 class="title">Le livre or de ciaracut</h1>
-                <label for="formGroupExampleInput"><b>Laisser vos commentaires</b></label>
+                <label for="formGroupExampleInput"><b>Laisser vos commentaires:</b></label>
                 <div class="form-group">
                 <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
@@ -69,23 +75,23 @@ if (isset($_POST['submit']))
 
         }
         ?>
-
+   <div id="contm">
 <?php
         $requete = "SELECT * FROM commentaires ORDER BY date DESC LIMIT 10";
         $req = mysqli_query($connexion, $requete);
-        
+    
         while($row = mysqli_fetch_assoc($req))
         {
         ?>
         <div class="poster">
             <div id="user">
-                <p><b>Date: <?php echo $row['date']?></b></p>
+                <p><b><u>Date:</u> <?php echo $row['date']?></b></p>
                 <hr>
-                <h3><b>Nom: <?php echo $row['nom']?></b></h3>
+                <h3><b><u>Nom:</u> <?php echo $row['nom']?></b></h3>
                 <hr>
             </div>
             <div id="messag">
-                <p>Messages: <?php echo $row['commentaire']?></p>
+                <p><b><u>Messages:</u></b> <?php echo $row['commentaire']?></p>
             </div>
                 <hr>
                 <?php
@@ -96,12 +102,14 @@ if (isset($_POST['submit']))
                 ?>
             </div>
             
-        </div>
         <?php
 
 }
 ?>
+ </div>
 </main>
-
+<footer class="headeri">
+    <?php include("../include/footer.php");?>
+</footer>
     </body>
 </html>
