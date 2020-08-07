@@ -1,12 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['login']) =="vanessa" ) {
-	
-}
-else 
-{
-	header('location:index.php');
-}
 ?>
 <html>
 <head>
@@ -64,7 +57,6 @@ else
 						</div>
 									<?php
 									$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
-									
 									$req=$connexion->query("SELECT SUM(prixglobal) FROM commande WHERE id_utilisateurs=$id_utilisateurs");
 									$total = $req->fetchAll();			   			
 									?>

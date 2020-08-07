@@ -3,13 +3,13 @@
 <footer id="foot" class="page-footer font-small blue pt-4">
 
   <!-- Footer Links -->
-  <div class="container-fluid text-center justify-content-space-around align-items-center text-md-left">
+  <div class="container-fluid text-center justify-content-space-around align-items-center">
 
     <!-- Grid row -->
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-4 mt-md-0 mt-4 ">
+      <div class="col-md-4 mt-md-0 mt-4 text-center ">
 
         <!-- Content -->
         <h5 class="text-uppercase text-center">Adresse</h5>

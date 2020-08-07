@@ -1,13 +1,5 @@
 
-<?php session_start();
-if (isset($_SESSION['login']) =="vanessa" ) {
-	
-}
-else 
-{
-	header('location:index.php');
-}
-?>
+<?php session_start();?>
 <html>
 	<head>
 		<title>Produit</title>

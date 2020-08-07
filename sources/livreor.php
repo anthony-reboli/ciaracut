@@ -3,12 +3,8 @@
 <?php
 date_default_timezone_set('europe/paris');
 $connexion = mysqli_connect("localhost", "root", "", "ciaracut");
-if (isset($_SESSION['nom'])) 
-{
 $nom=$_SESSION['nom'];
 $prenom=$_SESSION['prenom'];
-}
-
 if (isset($_POST['message']))
 {
     $msg=addslashes($_POST['message']);
@@ -70,7 +66,7 @@ if (isset($_POST['submit']))
             }
             else
             {
-                echo "Vous n'êtes pas client vous ne pouvez pas commenter !!";
+                echo "<p id='notclient'>Vous n'êtes pas client vous ne pouvez pas commenter !!</p>";
             }
 
         }

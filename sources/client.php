@@ -1,13 +1,6 @@
  
 <?php
-session_start();
-if (isset($_SESSION['login']) =="vanessa" ) {
-	
-}
-else 
-{
-	header('location:index.php');
-}
+
 
 
 date_default_timezone_set('europe/paris');
@@ -53,13 +46,15 @@ var timerID = setInterval(runClock,1000);
 </head>
 	<body id="pageclient">
 			<header class="headeri">
-    		<?php include("../include/bar-nav.php");?>
+    		<?php
+    		 session_start();
+    		 include("../include/bar-nav.php");?>
     		</header>
 
 				<main id="contclient">		  	
 					<section id="formclient">
              			<form class="form-row" method="post">
-             				<label class="title">Barre de recherche clients</label>
+             				<label class="title2">Barre de recherche clients</label>
         						<input id="formGroupExampleInput" class="form-control"  name="search"type="text" placeholder="Recherche par ordre alphabétique" id="searchBox"/><br>
         						 <small class="exemplescript" class="form-text text-muted">(Exemple: Nom)</small>
 						</form>

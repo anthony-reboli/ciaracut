@@ -42,7 +42,7 @@ include("../include/functions.php");
             echo "<div id=\"infouser2\">";
             echo "<h1 class='titrecoupe'>Le fichier client:</h1>";
 
-            echo "<h1>Les infos de $nom<br>";
+            echo "<h1>Les infos de: $nom<br>";
                 echo" Pseudo: $login<br>";
                 echo" Nom: $nom<br>";
                 echo" Prénom: $prenom<br>";
@@ -107,8 +107,6 @@ include("../include/functions.php");
                         }
                     
                     echo "Le changement a bien été effectué!";
-                    session_destroy();
-                    header('location:index.php');
                 }
                 
             ?>

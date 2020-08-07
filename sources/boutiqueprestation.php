@@ -18,7 +18,7 @@
     </header>
           <main id="main-reserv">
             <section id="cadre-reserv">
-                  <h1 class="title"><u>Mes prestations</u></h1>
+                  <h1 class="titrecoupe">Mes prestations</h1>
                   <div id="contpresta">
                       <?php 
                       $i=0;
@@ -29,9 +29,9 @@
                         $img=$values[5];
                         $nom=$values[1];
                         $type=$values[2];
-                        echo" <div class=\"cardproduit\" class=\"card\" style=\"width: 15rem\";>";
+                        echo" <div id=\"cardproduit\" class=\"card\" style=\"width: 20rem\";>";
                         echo "<h1 class=\"nomp\">$nom </h1><br>";
-                        echo "<a href=\"produit.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/$img\"></a>";
+                        echo "<a href=\"produit.php?p=$did\"><img class=\"photostock\" src=\"../upload/$img\"></a>";
                         echo "<p class=\"card-text\">Détails: {$values['2']}</p>";
                         echo "<p class=\"card-text\">Prix: {$values['3']}€</p>";
                         echo "</div>";
@@ -41,12 +41,11 @@
                   }
               ?>
               </div>
-            </section>
 
-  <button id="btnprest" type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal">
+  <button id="btnprest" type="button" class="btn-lg btn-light" data-toggle="modal" data-target="#exampleModal">
   Gestion de mes prestations
   </button>
-
+</section>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -67,9 +66,7 @@
   </div>
 </div>
 
-  <div class="heure">
     <?php include("../include/chiffre.php");?>
-    </div>
 
   </main>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

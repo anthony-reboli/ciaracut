@@ -1,5 +1,4 @@
-<?php   
-session_start();     
+<?php        
 $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
 ?>
 
@@ -12,39 +11,32 @@ $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../JS/stock.js"></script>
+	<script type="text/javascript" src="../include/script.js"></script>
       <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
 </head>
 <body id="stock">
 
 <header id="headeri">
-   <?php include("../include/bar-nav.php");?>
+   <?php
+   session_start();
+    include("../include/bar-nav.php");?>
 </header>
 		<main id="corpstock">
-
-
-
-			
 <?php
-if (isset($_SESSION['login']) =="vanessa" ) {
-	
-}
-else 
-{
-	header('location:index.php');
-}
 
 if (!isset($_GET['p']))
 {
 
 		?>
-
+		<div id="autostock">
         <form id="autostock" method="post">
         <label class="title">Le moteur de recherche du stock</label>
-        <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche par type" id="searchBox">
+        <input class="form-control mdb-autocomplete" name="search"type="text" placeholder="Recherche produits" id="searchBox">
 		</form>
         <div id="response"></div>
-        <button type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal6">
+        <button type="button" class="btn-lg btn-light" data-toggle="modal" data-target="#exampleModal6">
   		Gérer mon stock
 		</button>
 		<!-- Modal -->
@@ -57,22 +49,22 @@ if (!isset($_GET['p']))
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body flex-column">
+      <div class="modal-body d-flex flex-column justify-content-center">
        <?php 
        include("../include/imagestock.php");
        ?>
        		       <form method="post"  enctype="multipart/form-data">
-				    <label for="mon_fichier"></label><br />
+				    <label for="mon_fichier"></label><br/>
 				     <label for="formGroupExampleInput"><b>Images</b></label>
 				    <input type="hidden" name="MAX_FILE_SIZE" value="1048576" required />
-				    <input type="file" name="mon_fichier" id="mon_fichier" required/><br /> 
+				    <input type="file" name="mon_fichier" id="mon_fichier" required/><br/> 
 				     <label for="formGroupExampleInput"><b>Nom du produit:</b></label>
-				    <label for="titre"></label><br />
+				    <label for="titre"></label><br/>
 				    <input id="formGroupExampleInput" class="form-control" type="text" name="nom" value="Nom du produit" id="nom" required /><br />
-				    <label for="description"></label><br />
+				    <label for="description"></label><br/>
 				    <label for="formGroupExampleInput"><b>commentaires:</b></label>
-				    <textarea class="form-control" id="exampleFormControlTextarea1" name="description" id="description"></textarea><br />  
-				    <input class="btn btn-dark m-4" type="submit" name="submit" value="Envoyer" />
+				    <textarea class="form-control" id="exampleFormControlTextarea1" name="description" id="description"></textarea><br/>  
+				    <input class="btn btn-dark m-4" type="submit" name="submit" value="Envoyer"/>
 				</form>
       </div>
        <div class="modal-footer">
@@ -82,7 +74,8 @@ if (!isset($_GET['p']))
       </div>
     </div>
   </div>
-</div>   
+</div>  
+</div> 
         <div id="produit"> 
         <label class="title">Mon stock</label> 
         <div id="titlestock">
@@ -99,8 +92,8 @@ if (!isset($_GET['p']))
 				$cmb=$data['quantiteproduit'];
 
 
-					echo"<div id='bloccardstock' class='card'style=\"width: 20rem\";>";
-					echo "<a href=\"stock.php?p=$did\"><img id=\"photostock\" src=\"../upload/stock/$img\"></a>";
+					echo"<div id='bloccardstock' class='card'style='15rem'\>";
+					echo "<a href=\"stock.php?p=$did\"><img class=\"photostock\" src=\"../upload/stock/$img\"></a>";
 					echo" <div class=\"titrestock\">";
 					echo "<h1 class=\"dnp\">$dnp</h1><br>";
 					echo "</div>";
@@ -113,7 +106,6 @@ if (!isset($_GET['p']))
 					{
 						echo"<div id='stockquant'>";
 					}
-					
 					echo " Quantité: $cmb";
 					echo "</div>";
 					echo "</div>";
@@ -142,40 +134,27 @@ if (!isset($_GET['p']))
 				$dnp=$data['nom'];
 				$cmb=$data['quantiteproduit'];
 				$description=$data['description'];
-				
-				echo" <div id='bloccardstock' class=\"card\" style=\"width: 25rem\";>";
 
+				echo" <div id='bloccardstock' class=\"card\" style=\"width:30rem\";>";
 				echo "<div id='cadrestock'>";
-				echo "<h1>$dnp</h1><br>";
-				echo "<a href=\"stock.php?p=$did\"><img class=\"card-img-top\" src=\"../upload/stock/$img\"></a>";
-				echo "<label  for=\"formGroupExampleInput\"><u>Description:</u></label>$description";
-				echo "<div>";
-				echo "Quantité: $cmb";
-				?>
-				<form method="post">
-					
-					<button name='supstock' id="formsupstock" ><img width="50" height="50" src="../upload/corbeille.png"></button>
-					
-				</form>
-				<?php
+				echo "<h1 class=\"title\">$dnp</h1><br>";
+				echo "<a href=\"stock.php?p=$did\"><img class=\"photostock\" src=\"../upload/stock/$img\"></a>";
+				echo "<br>";
+				echo "<label for=\"formGroupExampleInput\"><b>Description:</b></label>$description";
 				
-				echo "</div>";
-				
+				echo "<br><br>";
+				echo "<b>Quantité:</b> $cmb";
+				echo "<br><br>";
 				?>
-				  </div>  
-				<form class="form-group" id="quantite" method="post">
-					<div>
-						<label>Modifier quantité:</label>
+				
+				<form id="formqts" method="post">
+						<label><b>Modifier quantité:</b></label>
 						<input name="nombre" class="form-control" type="number">
 						<br>
-					</div>
-
-						<div>
-							<button name="stockV" type="submit" class="btn btn-light">Valider</button>
-						</div>
-
+			            <button name="stockV" type="submit" class="btn btn-light">Valider</button>
 				</form>
 				<?php
+				echo "</div>";
 
 				$i++;
 				
@@ -187,19 +166,7 @@ if (!isset($_GET['p']))
 						$updateQ=mysqli_query($bdd,$update);
 						 header("refresh:0");
 					}
-
-								if(isset($_POST['supstock']))
-					{
-						
-						$idproduit=$_GET['p'];
-						$delete="DELETE FROM produit WHERE id = $idproduit";
-						var_dump($delete);
-						echo "salut";
-						$deleteQ=mysqli_query($bdd,$delete);
-						header("location:stock.php");
-						 
-					}
-					echo "</div>";
+					
 
 }
 

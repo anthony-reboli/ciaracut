@@ -1,7 +1,15 @@
+ /*Curseur*/
+a  ,.bulle{
+  cursor: url('../upload/ciseau.png'), auto; 
+} 
+
+/*format écriture*/
 @font-face {
   font-family :'police';
   src: url('../upload/Brightly Crush Shine.otf') format('truetype');
   }
+
+/*CLASS TITRES*/
 .title{
   margin: 2%;
   padding: 2%;
@@ -33,7 +41,6 @@
   flex-direction: column;
   justify-content: center;
 
-
 }
 #presentation{
   
@@ -52,7 +59,6 @@
 .photo{
   border:black 10px double;
 }
-
 
 #descriptionphoto {
   background-image: url("../upload/fondforfait.jpg");
@@ -196,32 +202,43 @@
 
 }
 
-
-
-
 /*PAGE TARIFS*/
+
 #tarif{
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
+
 #conttarif{
-  background-image: url("../upload/panierfond.jpg");
+  background-image: url("../upload/fondfacebook.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 #conttableau{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color:#121213d1;
-  padding: 3%;
+  border: white double 10px;
+  width: 90%;
+  padding: 4%;
+  margin: 3%;
    
+}
+#alertchiffre{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  width: 70%;
 }
 
 
@@ -303,7 +320,7 @@ font-size: 20px;
 
 /*PAGE CLIENT*/
 #pageclient{
-  background-image: url("../upload/panierfond.jpg");
+  background-image: url("../upload/fondfacebook.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -324,17 +341,19 @@ font-size: 20px;
 
 }
 #formclient{
-  border: solid white 5px;
-  padding: 3%;
-  margin: 3%;
-  justify-content: center;
-  font-family: sans-serif;
-  font-size: 20px;
-  background-color:#d4215e;
-  width: 100%;
   display: flex;
   flex-direction:row;
   justify-content:space-around;
+  border: double black 10px;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: black;
+  background-color:pink;
+  padding: 3%;
+  margin: 3%;
+  width: 100%;
+
   
 }
 #popclient{
@@ -354,8 +373,12 @@ font-size: 20px;
 
 }
 #tableauclient{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 60%;
+  width: 80%;
 }
 #infouser{
   border:double white 10px;
@@ -529,6 +552,11 @@ font-size: 20px;
   margin: 3%;
   border: double white 10px;
 }
+#notclient{
+  color: white;
+  font-size: 20px;
+  font-family:police;
+}
 #formprofil{
   display: flex;
   flex-direction: column;
@@ -554,7 +582,7 @@ font-size: 20px;
 
 /*PAGE PLANNING*/
 #planning{
-  background-image: url("../upload/panierfond.jpg");
+  background-image: url("../upload/fondfacebook.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -750,6 +778,12 @@ font-size: 20px;
 
 }
 
+
+#paiement2
+{
+  min-height: 74vh;
+}
+
 #paiement{
   background-image: url("../upload/panierfond.jpg");
   background-repeat: no-repeat;
@@ -762,11 +796,6 @@ font-size: 20px;
 
 
 }
-#paiement2
-{
-  min-height: 74vh;
-}
-
 #notpaiement
 {
     display: flex;
@@ -875,15 +904,14 @@ font-size: 20px;
 
   background-color:#e91e63 ;
   width: 100%;
-
 }
-.cardproduit{
+#cardproduit{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  background-color:#e91e638c; 
-  color: white;
+  align-items:center;
+  background-color:pink; 
+  color: black;
   border:double white 10px;
   font-size: 20px;
   margin: 2%;
@@ -916,19 +944,18 @@ font-size: 20px;
     flex-wrap: wrap;
 
 }
-
 #stock{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #e91e63;
-  width: 100%;
+  
   
 }
 
 #corpstock{
-  background-image: url("../upload/panierfond.jpg");
+  background-image: url("../upload/fondfacebook.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 80vh;
@@ -945,12 +972,12 @@ font-size: 20px;
   justify-content:space-around;
   align-items: center;
   flex-wrap: wrap;
+  border:double white 10px;
   background-color:#000000a6;
   padding: 2%;
   margin: 3%;
 }
 #cardstock{
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -958,46 +985,55 @@ font-size: 20px;
   
 }
 #bloccardstock{
-  background-color:#00000026;
+  background-color:pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
+  border:double black 10px;
+  color:black;
+  font-size: 20px;
   padding: 4%;
   margin: 4%;
-  font-family: sans-serif;
-  font-size: 20px;
-  border:double white 10px;
-  color: white;
+
 }
 #autostock{
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color:#000000a6;
+  border:double white 10px;
+  color: black;
   margin: 3%;
   padding: 3%;
 }
-#quantite{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3%;
-}
+
 #cadrestock{
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color:#1010109c;
   padding: 3%;
+  width: 100%;
+  font-size: 25px;
   
 }
-#photostock{
+.photostock{
+  border:double black 10px;
   width: 250px;
   height: 250px;
 }
+
+#formqts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /*PAGE NAV BAR*/
 
