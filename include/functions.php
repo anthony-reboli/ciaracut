@@ -114,44 +114,38 @@ class userpdo
     {
 
 
-        $log = $_POST['login'];
-        $login = $_SESSION['login'];
+        $log = $_SESSION['login'];
        
             $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$log'");
 
             $etat = $user->rowCount();
         
-            var_dump($etat);
+            
+            if ($etat > 0)
+            {
+                $msg = "erreur";
+            }
         
             if (strlen($pass1) >= 5)
             {
-                echo "mdp bon";
-                if ($etat == 0)
-                {
-                    $hash= password_hash($_POST["pass"], PASSWORD_DEFAULT, array('cost' => 12));
-                        $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$log', nom='$nom', prenom='$prenom', email='$email', password='$hash' , tel='$tel' ,fiche= NULL, datefiche= NULL WHERE login='$login'");
-                        var_dump($update);
+                
+                $hash= password_hash($_POST["pass"], PASSWORD_DEFAULT, array('cost' => 12));
+                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', password='$hash' , tel='$tel' ,fiche= NULL, datefiche= NULL WHERE login='$log'");
 
-                        $this->login = $log;
-                        $this->nom = $nom;
-                        $this->prenom = $prenom;
-                        $this->email = $email;
-                        $this->password = $pass1;
-                        $this->tel = $tel;
-                        
-                        echo "rentre";
-                        session_unset();
-                        header('location:index.php');
-                    
-                }
-                else
-            {
-                $msg = "erreur";         
-            }
+                $this->login = $log;
+                $this->nom = $nom;
+                $this->prenom = $prenom;
+                $this->email = $email;
+                $this->password = $pass1;
+                $this->tel = $tel;
+                
 
                 
             }
-            
+            else
+            {
+                $msg = "erreur2";
+            }
 
         
         return $msg;

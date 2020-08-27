@@ -44,7 +44,6 @@ $("#insert").click(function(){
         
 
 })
-
 $("#modif").click(function(){
      $.ajax(
                             {
@@ -57,11 +56,7 @@ $("#modif").click(function(){
 
                                 },
                             })
-        
-
 })
-
-
 $("#effacer").click(function(){
      $.ajax(
                             {
@@ -74,9 +69,7 @@ $("#effacer").click(function(){
                                 },
                             })
         
-
 })
-
 $(".btnRes").click(function() {
     var id = this["id"];
          $.ajax(

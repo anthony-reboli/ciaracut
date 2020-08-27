@@ -36,22 +36,24 @@ ob_start();
 				  <div  class="form-column d-flex align-items-center flex-column justify-content-center">
 				  	<h1 class="card-title">Formulaire de paiement</h1>
 				    <div class="col-10">
-				    	 <label for="validationDefault01">Nom</label>
-				      <input name="nom" type="text" class="form-control" placeholder="Nom client">
-				    </div>
-				    <div class="col-10">
-				    	 <label for="validationDefault01">Prénom</label>
-				      <input name="prenom" type="text" class="form-control" placeholder="Prénom client">
-				    </div>
-				    <div class="form-group col-md-10">
-				      <label for="inputState">Paiement</label>
-				      <select name="mode" id="inputState" class="form-control">
-				        <option selected>Choisir...</option>
-				        <option value="espece" required>Espece</option>
-						<option value="cheque"required>Chèque</option>
-				      </select>
-				    </div>
-				     <button name="payer" class="btn btn-dark" type="submit">Payer</button>
+				    <label for="validationDefault01">Nom</label>
+				    <input name="nom" type="text" class="form-control" placeholder="Nom client">
+				    <small class="exemplescript" class="form-text text-muted">(Exemple:Dupont)</small><br>
+				  </div>
+				  <div class="col-10">
+				   	<label for="validationDefault01">Prénom</label>
+				    <input name="prenom" type="text" class="form-control" placeholder="Prénom client">
+				    <small class="exemplescript" class="form-text text-muted">(Exemple:Madeleine)</small><br>
+				  </div>
+				  <div class="form-group col-md-10">
+				    <label for="inputState">Paiement</label>
+				    <select name="mode" id="inputState" class="form-control">
+				    <option selected>Choisir...</option>
+				   	<option value="espece" required>Espece</option>
+					<option value="cheque"required>Chèque</option>
+				    </select>
+				  </div>
+				     <button name="payer" class="btn btn-light" type="submit">Payer</button>
 				  </div>
 			</form>	
  		</section>
@@ -77,7 +79,9 @@ ob_start();
 		}
 			
 			?>
-			
+			<footer class="headeri">
+    		<?php include("../include/footer.php");?>
+			</footer>
 		
 	</body>
 </html>

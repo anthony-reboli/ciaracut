@@ -16,12 +16,12 @@ if(!isset($_SESSION)){
 							
 		
 						<section>
-								<H1 class="titre">Ma Selection</H1>
+								
 								<?php
 								$connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
 								$retour=$_GET['p'];
 								$id_utilisateurs=$_SESSION['id'];
-								$reponse = $connexion->query("SELECT * FROM prestation WHERE prestation.id=$retour ");
+								$reponse = $connexion->prepare("SELECT * FROM prestation WHERE prestation.id=$retour ");
 								$rep=$reponse->fetchAll();
 								
       										if (!empty($_GET['p'])) 
@@ -35,7 +35,7 @@ if(!isset($_SESSION)){
                         									$img=$val[5];
                         									$nom=$val[1];
                         									$type=$val[2];
-															echo" <div class=\"presta\">";
+															echo" <div class=\"card\">";
                         									echo "<h1 class=\"nomp\">$nom </h1><br>";
                         									echo "<a href=\"../include/produit.php?p=$did\"><img class=\"imagebout\" src=\"../upload/$img\"></a>";
                         									echo "<p class=\"nomp\">{$val['2']}</p>";
