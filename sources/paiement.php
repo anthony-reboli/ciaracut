@@ -21,8 +21,7 @@ ob_start();
 				</head>
 
 				<?php
-				if(!isset($_GET['P']))
-				{
+
 					
 				
 				?>
@@ -35,14 +34,37 @@ ob_start();
 							<section id="paiementbloc1" class="container">
 							<?php
 							$id_utilisateurs=$_SESSION['id'];
-							$id = $_GET['id'];
+							if(isset($_GET['id']))
+							{
+								$id = $_GET['id'];
+							}
+							
 							$connexion=mysqli_connect("localhost","root","","ciaracut");
 							$req=("SELECT prixtotal FROM panier ");
 							$query2=mysqli_query($connexion,$req);
 							$res=mysqli_fetch_all($query2);	
+
+								$bdd = mysqli_connect("localhost", "root", "", "ciaracut");
+								$requete="SELECT prixtotal FROM sauvegarde where datepanier ORDER by datepanier DESC LIMIT 1";
+								$requeteQ=mysqli_query($bdd,$requete);
+								$requeteR=mysqli_fetch_all($requeteQ);
+								$somme=$requeteR[0][0];
+
+											if(!isset($_GET['P']))
+											{
+												$res=$res[0][0];
+												echo"<h1 id='notclient'>Le montant total à payer est de:   $res €</h1>";
+												
+											}
+											else
+											{
+											echo "<p id='notclient'>La nouvelle somme après réduction est de : $somme € </p>";
+											
+											}
 							?>
 
-							<h1 id="montant">Le montant total à payer est de: <?php echo $res[0][0]?>€</h1>
+
+							
 				            <H2 class id="title">En espèce ou chèque</H2><br>
 
 				            <form id="paiementbloc" method="post">
@@ -80,38 +102,9 @@ ob_start();
 							</footer>
 						
 				</body>
-			<?php
-				}
-				else
-				{
-					?>
-					<body id="paiement">
-						<main id="paiement2">
-										<header class="headeri">
-										<?php include("../include/bar-nav.php");?>
-										</header>
-								<?php
-								$bdd = mysqli_connect("localhost", "root", "", "ciaracut");
-								$requete="SELECT prixtotal FROM sauvegarde where datepanier ORDER by datepanier DESC LIMIT 1";
-								$requeteQ=mysqli_query($bdd,$requete);
-								$requeteR=mysqli_fetch_all($requeteQ);
-								$somme=$requeteR[0][0];
-								
-								echo "<p id='notpaiement'>La nouvelle somme après réduction est de : $somme € </p>";
-
-								?>
-						</main>
-										<footer class="headeri">
-							    		<?php include("../include/footer.php");?>
-										</footer>
-						
-					</body>
-					<?php
-					
-				}
-
-			?>
-
+			
+				
+			
 				</html>
 
 
