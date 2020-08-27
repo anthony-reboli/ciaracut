@@ -48,11 +48,10 @@ var timerID = setInterval(runClock,1000);
 			<header class="headeri">
     		<?php
     		 session_start();
-
-    		 if($_SESSION['login'] != 'vanessa')
-    		 {
-    		 	header('location:index.php');
-    		 }
+   if (!isset($_SESSION['login']) or $_SESSION['login'] != 'vanessa')
+   {
+   	header('location:index.php');
+   }
 
 
     		 include("../include/bar-nav.php");?>

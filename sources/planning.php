@@ -1,9 +1,9 @@
 <?php
 session_start();
-         if($_SESSION['login'] != 'vanessa')
-         {
-          header('location:index.php');
-         }
+   if (!isset($_SESSION['login']) or $_SESSION['login'] != 'vanessa')
+   {
+    header('location:index.php');
+   }
 ?>
 <html>
 <head>

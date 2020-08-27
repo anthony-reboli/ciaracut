@@ -21,7 +21,7 @@ $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
 <header id="headeri">
    <?php
    session_start();
-   if (!isset($_SESSION['login']))
+   if (!isset($_SESSION['login']) or $_SESSION['login'] != 'vanessa')
    {
    	header('location:index.php');
    }
