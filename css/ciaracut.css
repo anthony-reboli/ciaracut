@@ -1,0 +1,1070 @@
+ /*Curseur*/
+a  ,.bulle{
+  cursor: url('../upload/ciseau.png'), auto; 
+} 
+
+/*format écriture*/
+@font-face {
+  font-family :'police';
+  src: url('../upload/Brightly Crush Shine.otf') format('truetype');
+  }
+
+/*CLASS TITRES*/
+.title{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:white;
+}
+.title2{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  font-family:police;
+  font-size: 50px;
+  color:black;
+}
+
+/*PAGE INDEX*/
+#index{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: pink;
+  width: 100%;
+}
+
+#contindex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+#presentation{
+  
+  background-image: url("../upload/fondfacebook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 0px 14px 0px;
+
+}
+
+.photo{
+  border:black 10px double;
+}
+
+#descriptionphoto {
+  background-image: url("../upload/fondforfait.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 30px;
+  font-family:serif;
+  padding: 3%;
+  margin: 2%;
+  width: 64vw;
+  height: 100%;
+  
+}
+#forfait{
+  background-image: url("../upload/fondforfait.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.bulle{
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  border-radius: 100%;
+  border:double 20px;
+  font-family:"Times New Roman", Times, serif;
+  font-size: 20px;
+  width: 250px;
+  height: 250px;
+  margin: 2%;
+}
+.forfait div #bulle1 {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.bulle:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  transition: all 0.25s ease-in-out;
+
+}
+.bulle:not(:hover) {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.25s ease-in-out;
+}
+#bulle1{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 1%;
+
+}
+#bulle2{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: 2%;
+   padding: 1%;
+}
+
+#services{
+  background-image: url("../upload/fondprestation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#contservices{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.theme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#demo{
+  align-items: center;
+  margin: 8%;
+  padding: 5%;
+  width: 700px;
+}
+.titrecoupe{
+  margin: 2%;
+  font-size: 60px;
+  color: pink;
+  font-family: police;
+}
+
+#facebook{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#contfacebook{
+  background-color:#0c0c0cbf;
+  border:double white 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3%;
+  margin: 2%;
+
+}
+
+/*PAGE TARIFS*/
+
+#tarif{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+#conttarif{
+  background-image: url("../upload/fondfacebook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#conttableau{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#121213d1;
+  border: white double 10px;
+  width: 90%;
+  padding: 4%;
+  margin: 3%;
+   
+}
+#alertchiffre{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  width: 70%;
+}
+
+
+/*FOOTER*/
+#foot{
+color: white;
+font-family:serif;
+font-size: 20px;
+}
+/*PAGE INSCRIPTION*/
+#inscription{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#continscription{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-height: 690px;
+}
+#main{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#191717a8;
+  width: 50%;
+}
+#main2{
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#191717a8;
+  width: 50%;
+
+}
+/*PAGE CONNEXION*/
+#connexion{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contconnexion{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-height: 641px;
+
+}
+.inscri{
+  background-color: pink;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+}
+#notcon{
+  color: black;
+  font-size: 30px;
+  font-family: police;
+}
+
+
+
+/*PAGE CLIENT*/
+#pageclient{
+  background-image: url("../upload/fondfacebook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#contclient{
+  border: double white 10px; 
+  margin: 3%;
+  background-color:#000000c4;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  padding: 30px;
+
+}
+#formclient{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  border: double black 10px;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: black;
+  background-color:pink;
+  padding: 3%;
+  margin: 3%;
+  width: 100%;
+
+  
+}
+#popclient{
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+#heureclient{
+  font-size: 15px;
+  font-family: sans-serif;
+}
+#compteclient{
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+
+}
+#tableauclient{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+#infouser{
+  border:double white 10px;
+  font-size: 20px;
+  padding: 1%;
+  margin: 3%;
+  border:solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
+/*PAGE LIVREOR*/
+#livreor{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+
+
+}
+#contlivreor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+  padding: 5%;
+}
+#contm{
+
+  overflow: scroll;
+  height: 600px;
+  margin: 3%;
+  padding: 5%;
+}
+#comment{
+  justify-content: center;
+  align-items: center;
+  background-color:#000000bf;
+  color: white;
+  margin: 3%;
+  padding: 3%;
+  font-size: 25px;
+  width: 95%;
+}
+#contlivreor{
+  background-color:#000000bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+.poster{
+
+  background-color:#e91e63e3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  margin: 3%;
+}
+
+#suppcomment{
+
+  color: black;
+  background-color:white; 
+  border: double;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  margin: 3%;
+
+  
+}
+#user{
+  font-size: 20px;
+}
+#messag p{
+  word-wrap: break-word;
+  font-size: 20px;
+  width: 70vw;
+  padding: 3%;
+  margin: 3%;
+}
+
+/*PAGE PROFIL*/
+
+#profil{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+#fiche{
+  border: double white 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#d4215e;
+  word-break: break-all;
+  font-size: 30px;
+  color: white;
+  width: 60%;
+  margin: 3%;
+}
+#contfiche{
+  padding: 1%;
+  background-color:#343a40;
+}
+#formfiche{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contentinfos{
+
+  display: flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: center;
+  background-color:#171616c9;
+  border:double white 10px;
+  width: 90%;
+
+}
+#dernierpresta{
+  border: double white 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#d4215e;
+  width: 40%;
+  margin:3%;
+
+
+}
+
+#infouser2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 3%;
+  margin: 3%;
+  background-color:#171616c9;
+  width: 80%;
+  border: double white 10px;
+}
+#popclient{
+  background-color:#171616c9;
+  margin: 3%;
+  border: double white 10px;
+}
+#notclient{
+  color: white;
+  font-size: 20px;
+  font-family:police;
+}
+#formprofil{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#272525d1;
+  color: white;
+  margin: 3%;
+  min-height: 80vh;
+}
+#titreclient{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#continfo{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+/*PAGE PLANNING*/
+#planning{
+  background-image: url("../upload/fondfacebook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contplanning{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
+}
+#tableauplanning{
+  background-color: #1c1d1fd9;
+  width: 95%;
+  margin: 3%;
+
+}
+#alertplanning{
+  background-color: #1c1d1fd9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#pop1{
+  margin: 3%;
+}
+
+.ligne{
+  border:solid white;
+  width: 330px;
+  height: 65px;
+}
+.ligne2{
+  border:solid;
+  width: 65px;
+  height: 65px;
+}
+
+#calendrier{
+  border:double white 10px;
+  background-color:#1c1d1fd9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:stretch;
+  width: 80%;
+  font-size: 35px;
+  font-family: serif;
+  color: white;
+  margin: 2%;
+  padding: 2%;
+}
+
+#message{
+  font-family: serif;
+  text-align: center;
+  font-size: 30px;
+  
+}
+#agenda{
+  border:double white 10px;
+  background-color: #1b1a1ac7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+  padding: 2%;
+
+
+}
+.lien{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  border:double;
+  margin:2%;
+  padding: 2%;
+}
+
+/*PAGE PRODUIT*/
+#pageproduit{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+
+}
+#formprestation{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+  height: -webkit-fill-available;
+  font-family: sans-serif;
+  color: white;
+
+}
+#formprestation2{
+  background-color:#4a4144a8;
+  border:double white 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  font-family: sans-serif;
+  border:double white 10px;
+  font-size: 20px;
+  color: white;
+  padding: 3%;
+  
+}
+/*PAGE PANIER*/
+  #pagepanier{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+}
+
+#btnretour{
+  background-color:#0000009e;
+  border:double white 5px;
+  margin:3%;
+  padding: 1%;
+}
+#contpanier{
+  background-color:#0000009e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:stretch;
+  flex-wrap: wrap;
+  width: 70%;
+  padding: 3%;
+  margin: 3%;
+  min-height: 80vh;
+  border:double white 10px;
+}
+#produitpanier{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom:20px;
+}
+#cardpanier{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: serif;
+  color: black;
+  width: 20%;
+  margin: 2%;
+
+}
+#infopanier{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: serif;
+  font-size: 30px;
+
+}
+
+
+/*PAGE BOUTIQUE PAIEMENT*/
+
+#btnprest{
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+#paiement{
+  background-image: url("../upload/panierfond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  min-height:750px;
+
+
+}
+
+#paiementbloc1{
+  background-color:#0000009c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  min-height:80vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 3%;
+  width: 70%;
+
+}
+
+#paiementbloc{
+  background-color:#e91e638f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 70%;
+  padding: 3%;
+  
+}
+#paiementbloc h1{
+ font-size: 1.8vw;
+}
+#montant h1{
+  font-size: 1.8vw;
+}
+#btnpayer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+/*PAGE BOUTIQUE PRESTATION*/
+#boutiquepresta{
+    background-color:#fadbdd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#main-reserv{
+    
+    background-image: url("../upload/panierfond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+#cadre-reserv{
+  background-color: #211d1d91;
+  border:double white 10px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap:wrap;
+  text-decoration: none;
+  list-style: none;
+  margin: 3%;
+  padding: 3%;  
+  
+
+}
+#alertchiffre{
+  background-color:#2f2d2ead;
+  font-family:sans-serif;
+  color:black;
+  font-size: 30px;
+
+}
+
+#contpresta{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:stretch;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 5%;
+}
+
+.headeri{
+
+  background-color:#e91e63 ;
+  width: 100%;
+}
+#cardproduit{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+  background-color:pink; 
+  color: black;
+  border:double white 10px;
+  font-size: 20px;
+  margin: 2%;
+  padding: 1%;
+}
+#alertchiffre{
+  background-color:;
+  font-family:sans-serif;
+  color: white;
+  border:double white 10px;
+  margin: 1%;
+  padding: 3%;
+
+}
+
+
+/*PAGE STOCK*/
+#insufisant{
+  
+  color: red;
+}
+#stockquant{
+  
+  color:green;
+}
+#titlestock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+#stock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e91e63;
+  
+  
+}
+
+#corpstock{
+  background-image: url("../upload/fondfacebook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+#produit{
+  display: flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border:double white 10px;
+  background-color:#000000a6;
+  padding: 2%;
+  margin: 3%;
+}
+#cardstock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+#bloccardstock{
+  background-color:pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  border:double black 10px;
+  color:black;
+  font-size: 20px;
+  padding: 4%;
+  margin: 4%;
+
+}
+#autostock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#000000a6;
+  border:double white 10px;
+  color: black;
+  margin: 3%;
+  padding: 3%;
+}
+
+#cadrestock{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#1010109c;
+  padding: 3%;
+  width: 100%;
+  font-size: 25px;
+  
+}
+.photostock{
+  border:double black 10px;
+  width: 250px;
+  height: 250px;
+}
+
+#formqts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*PAGE NAV BAR*/
+
+
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+    align-items: center;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    color:#000;
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+
+#titreh1 {
+  color: #262626;
+}
+
+.formRes label {
+  color: #262626;
+}
+
+.modal-header * {
+  color: #262626;
