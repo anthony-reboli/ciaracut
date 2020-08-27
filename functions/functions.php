@@ -16,7 +16,6 @@ class userpdo
     public  $pass1  = '';
     public  $pass2  = '';
     public  $date   = '';
-    public  $tel   = '';
 
 
     function connectdb()
@@ -26,34 +25,28 @@ class userpdo
         return $base;
     }
 
-    public function register($login, $nom, $prenom, $email, $pass1, $pass2, $date, $tel)
+    public function register($login, $nom, $prenom, $email, $pass1, $pass2, $date)
     {
-        
-        $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$login'");
+        $user = $this->connectdb()->query("SELECT * FROM utilisateurs WHERE login='$login'");
         $etat = $user->rowCount();
-        
 
         if ($pass1 != $pass2 || strlen($pass1) < 5)
         {
             if ($pass1 != $pass2)
             {
                 $msg = "Mots de passes rentrés différents";
-                
             }
             if (strlen($pass1) < 5)
             {
                 $msg = "Mot de passe trop court";
             }
-
         }
         else
         {
             if ($etat == 0)
             {
-                
                 $hash = password_hash($pass1, PASSWORD_BCRYPT, ['cost' => 12]);
-                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date','$tel', NULL, NULL)");
-                
+                $requser = $this->connectdb()->query("INSERT INTO utilisateurs VALUES(NULL, '$login', '$nom', '$prenom','$email','$hash','$date',0)");
                 $msg = "ok";
             }
             else
@@ -110,50 +103,40 @@ class userpdo
 
     }
 
-    public function update($login, $nom, $prenom, $email, $pass1, $tel)
+    public function update($login, $nom, $prenom, $email, $pass1)
     {
 
 
-        $log = $_POST['login'];
-        $login = $_SESSION['login'];
-       
-            $user = $this->connectdb()->query("SELECT *FROM utilisateurs WHERE login='$log'");
-
+              
+            $user = $this->connectdb()->query("SELECT * FROM utilisateurs WHERE login='$login'");
             $etat = $user->rowCount();
-        
-            var_dump($etat);
-        
-            if (strlen($pass1) >= 5)
-            {
-                echo "mdp bon";
-                if ($etat == 0)
-                {
-                    $hash= password_hash($_POST["pass"], PASSWORD_DEFAULT, array('cost' => 12));
-                        $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$log', nom='$nom', prenom='$prenom', email='$email', password='$hash' , tel='$tel' ,fiche= NULL, datefiche= NULL WHERE login='$login'");
-                        var_dump($update);
 
-                        $this->login = $log;
-                        $this->nom = $nom;
-                        $this->prenom = $prenom;
-                        $this->email = $email;
-                        $this->password = $pass1;
-                        $this->tel = $tel;
-                        
-                        echo "rentre";
-                        session_unset();
-                        header('location:index.php');
-                    
-                }
-                else
+            if ($etat > 0)
             {
-                $msg = "erreur";         
+                $msg = "erreur";
+            }
+            if(strlen($pass1) >= 5)
+            {
+
+                $hash = sha1($pass1);
+                $update = $this->connectdb()->query("UPDATE utilisateurs SET login='$login', nom='$nom', prenom='$prenom', email='$email', pass1='$hash' WHERE login= 'vanessa'");
+                $this->login = $login;
+                $this->nom = $nom;
+                $this->prenom = $prenom;
+                $this->email = $email;
+                $this->pass1 = $pass1;
+                $this->date = $date;
+
+                // unset($_SESSION['login']);
+                // unset($_SESSION['pass1']);
+                // header('location: connexion.php');
+            }
+            else
+            {
+        
+                $msg = "erreur3";
             }
 
-                
-            }
-            
-
-        
         return $msg;
     }
 
@@ -189,7 +172,7 @@ class userpdo
 
 
         $login = $_SESSION['login'];
-        $queryuser = $this->connectdb()->query("SELECT * FROM utilisateurs WHERE login='$login'");
+        $queryuser = $this->connectdb()->query("SELECT *from utilisateurs WHERE login='$login'");
         $donnees = $queryuser->fetch();
 
         $this->id = $donnees['id'];
@@ -199,7 +182,6 @@ class userpdo
         $this->email = $donnees['email'];
         $this->pass1 = $donnees['pass1'];
         $this->date = $donnees['date'];
-        $this->tel = $donnees['tel'];
 
     }
 

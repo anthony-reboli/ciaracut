@@ -1,5 +1,12 @@
 <?php 
+if (isset($_SESSION['login']) && $_SESSION['login'] == 'vanessa')
+{
 
+}
+else
+{
+  header("location:index.php");
+}
 if (isset($_SESSION['id'])) {
 
 ?>
@@ -7,9 +14,9 @@ if (isset($_SESSION['id'])) {
             
             <?php 
                 if (isset($_POST['valider'])) {
-                      $titre = htmlspecialchars($_POST['titre']);
-                      $type = htmlspecialchars($_POST['type']);
-                      $prix = htmlspecialchars($_POST['prix']);
+                      $titre = $_POST['titre'];
+                      $type = $_POST['type'];
+                      $prix = $_POST['prix'];
                       $image = $_POST['photo'];
                       $id=$_SESSION['id'];
                       $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
@@ -35,10 +42,10 @@ if (isset($_SESSION['id'])) {
             <?php
 
                 if (isset($_POST['modifier'])) {
-                          $titre3 = htmlspecialchars($_POST['titre3']);
-                          $titre2 = htmlspecialchars($_POST['titre2']);
-                          $prix2 = htmlspecialchars($_POST['prix2']);
-                          $type = htmlspecialchars($_POST['type']);
+                          $titre3 = $_POST['titre3'];
+                          $titre2 =  $_POST['titre2'];
+                          $prix2 = $_POST['prix2'];
+                          $type = $_POST['type'];
                           $id = $_SESSION['id'];
                           $image = $_POST['photo'];
                           $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
@@ -67,7 +74,7 @@ if (isset($_SESSION['id'])) {
                  if (isset($_POST['effacer'])) {
                     if (!empty($_POST['titre4']))
                             {
-                            $titre4 = htmlspecialchars($_POST['titre4']); 
+                            $titre4 = $_POST['titre4']; 
                             $id = $_SESSION['id'];
                             $connexion = new PDO('mysql:host=localhost;dbname=ciaracut', 'root', '');
                             $requete3 = $connexion->prepare("DELETE FROM prestation WHERE nom = '$titre4'");

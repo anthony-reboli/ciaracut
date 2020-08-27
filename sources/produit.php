@@ -1,5 +1,15 @@
 
-<?php session_start();?>
+<?php session_start();
+if (isset($_SESSION['login']) && $_SESSION['login'] == 'vanessa')
+{
+
+}
+else
+{
+  header("location:index.php");
+}
+?>
+
 <html>
 	<head>
 		<title>Produit</title>
@@ -81,8 +91,6 @@
     											?>
     									</div>
     								</section>						
-				<footer class="headeri">
-    			<?php include("../include/footer.php");?>
-				</footer>
+				
 			</body>
 </html>

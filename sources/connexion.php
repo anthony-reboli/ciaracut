@@ -1,20 +1,16 @@
-<html>
+,<html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="../css/ciaracut.css">
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,800,700,900,300,100' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="camping.css">
     <title>Connexion</title>
 </head>
-<body class="connexion">
-     <header class="headeri">
-    <?php include("../include/bar-nav.php");?>
-    </header>
- <main id="contconnexion">
+<body class="bodyc">
 	<?php
 	session_start();
+	include("../include/bar-nav.php");
     if ( !isset($_SESSION['login']) )
     {
 	    if(isset($_POST['login']) && isset($_POST['password']))
@@ -31,9 +27,14 @@
                 $exec_requete = mysqli_query($connexion,$requete);
                 $reponse  = mysqli_fetch_array($exec_requete);
                 $count = $reponse['count(*)'];
+
                 $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
                 $exec_requete4 = mysqli_query($connexion,$requete4);
                 $reponse4 = mysqli_fetch_array($exec_requete4);
+                var_dump($reponse4);
+            
+                    var_dump($count);
+
                  if( $count!=0 && password_verify($password, $reponse4['password']) )
                 {
                 
@@ -52,21 +53,20 @@
             }
         }
         ?>
-    
+    <section id="connexion">
 
-        <div id="main2" class="container"> 
-        <h1 class="title">Connectez-vous !</h1>  
-            <form class="form-column d-flex justify-content-center flex-column align-items-center" name="loginform" id="loginform" action="#" method="post"> 
+        <div id="main" class="container">   
+            <form name="loginform" id="loginform" action="#" method="post" class="wpl-track-me"> 
                 <p class="login-username">
-                    <label for="formGroupExampleInput"><b>Login</b></label>
-                    <input class="form-control" type="text" id="user_login" class="input" placeholder="Votre login" value="" size="20" name="login" required/> 
+                    <label for="user_login">Username</label> 
+                    <input type="text" id="user_login" class="input" placeholder="Username" value="" size="20" name="login" required/> 
                 </p> 
                 <p class="login-password"> 
-                    <label for="formGroupExampleInput"><b>Mot de passe</b></label>
-                    <input class="form-control" type="password" name="password" id="user_pass" class="input" placeholder="Password" value="" size="20" required/> 
+                    <label for="user_pass">Password</label>
+                    <input type="password" name="password" id="user_pass" class="input" placeholder="Password" value="" size="20" required/> 
                 </p>    
 
-                <p class="login-submit"><input type="submit" name="submit" id="submit" class="btn btn-light" value="Connectez-vous" />
+                <p class="login-submit"><input type="submit" name="submit" id="submit" class="button-primary" value="Log in" />
                     <input type="hidden" name="redirect_to" value="#"/>
                 </p>    
          
@@ -84,10 +84,10 @@
                 }
                 
                 ?>
-        
-            <section class="inscri">
+            </main>
+            <main class="inscri">
                 <p>Pas encore membre ? <a href="inscription.php" class="btn">Inscrivez-vous gratuitement</a></p>
-            </section>
+            </main>
              
         </form>
      </div>
@@ -107,10 +107,6 @@
 
     
     ?>
-</main>
-     <header class="headeri">
-    <?php include("../include/footer.php");?>
-    </header>
    
 </body>
 </html>

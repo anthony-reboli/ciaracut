@@ -1,7 +1,16 @@
 <?php
 session_start();
+if (isset($_SESSION['login']) && $_SESSION['login'] == 'vanessa')
+{
+
+}
+else
+{
+  header("location:index.php");
+}
 ?>
-<html>
+  <html>
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -13,9 +22,8 @@ session_start();
 <header class="headeri">
    <?php include("../include/bar-nav.php");?>
 </header>
-<main id="contplanning">
 
-<button id="pop1" type="button" class="btn-lg btn-dark" data-toggle="modal" data-target="#exampleModal2">
+<button id="pop1" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal2">
 Gérer mes rendez-vous </button>
    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -38,7 +46,7 @@ Gérer mes rendez-vous </button>
   
           <section id="calendrier">
               <form  method="post">
-              <input class="btn-lg btn-light" type="submit" name="precedent" value="Précédent">
+              <input class="btn btn-dark" type="submit" name="precedent" value="Précédent">
               </form>
 <?php
                    
@@ -64,7 +72,7 @@ Gérer mes rendez-vous </button>
                   
 ?>
               <form  method="post">
-              <input class="btn-lg btn-light" type="submit" name="suivant" value="Suivant">
+              <input class="btn btn-dark" type="submit" name="suivant" value="Suivant">
               </form>
             </section>
 
@@ -99,6 +107,7 @@ Gérer mes rendez-vous </button>
       </thead>
       <tbody>
 <?php
+    
     for($ligne =9; $ligne <= 18; $ligne++ )
     {
       echo "<tr>";
@@ -126,8 +135,11 @@ Gérer mes rendez-vous </button>
                     $requete = $connexion->prepare("SELECT * FROM reservations WHERE id='$idreserv'");
                     $requete->execute();
                     $test = $requete->fetchAll();
+              
               foreach ($test as  $teste) {
-                $idtest=$teste;          
+                
+                $idtest=$teste;
+                
                 ?>
                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -148,15 +160,23 @@ Gérer mes rendez-vous </button>
                   </div>
                 </div>
                   <?php
-              } 
-             }
+                
+
+              }
+                
+              
+                  }
+               
           }
         }
         echo "</td>";
       }
     echo "</tr>";
+
+        
               ?>
-  </tbody> 
+  </tbody>
+    
 </table>
 </section>
 
@@ -166,10 +186,7 @@ Gérer mes rendez-vous </button>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="../js/script.js"></script>
-</main>
-<footer class="headeri">
-    <?php include("../include/footer.php");?>
-</footer>
 </body>
 
 </html>
+
