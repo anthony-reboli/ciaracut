@@ -144,6 +144,23 @@ if (!isset($_GET['p']))
 				$description=$data['description'];
 
 				echo" <div id='bloccardstock' class=\"card\" style=\"width:30rem\";>";
+				if(isset($_SESSION['login'])=='vanessa')
+                {
+
+
+                        ?>
+                        <form method="post">
+                            <input class="btn btn-secondary" type="submit" value="effacer" name="sup"/>
+                        </form>
+                         <?php
+                         if (isset($_POST['sup']))
+                         {
+                            $idproduit=$_GET['p'];
+                            $requetesup="DELETE FROM produit WHERE id = $idproduit";
+                            $requetesupQ=mysqli_query($bdd,$requetesup);
+                            header("location:index.php");
+                         }
+                }
 				echo "<div id='cadrestock'>";
 				echo "<h1 class=\"title\">$dnp</h1><br>";
 				echo "<a href=\"stock.php?p=$did\"><img class=\"photostock\" src=\"../upload/stock/$img\"></a>";

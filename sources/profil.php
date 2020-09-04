@@ -40,6 +40,25 @@ include("../include/functions.php");
             $aniv=$fetch['date'];
             $tel=$fetch['tel'];
             echo "<div id=\"infouser2\">";
+                if(isset($_SESSION['login'])=='vanessa')
+                {
+
+
+                        ?>
+                        <form method="post">
+                            <input class="btn btn-secondary" type="submit" value="effacer" name="sup"/>
+                        </form>
+                         <?php
+                         if (isset($_POST['sup']))
+                         {
+                            $iduser=$_GET['U'];
+                            $requetesup="DELETE FROM utilisateurs WHERE id = $iduser";
+                            $requetesupQ=mysqli_query($connexion,$requetesup);
+                            header("location:index.php");
+                         }
+                }
+
+
             echo "<h1 class='titrecoupe'>Le fichier client:</h1>";
 
             echo "<h1>Les infos de: $nom<br>";
