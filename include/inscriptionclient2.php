@@ -39,9 +39,8 @@ $connexion =  mysqli_connect("localhost","root","","ciaracut");
            
             if (empty($requete1R) )
             {
-                include("../include/mdpaleatoire.php");
-                $hash = password_hash($mdp, PASSWORD_BCRYPT, ['cost' => 12]);
-                $requete2=("INSERT INTO utilisateurs VALUES(NULL,'$nom','$nom', '$prenom','$email','$hash','$date',$tel,NULL,NULL)");
+
+                $requete2=("INSERT INTO utilisateurs VALUES(NULL,'$nom','$nom', '$prenom','$email','$mdp','$date',$tel,NULL,NULL)");
                 var_dump($requete2);
                 
                 $requete2Q=mysqli_query($connexion,$requete2);

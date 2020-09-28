@@ -49,7 +49,7 @@ if(isset($_POST['ficheE']))
 
  	$fiche="UPDATE utilisateurs SET datefiche='$datefiche',fiche= '$fiche' WHERE id= $U";
  	$ficheQ=mysqli_query($connexion,$fiche);
- 	   header ("Refresh: 0");
+ 	   
 
  echo "Votre saisie a été completé";
 

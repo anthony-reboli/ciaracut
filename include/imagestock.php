@@ -12,7 +12,7 @@ if(isset($_POST['description']) & isset($_POST['nom']) )
 			$extensions = array('.png', '.gif', '.jpg', '.jpeg');
 			$extension = strrchr($_FILES['mon_fichier']['name'], '.');
 			$chemin=$fichier;
-			var_dump($chemin);
+			
 			  
 			//Début des vérifications de sécurité...
 			if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
@@ -35,7 +35,7 @@ if(isset($_POST['description']) & isset($_POST['nom']) )
 			     try
 			{
 			 
-			    $bdd = mysqli_connect("localhost", "root", "", "ciaracut");
+			    $bdd = new PDO('mysql:host=localhost;dbname=ciaracut','root','');
 			}
 			  catch(Exception $e)
 			    {          die('Erreur : '.$e->getMessage());

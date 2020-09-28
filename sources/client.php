@@ -4,7 +4,7 @@
 
 
 date_default_timezone_set('europe/paris');
-$bdd = mysqli_connect("localhost", "root", "", "ciaracut");
+$bdd = new PDO('mysql:host=localhost;dbname=ciaracut','root','');
 
 ?>
 
@@ -84,9 +84,11 @@ var timerID = setInterval(runClock,1000);
 							<section id="tableauclient">
 
 						<?php
-							$count="SELECT count(id) FROM utilisateurs";
-							$countQ=mysqli_query($bdd,$count);
-							$countR=mysqli_fetch_all($countQ);
+							$count = $bdd->prepare("SELECT count(id) FROM utilisateurs");
+							$count->execute();
+							$countR = $count->fetchAll();
+							
+							// $countR=mysqli_fetch_all($countQ);
 							$CR=$countR[0][0];
 
 							echo "<div id =\"compteclient\"> Il y a $CR clients inscrits </div>";
@@ -94,21 +96,27 @@ var timerID = setInterval(runClock,1000);
 								{
 									
 									$R=$_POST['search'];
-									$requete="SELECT * FROM utilisateurs WHERE nom LIKE '$R%' ORDER BY id DESC";
-									$queryR=mysqli_query($bdd,$requete);
-									while($data= mysqli_fetch_assoc($queryR))
+
+							$requete = $bdd->prepare("SELECT * FROM utilisateurs WHERE nom LIKE '$R%' ORDER BY id DESC");
+							$requete->execute();
+							
+
+									// $requete="SELECT * FROM utilisateurs WHERE nom LIKE '$R%' ORDER BY id DESC";
+									// $queryR=mysqli_query($bdd,$requete);
+
+									while($data= $requete->fetch())
 						            		{
 												include("../include/infouseradmin.php");
 						            		}
 								}
 								else
 								{
-
-							$user="SELECT * FROM utilisateurs";
-							$reservQ=mysqli_query($bdd,$user);
+							$user = $bdd->prepare("SELECT * FROM utilisateurs");
+							
+							$user->execute();
 							
 
-									while($data= mysqli_fetch_assoc($reservQ))
+									while($data= $user->fetch())
 						            		{
 												include("../include/infouseradmin.php");
 	

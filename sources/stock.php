@@ -1,5 +1,5 @@
 <?php        
-$bdd = mysqli_connect("localhost", "root", "", "ciaracut");
+$bdd = new PDO('mysql:host=localhost;dbname=ciaracut','root','');
 ?>
 
 <html>
@@ -88,9 +88,12 @@ if (!isset($_GET['p']))
         <label class="title">Mon stock</label> 
         <div id="titlestock">
         <?php
-        $all="SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id";
-		$allQ=mysqli_query($bdd,$all);
-		while($data= mysqli_fetch_assoc($allQ))
+        					$all = $bdd->prepare("SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id");
+							$all->execute();
+							
+        
+		
+		while($data= $all->fetch())
 			{
 			
 				$i=1;
@@ -129,9 +132,12 @@ if (!isset($_GET['p']))
 {
 
 		$idproduit=$_GET['p'];
-		$unprod="SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id WHERE stock.id_produit = '$idproduit'";
-		$unprodQ=mysqli_query($bdd,$unprod);
-		$data=mysqli_fetch_assoc($unprodQ);
+		        			$unprod = $bdd->prepare("SELECT * FROM stock INNER JOIN produit ON stock.id_produit = produit.id WHERE stock.id_produit = '$idproduit'");
+							$unprod->execute();
+
+		
+		
+		$data= $unprod->fetch();
 		
 
 
@@ -156,8 +162,10 @@ if (!isset($_GET['p']))
                          if (isset($_POST['sup']))
                          {
                             $idproduit=$_GET['p'];
-                            $requetesup="DELETE FROM produit WHERE id = $idproduit";
-                            $requetesupQ=mysqli_query($bdd,$requetesup);
+
+                            $requetesup = $bdd->prepare("DELETE FROM produit WHERE id = $idproduit");
+                            
+                            $requetesup->execute();
                             header("location:index.php");
                          }
                 }
@@ -185,10 +193,13 @@ if (!isset($_GET['p']))
 				
 				if(isset($_POST['stockV']))
 					{
-						$qtt=$_POST['nombre'];
+						$qtt=htmlspecialchars($_POST['nombre']);
 						$idproduit=$_GET['p'];
-						$update="UPDATE stock SET quantiteproduit = $qtt where id_produit = $idproduit";
-						$updateQ=mysqli_query($bdd,$update);
+
+                            $update= $bdd->prepare("UPDATE stock SET quantiteproduit = $qtt where id_produit = $idproduit");
+                            $update->execute();
+
+
 						 header("refresh:0");
 					}
 					

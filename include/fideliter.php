@@ -6,15 +6,14 @@
 										
 							$datejour=date('Y-m-d');
 
-							$bdd = mysqli_connect("localhost", "root", "", "ciaracut");
+							$bdd = new PDO('mysql:host=localhost;dbname=ciaracut','root','');
 
 								$nomclient=$_POST['nom'];
 								$prenomclient=$_POST['prenom'];
 								$modeclient=$_POST['mode'];
-								$selectotal="SELECT * FROM utilisateurs where nom ='$nomclient'";
-
-								$selectotalQ=mysqli_query($bdd,$selectotal);
-								$selectotalR=mysqli_fetch_all($selectotalQ);
+							$selectotal= $bdd->prepare("SELECT * FROM utilisateurs where nom ='$nomclient");
+							$selectotal->execute();
+							$selectotalRR = $selectotal->fetchAll();
 
 								$dateR=$selectotalR[0][6];
 								// $dateR = date('Y-m-d', $dateR);
@@ -31,26 +30,26 @@
 
 								if($datetime3 >= $datetime1 == "true" and $datetime3 <= $datetime2 == "true")
 						{
-							
-									$selectS="SELECT * FROM sauvegarde where nom = '$nomclient' and datepanier LIKE ('$datejour%')";
-									var_dump($selectS);
-												 $req1=("UPDATE sauvegarde SET mode ='$modeclient',nom ='$nomclient',prenom ='$prenomclient'  WHERE nom is null AND prenom is null");
-												 
-												$query1=mysqli_query($bdd,$req1);
-						
+							$selectS= $bdd->prepare("SELECT * FROM sauvegarde where nom = '$nomclient' and datepanier LIKE ('$datejour%')");
+							$selectS->execute();
+							$selectotalR = $selectS->fetchAll();
 
-						$deux=mysqli_query($bdd,$selectS);
-						$trois=mysqli_fetch_all($deux);
-						foreach ($trois as $key2) {
+
+							$req1= $bdd->prepare("UPDATE sauvegarde SET mode ='$modeclient',nom ='$nomclient',prenom ='$prenomclient'  WHERE nom is null AND prenom is null");
+							$req1->execute();
+							$selectotalR = $req1->fetchAll();
+
+									
+
+						foreach ($selectotalR as $key2) {
 							 	
 							 	$prix=$key2[4];
 							 	
 
-							 	
-							 	$red="SELECT prixtotal from sauvegarde where prixtotal= '$prix'";
-							 	
-								$redQ=mysqli_query($bdd,$red);
-								$redR=mysqli_fetch_all($redQ);
+							$red= $bdd->prepare("SELECT prixtotal from sauvegarde where prixtotal= '$prix'");
+							$red->execute();
+							$redR = $selectS->fetchAll();
+
 
 
 
@@ -60,15 +59,9 @@
 																	$a=$key3[0];
 																	$b=10;
 																	$resultat= $a - ($a * ($b/100));
-																			
-																	$prix="UPDATE sauvegarde set prixtotal= $resultat where nom = '$nomclient' and datepanier LIKE  ('$datejour%')";
-																	var_dump($prix);
-																	
-																	
-																	
-																	$prixQ=mysqli_query($bdd,$prix);
-																	
-																	
+
+							$prix= $bdd->prepare("UPDATE sauvegarde set prixtotal= $resultat where nom = '$nomclient' and datepanier LIKE  ('$datejour%");
+							$prix->execute();	
 																 }
 							 							}
 							$req2=("DELETE FROM panier WHERE id_utilisateurs=$id_utilisateurs");
